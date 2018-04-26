@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class EmpresaMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -13,10 +13,10 @@ class EmpresaMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard='empresa')
+    public function handle($request, Closure $next, $guard='admin')
     {
         if(!auth()->guard($guard)->check()){
-            return redirect('/empresa/login');
+            return redirect('/admin/login');
         }
         return $next($request);
     }

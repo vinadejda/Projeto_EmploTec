@@ -56,3 +56,29 @@ Route::group(['prefix'=>'empresa'], function(){
 
 Route::view('/empresa/home','empresa-home')->middleware('empresa');
 
+
+
+
+
+//Rotas para Administrador
+
+Route::group(['prefix'=>'admin'], function(){
+    Route::get('login', ['as' => 'admin.login', 'uses' => 'AdminAuth\LoginController@showLoginForm']);
+
+    Route::post('login', ['uses' => 'AdminAuth\LoginController@login']);
+    Route::post('logout', ['as' => 'admin.logout', 'uses' => 'AdminAuth\LoginController@logout']);
+
+// Registration Routes...
+    Route::get('register', ['as' => 'admin.register', 'uses' => 'AdminAuth\RegisterController@showRegistrationForm']);
+    Route::post('register', ['uses' => 'AdminAuth\RegisterController@register']);
+
+// Password Reset Routes...
+    Route::get('password/reset', ['as' => 'admin.password.request', 'uses' => 'AdminAuth\ForgotPasswordController@showLinkRequestForm']);
+    Route::post('password/email', ['as' => 'admin.password.email', 'uses' => 'AdminAuth\ForgotPasswordController@sendResetLinkEmail']);
+    Route::get('password/reset/{token}', ['as' => 'admin.password.reset.token', 'uses' => 'AdminAuth\ResetPasswordController@showResetForm']);
+    Route::post('password/reset', ['uses' => 'AdminAuth\ResetPasswordController@reset']);
+});
+
+
+Route::view('/admin/home','admin-home')->middleware('admin');
+

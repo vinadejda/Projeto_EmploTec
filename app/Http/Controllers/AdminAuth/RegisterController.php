@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\EmpresaAuth;
+namespace App\Http\Controllers\AdminAuth;
 
-use App\Empresa;
+use App\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/empresa/home';
+    protected $redirectTo = '/admin/home';
 
     /**
      * Create a new controller instance.
@@ -63,7 +63,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Empresa::create([
+        return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -72,7 +72,7 @@ class RegisterController extends Controller
             'ds_bairro' => $data['bairro'],
             'ds_complemento' => $data['complemento'],
             'nr_tel' => $data['tel'],
-            'nl_user' => 3,
+            'nl_user' => 1,
             'nr_cel' => $data['celular'],
             'im_perfil' => $data['img'],
             'link_linkedin' => $data['linkedin'],
@@ -83,10 +83,10 @@ class RegisterController extends Controller
     }
     protected function guard()
     {
-        return auth()->guard('empresa');
+        return auth()->guard('admin');
     }
     public function showRegistrationForm()
     {
-        return view('empresa-auth.register');
+        return view('admin-auth.register');
     }
 }

@@ -5,17 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Empresa extends Authenticatable
+class Admin extends Authenticatable
 {
     use Notifiable;
 
-   // protected $table = 'empresa';
-     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-
+    
     protected $table = 'users';
     protected $fillable = [
         'name',
@@ -35,6 +29,7 @@ class Empresa extends Authenticatable
         'link_site_pessoal',   
     ];
 
+    
     /**
      * The attributes that should be hidden for arrays.
      *
