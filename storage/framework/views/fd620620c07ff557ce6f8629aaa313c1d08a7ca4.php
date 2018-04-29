@@ -1,12 +1,11 @@
-@extends('area-empresa.layout.template')
+<?php $__env->startSection('content'); ?>
 
-@section('content')
-
-@if (session('status'))
+<?php if(session('status')): ?>
     <div class="alert alert-success">
-        {{ session('status') }}
+        <?php echo e(session('status')); ?>
+
     </div>
-@endif
+<?php endif; ?>
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
@@ -538,4 +537,5 @@
                 <!-- /.col-lg-4 -->
             </div>
             <!-- /.row -->
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('area-empresa.layout.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

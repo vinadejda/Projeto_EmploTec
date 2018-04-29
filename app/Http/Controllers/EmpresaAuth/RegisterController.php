@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\EmpresaAuth;
 
+
 use App\Empresa;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class RegisterController extends Controller
 {
@@ -28,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/empresa/home';
+    protected $redirectTo = '/empresa/info';
 
     /**
      * Create a new controller instance.
@@ -78,8 +81,9 @@ class RegisterController extends Controller
             'link_linkedin' => $data['linkedin'],
             'link_facebook' => $data['facebook'],
             'link_twitter' => $data['twitter'],
-            'link_site_pessoal' => $data['portifolio'],
-        ]);
+            'link_site' => $data['portifolio'],
+            'fk_cidade' => $data['cidade'],
+        ]);   
     }
     protected function guard()
     {
@@ -90,3 +94,4 @@ class RegisterController extends Controller
         return view('empresa-auth.register');
     }
 }
+

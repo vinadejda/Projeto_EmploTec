@@ -32,7 +32,7 @@ class User extends Authenticatable
         'link_linkedin',
         'link_facebook',
         'link_twitter',
-        'link_site_pessoal',   
+        'link_site',   
     ];
 
     /**
