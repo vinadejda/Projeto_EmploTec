@@ -43,11 +43,21 @@ Route::group(['prefix'=>'empresa'], function(){
 // Registration Routes...
     Route::get('register', ['as' => 'empresa.register', 'uses' => 'EmpresaAuth\RegisterController@showRegistrationForm']);
     Route::post('register', ['uses' => 'EmpresaAuth\RegisterController@register']);
+
+
 // Password Reset Routes...
     Route::get('password/reset', ['as' => 'empresa.password.request', 'uses' => 'EmpresaAuth\ForgotPasswordController@showLinkRequestForm']);
     Route::post('password/email', ['as' => 'empresa.password.email', 'uses' => 'EmpresaAuth\ForgotPasswordController@sendResetLinkEmail']);
     Route::get('password/reset/{token}', ['as' => 'empresa.password.reset.token', 'uses' => 'EmpresaAuth\ResetPasswordController@showResetForm']);
     Route::post('password/reset', ['uses' => 'EmpresaAuth\ResetPasswordController@reset']);
+
+
+    //Empresa Info
+    Route::get('info', ['as' => 'empresa.info','uses' => 'EmpresaInfoController@showRegistrationInfoForm']);
+    Route::post('info', ['uses' => 'EmpresaInfoController@cadastrar']);
+    Route::get('editar', 'EmpresaInfoController@editar')->where('id', '[0-9]+');
+    Route::post('atualizar', 'EmpresaInfoController@altera');
+
 });
 
 

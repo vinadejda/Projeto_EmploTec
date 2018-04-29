@@ -11,20 +11,20 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{ asset('../vendor/bootstrap/css/bootstrap.min2.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('../vendor/bootstrap/css/bootstrap.min2.css')); ?>" rel="stylesheet">
     <!-- MetisMenu CSS -->
-    <link href="{{ asset('../vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('../vendor/metisMenu/metisMenu.min.css')); ?>" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{ asset('../css/sb-admin-2.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('../css/sb-admin-2.css')); ?>" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="{{ asset('../vendor/morrisjs/morris.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('../vendor/morrisjs/morris.css')); ?>" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{ asset('../vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="<?php echo e(asset('../vendor/font-awesome/css/font-awesome.min.css')); ?>" rel="stylesheet" type="text/css">
 
-    <link href="{{ asset('../css/geral.css') }}" rel="stylesheet">
+    <link href="<?php echo e(asset('../css/geral.css')); ?>" rel="stylesheet">
 </head>
 
 <body>
@@ -246,15 +246,16 @@
                         </li>
                         <li class="divider"></li>
                         <li> 
-                            <a class="dropdown-item" href="{{ route('empresa.logout') }}"
+                            <a class="dropdown-item" href="<?php echo e(route('empresa.logout')); ?>"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                      <i class="fa fa-sign-out fa-fw"></i>
-                                        {{ __('Logout') }}
+                                        <?php echo e(__('Logout')); ?>
+
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('empresa.logout') }}" method="POST" style="display: none;">
-                                        @csrf
+                                    <form id="logout-form" action="<?php echo e(route('empresa.logout')); ?>" method="POST" style="display: none;">
+                                        <?php echo csrf_field(); ?>
                                     </form>
                         </li>
                     </ul>
@@ -279,10 +280,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{{ url('/empresa/dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="<?php echo e(url('/empresa/dashboard')); ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="{{url('/empresa/vagas')}}"><i class="fa  fa-crosshairs fa-fw"></i> Vagas</a>
+                            <a href="<?php echo e(url('/empresa/vagas')); ?>"><i class="fa  fa-crosshairs fa-fw"></i> Vagas</a>
                         </li>
                         <li>
                             <a href=""><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -301,7 +302,7 @@
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="{{url('/empresa/editar')}}"><i class="fa fa-edit fa-fw"></i> Atualizar Informações</a>
+                            <a href="<?php echo e(url('/empresa/editar')); ?>"><i class="fa fa-edit fa-fw"></i> Atualizar Informações</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -322,7 +323,7 @@
                                     <a href="icons.html"> Icons</a>
                                 </li>
                                 <li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <a href="grid.html">Grid</a>
+                                    <a href="grid.html">Grid</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -383,7 +384,7 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
         </div>
         <!-- /#page-wrapper -->
 
@@ -391,22 +392,22 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="{{ asset('../vendor/jquery/jquery.min.js') }}"></script>
+    <script src="<?php echo e(asset('../vendor/jquery/jquery.min.js')); ?>"></script>
 
     <!-- Bootstrap Core JavaScript 
-    <script src="{{ asset('../vendor/bootstrap/js/bootstrap.min.js') }}"></script>-->
-    <script src="{{ asset('../vendor/bootstrap/js/bootstrap.min2.js') }}"></script>
+    <script src="<?php echo e(asset('../vendor/bootstrap/js/bootstrap.min.js')); ?>"></script>-->
+    <script src="<?php echo e(asset('../vendor/bootstrap/js/bootstrap.min2.js')); ?>"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{ asset('../vendor/metisMenu/metisMenu.min.js') }}"></script>
+    <script src="<?php echo e(asset('../vendor/metisMenu/metisMenu.min.js')); ?>"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="{{ asset('../vendor/raphael/raphael.min.js') }}"></script>
-    <script src="{{ asset('../vendor/morrisjs/morris.min.js') }}"></script>
-    <script src="{{ asset('../data/morris-data.js') }}"></script>
+    <script src="<?php echo e(asset('../vendor/raphael/raphael.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('../vendor/morrisjs/morris.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('../data/morris-data.js')); ?>"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="{{ asset('../js/sb-admin-2.js') }}"></script>
+    <script src="<?php echo e(asset('../js/sb-admin-2.js')); ?>"></script>
 
 </body>
 
