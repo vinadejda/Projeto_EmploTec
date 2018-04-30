@@ -32,6 +32,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/painel/candidato/dashboard', function () {
+    return view('area-user.dashboard.index');
+});
+
+//ROTAS USUARIO
+Route::get('/painel/candidato/curriculo', 'CurriculoController@index');
+Route::post('/painel/candidato/curriculo/adicionarcurriculo', 'CurriculoController@adiciona');
+Route::get('/painel/candidato/experiencia','ExperienciaController@infoExperiencia');
+
+Route::post('/painel/candidato/experiencia/adiciona', 'ExperienciaController@adiciona');
+
+
 
 
 //------------------------ROTAS ACESSO EMPRESA---------------------------------

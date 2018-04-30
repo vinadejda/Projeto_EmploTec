@@ -110,7 +110,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('img') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="file" class="form-control" name="img" required>
+                                <input id="password-confirm" type="file" class="form-control" name="img">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -142,6 +142,14 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="text" class="form-control" name="portifolio" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Cidade') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="text" class="form-control" name="cidade" value="1" >
                             </div>
                         </div>
 
