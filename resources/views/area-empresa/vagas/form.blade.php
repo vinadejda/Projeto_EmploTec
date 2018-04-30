@@ -28,48 +28,64 @@
               </label>
               <input type="text" name="nome" class="form-control" placeholder="Nome da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
             </div>
-
             <div class="form-group col-md-6">
-              <label for="localidade">
-                <span class="text-danger">* </span> Localidade
+              <label for="areaTI">
+                <span class="text-danger">* </span> Área de TI
               </label>
-              <input type="text" name="localidade" class="form-control" placeholder="Localidade da vaga" required="required" value="{{isset($vaga) ? $vaga->ds_localidade : old('localidade')}}">
+              <select id="areaTI" name="areaTI" class="form-control" required="required">
+                <option {{(isset($vaga) ? '' : 'selected="selected"')}}></option>
+                @foreach($areasTI as $a)
+                  <option value="{{$a->cd_areaTI}}" {{(isset($vaga) && $a->cd_areaTI == $vaga->fk_area_ti) ? 'selected="selected"' : ''}}>{{$a->nm_areaTI}}</option>
+                @endforeach
+              </select>
             </div>
-
-            <div class="form-group col-md-4">
-              <label for="dataExpiracao">
-                <span class="text-danger">* </span> Data de Expiração
-              </label>
-              <input type="date" name="dataExpiracao" class="form-control" required="required" value="{{isset($vaga) ? $vaga->dt_expiracao : old('dataExpiracao')}}">
-            </div>
-
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
               <label for="quantidade">
-                <span class="text-danger">* </span> Quantidade
+                <span class="text-danger">* </span> Quantidade de Vagas
               </label>
               <input name="quantidade" type="number" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($vaga) ? $vaga->qt_vagas : old('quantidade')}}">
             </div>
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
               <label for="salario" >
                 <span class="text-danger">* </span> Salário
               </label>
               <input type="text" name="salario" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($vaga) ? $vaga->vl_salario_vaga : old('salario')}}">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
               <label for="nivel"><span class="text-danger">* </span> Nível</label>
                 <select id="nivel" name="nivel"  class="form-control">
-                    <option value="estagiario">Estágio</option>
-                    <option value="trainne">Trainne</option>
+                    <option {{(isset($vaga) ? '' : 'selected="selected"')}}></option>
+                    <option value="Estágio" {{(isset($vaga) && 'Estágio' == $vaga->ds_nivel) ? 'selected="selected"' : ''}}>Estágio</option>
+                    <option value="Trainne" {{(isset($vaga) && 'Trainne' == $vaga->ds_nivel) ? 'selected="selected"' : ''}}>Trainne</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="contratacao">Tipo de Contratação</label>
+                <select id="contratacao" name="contratacao" class="form-control">
+                    <option {{(isset($vaga) ? '' : 'selected="selected"')}}></option>
+                    <option value="CLT" {{(isset($vaga) && 'CLT' == $vaga->nm_contratacao) ? 'selected="selected"' : ''}} >CLT</option>
+                    <option value="PJ" {{(isset($vaga) && 'PJ' == $vaga->nm_contratacao) ? 'selected="selected"' : ''}} >PJ</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
-              <label for="contratacao">Contratação</label>
-                <select id="contratacao" name="contratacao" class="form-control">
-                    <option value="clt">CLT</option>
-                    <option value="pj">PJ</option>
-                </select>
+              <label for="cidade">
+                <span class="text-danger">* </span> Cidade
+              </label>
+              <select id="cidade" name="cidade" class="form-control" required="required">
+                <option {{(isset($vaga) ? '' : 'selected="selected"')}}></option>
+                @foreach($cidades as $c)
+                  <option value="{{$c->cd_cidade}}" {{(isset($vaga) && $c->cd_cidade == $vaga->fk_cidade) ? 'selected="selected"' : ''}}>{{$c->nm_cidade}}</option>
+                @endforeach
+              </select>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="dataExpiracao">
+                <span class="text-danger">* </span> Data de Expiração
+              </label>
+              <input type="date" name="dataExpiracao" class="form-control" required="required" value="{{isset($vaga) ? $vaga->dt_expiracao : old('dataExpiracao')}}">
             </div>
             <div class="form-group col-md-12">
               <label>Benefícios</label>
@@ -105,9 +121,11 @@
               </div>
             </div>
           </fieldset>
-          <div class="form-group col-md-6">
-            <button type="submit" class="btn btn-success">Salvar</button>
-            <button type="reset" class="btn btn-primary">Limpar</button>
+          <div class="form-group col-md-8">
+            <button type="submit" class="btn btn-success" >Salvar Dados</button>
+            @if(!isset($vaga))
+              <button type="reset" class="btn btn-primary">Limpar</button>
+            @endif
           </div>
         </form>    
       </div> 

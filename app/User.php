@@ -34,7 +34,9 @@ class User extends Authenticatable
         'link_facebook',
         'link_twitter',
         'link_site', 
-        'fk_cidade',  
+        'ic_ativo',
+        'fk_cidade'
+
     ];
 
     /**
