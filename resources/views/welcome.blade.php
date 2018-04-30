@@ -32,13 +32,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-<<<<<<< HEAD
+
                             <a class="navbar-brand" href="{{ url('/') }}">
                                 <img src="{{ asset('../images/logo.png') }}" style="width: 30%;">
-=======
+
                             <a class="navbar-brand" href="{{route('index')}}">
                                 <img  width="25%;" src="{{ asset('../images/logo.png') }}">
->>>>>>> 827badb4eb86058a50c0872d873bf448a3ef55af
+
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
@@ -56,7 +56,7 @@
                                         <a class="nav-link" href="{{ url('sobrenos') }}">{{ __('SOBRE NÓS') }}</a>
                                     </li>
 
-<<<<<<< HEAD
+
 
                                     @guest
 
@@ -73,7 +73,7 @@
                                         
                                         <li><a href="{{ route('register') }}" class="btn btn-outline-light top-btn">
                                             <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} </a>
-=======
+
                                     @if(auth()->guard('empresa')->check())
                                         <li class="nav-item dropdown">
                                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ url('home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>  
@@ -95,7 +95,7 @@
                                                     @csrf
                                                 </form>
                                             </div>
->>>>>>> 827badb4eb86058a50c0872d873bf448a3ef55af
+
                                         </li>
                                     @elseif(auth()->guard('web')->check())
                                         <li class="nav-item dropdown">
@@ -140,7 +140,7 @@
                                                 <a class="dropdown-item" href="{{ route('empresa.register') }}">Empresa</a>
                                             </div>
                                         </li>
-                                        <!--<li>
+                                        <!--<li-->
                                             <!--<a href="{{ route('register') }}" class="nav-link btn btn-outline-light top-btn">
                                                 <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} 
                                             </a>-->

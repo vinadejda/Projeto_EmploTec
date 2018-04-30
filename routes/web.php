@@ -36,14 +36,23 @@ Route::get('/painel/candidato/dashboard', function () {
     return view('area-user.dashboard.index');
 });
 
+
+
+Route::post('/painel/candidato/adiciona', 'CandidatoController@adiciona');
+Route::get('/painel/candidato/edita', 'CandidatoController@editar');
+Route::post('/painel/candidato/altera', 'CandidatoController@altera'); 
+Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
+Route::get('/painel/candidato/cadastrar', 'CandidatoController@listarDeficiencia');
+    //return view('area-user.candidato.form');
+
 //ROTAS USUARIO
 Route::get('/painel/candidato/curriculo', 'CurriculoController@index');
 Route::post('/painel/candidato/curriculo/adicionarcurriculo', 'CurriculoController@adiciona');
 Route::get('/painel/candidato/experiencia','ExperienciaController@infoExperiencia');
 
 Route::post('/painel/candidato/experiencia/adiciona', 'ExperienciaController@adiciona');
-
-
+//Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
+Route::get('/painel/candidato/atualizar', 'CandidatoController@atualiza');
 
 
 //------------------------ROTAS ACESSO EMPRESA---------------------------------

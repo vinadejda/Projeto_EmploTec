@@ -250,14 +250,14 @@
                         </li>
                         <li class="divider"></li>
                         <li> 
-                            <a class="dropdown-item" href="{{ route('empresa.logout') }}"
+                            <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                      <i class="fa fa-sign-out fa-fw"></i>
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('empresa.logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                         </li>
@@ -296,7 +296,7 @@
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Vagas Candidatadas</a>
                         </li>
                         <li>
-                            <a href="{{url('/empresa/editar')}}"><i class="fa fa-edit fa-fw"></i> Atualizar Informações</a>
+                            <a href="{{url('/painel/candidato/informacoes')}}"><i class="fa fa-edit fa-fw"></i> Atualizar Informações</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
