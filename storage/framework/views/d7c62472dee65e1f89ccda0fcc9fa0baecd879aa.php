@@ -22,49 +22,49 @@
               <label for="nome">
                 <span class="text-danger">*</span> Cargo
               </label>
-              <input type="text" name="cargo" class="form-control" placeholder="Nome do Cargo Exercido" required="required" value="<?php echo e(isset($vaga) ? $vaga->nm_vaga : old('nome')); ?>">
+              <input type="text" name="cargo" class="form-control" placeholder="Nome do Cargo Exercido" required="required" value="<?php echo e(isset($exp) ? $exp->nm_cargo_experiencia : old('cargo')); ?>">
             </div>
 
             <div class="form-group col-md-6">
               <label for="localidade">
                 <span class="text-danger">* </span> Descrição
               </label>
-              <input type="text" name="descricao" class="form-control" placeholder="Localidade da vaga" required="required" value="<?php echo e(isset($vaga) ? $vaga->ds_localidade : old('localidade')); ?>">
+              <input type="text" name="descricao" class="form-control" placeholder="Localidade da vaga" required="required" value="<?php echo e(isset($exp) ? $exp->ds_experiencia : old('descricao')); ?>">
             </div>
 
             <div class="form-group col-md-4">
               <label for="quantidade">
                 <span class="text-danger">* </span> Nome Empresa
               </label>
-              <input name="empresa" type="text" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="<?php echo e(isset($vaga) ? $vaga->qt_vagas : old('quantidade')); ?>">
+              <input name="empresa" type="text" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="<?php echo e(isset($exp) ? $exp->nm_empresa : old('empresa')); ?>">
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
                 <span class="text-danger">* </span> Segmento
               </label>
-              <input type="text" name="segmento" class="form-control" placeholder="Salario de vagas" required="required"  value="<?php echo e(isset($vaga) ? $vaga->vl_salario_vaga : old('salario')); ?>">
+              <input type="text" name="segmento" class="form-control" placeholder="Salario de vagas" required="required"  value="<?php echo e(isset($exp) ? $exp->ds_segmento_empresa : old('segmento')); ?>">
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
                 <span class="text-danger">* </span> Salário
               </label>
-              <input type="number" name="salario" class="form-control" placeholder="Salario de vagas" required="required"  value="<?php echo e(isset($vaga) ? $vaga->vl_salario_vaga : old('salario')); ?>">
+              <input type="number" name="salario" class="form-control" placeholder="Salario de vagas" required="required"  value="<?php echo e(isset($exp) ? $exp->vl_salario : old('salario')); ?>">
             </div>
 
             <div class="form-group col-md-4">
               <label for="dataExpiracao">
                 <span class="text-danger">* </span> Data de Inicio
               </label>
-              <input type="date" name="dataInicio" class="form-control" required="required" value="<?php echo e(isset($vaga) ? $vaga->dt_expiracao : old('dataExpiracao')); ?>">
+              <input type="date" name="dataInicio" class="form-control" required="required" value="<?php echo e(isset($exp) ? $exp->dt_inicio_experiencia : old('dataInicio')); ?>">
             </div>
 
             <div class="form-group col-md-4">
               <label for="dataExpiracao">
                 <span class="text-danger">* </span> Data de Termino
               </label>
-              <input type="date" name="dataTermino" class="form-control" required="required" value="<?php echo e(isset($vaga) ? $vaga->dt_expiracao : old('dataExpiracao')); ?>">
+              <input type="date" name="dataTermino" class="form-control" required="required" value="<?php echo e(isset($exp) ? $exp->dt_termino_experiencia : old('dataTermino')); ?>">
             </div>
 
           </fieldset>

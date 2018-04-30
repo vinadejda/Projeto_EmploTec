@@ -16,7 +16,7 @@ class EmpresaMiddleware
     public function handle($request, Closure $next, $guard='empresa')
     {
         if(!auth()->guard($guard)->check()){
-            return redirect('/');
+            return redirect('/empresa/login');
         }
         return $next($request);
     }

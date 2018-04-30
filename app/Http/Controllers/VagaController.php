@@ -9,6 +9,10 @@ use App\Models\Vaga;
 
 class VagaController extends Controller
 {
+	public function __construct()
+	{
+	    $this->middleware('empresa');
+	}
     public function lista()
     {
         $vagas =Vaga::all();

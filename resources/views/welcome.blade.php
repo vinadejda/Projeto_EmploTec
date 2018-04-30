@@ -32,8 +32,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
+<<<<<<< HEAD
                             <a class="navbar-brand" href="{{ url('/') }}">
                                 <img src="{{ asset('../images/logo.png') }}" style="width: 30%;">
+=======
+                            <a class="navbar-brand" href="{{route('index')}}">
+                                <img  width="25%;" src="{{ asset('../images/logo.png') }}">
+>>>>>>> 827badb4eb86058a50c0872d873bf448a3ef55af
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
@@ -51,6 +56,7 @@
                                         <a class="nav-link" href="{{ url('sobrenos') }}">{{ __('SOBRE NÓS') }}</a>
                                     </li>
 
+<<<<<<< HEAD
 
                                     @guest
 
@@ -67,16 +73,39 @@
                                         
                                         <li><a href="{{ route('register') }}" class="btn btn-outline-light top-btn">
                                             <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} </a>
-                                        </li>
-                                    @else
+=======
+                                    @if(auth()->guard('empresa')->check())
                                         <li class="nav-item dropdown">
                                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ url('home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>  
-                                                {{ Auth::user()->name }} <span class="caret"></span>
+                                                {{ Auth::guard('empresa')->user()->name }} <span class="caret"></span>
                                             </a>
 
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{ url('home') }}">
+                                                <a class="dropdown-item" href="{{ route('dashboard-empresa') }}">
                                                     {{ __('Area da Empresa') }}
+                                                </a>
+                                                
+                                                <a class="dropdown-item" href="{{ route('empresa.logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('empresa.logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+>>>>>>> 827badb4eb86058a50c0872d873bf448a3ef55af
+                                        </li>
+                                    @elseif(auth()->guard('web')->check())
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ url('home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>  
+                                                {{ Auth::guard('web')->user()->name }} <span class="caret"></span>
+                                            </a>
+
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ route('dashboard-empresa') }}">
+                                                    {{ __('Area do Candidato') }}
                                                 </a>
                                                 
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -90,7 +119,40 @@
                                                 </form>
                                             </div>
                                         </li>
-                                    @endguest
+                                    @else
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{ __('LOGIN') }}
+                                                <span class="icon-arrow-down"></span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="{{ route('login') }}">Candidato</a>
+                                                <a class="dropdown-item" href="{{ route('empresa.login') }}">Empresa</a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{ __('CADASTRE-SE') }}
+                                                <span class="icon-arrow-down"></span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="{{ route('register') }}">Candidato</a>
+                                                <a class="dropdown-item" href="{{ route('empresa.register') }}">Empresa</a>
+                                            </div>
+                                        </li>
+                                        <!--<li>
+                                            <!--<a href="{{ route('register') }}" class="nav-link btn btn-outline-light top-btn">
+                                                <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} 
+                                            </a>-->
+                                            <!--<a href="#" class="nav-link" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="ti-plus icon-arrow-down"></span>{{ __('CADASTRE-SE') }} 
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="{{ route('register') }}">Candidato</a>
+                                                <a class="dropdown-item" href="{{ route('empresa.register') }}">Empresa</a>
+                                            </div>
+                                        </li>-->
+                                    @endif
                                 </ul>
                             </div>
                         </nav>

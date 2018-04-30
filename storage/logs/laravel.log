@@ -10067,6 +10067,7 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #53 {main}
 
 "} 
+
 [2018-04-29 21:52:52] local.ERROR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list' (SQL: insert into `users` (`name`, `email`, `password`, `ds_rua`, `nr_endereco`, `ds_bairro`, `ds_complemento`, `nr_tel`, `nl_user`, `nr_cel`, `im_perfil`, `link_linkedin`, `link_facebook`, `link_twitter`, `link_site`, `updated_at`, `created_at`) values (vitoria, vi@gmail.com, $2y$10$o4BUMecIPlztpKL/GTgvW.hXQUSDFwrUSohtWL16WDy3TgRpNK8nG, teste, 1, teste, , , 2, , depositphotos_45242761-stock-photo-super-moon-in-starry-sky.jpg, , , , , 2018-04-29 21:52:52, 2018-04-29 21:52:52)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list' (SQL: insert into `users` (`name`, `email`, `password`, `ds_rua`, `nr_endereco`, `ds_bairro`, `ds_complemento`, `nr_tel`, `nl_user`, `nr_cel`, `im_perfil`, `link_linkedin`, `link_facebook`, `link_twitter`, `link_site`, `updated_at`, `created_at`) values (vitoria, vi@gmail.com, $2y$10$o4BUMecIPlztpKL/GTgvW.hXQUSDFwrUSohtWL16WDy3TgRpNK8nG, teste, 1, teste, , , 2, , depositphotos_45242761-stock-photo-super-moon-in-starry-sky.jpg, , , , , 2018-04-29 21:52:52, 2018-04-29 21:52:52)) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 42S22): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list' at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:452)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('insert into `us...', Array, Object(Closure))
@@ -10403,7 +10404,10 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #4 C:\\xampp\\htdocs\\employ\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #5 {main}
 "} 
-[2018-04-29 23:01:02] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
+[2018-04-29 23:01:02] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -10463,7 +10467,10 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #55 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
-[2018-04-29 23:01:08] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
+[2018-04-29 23:01:08] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -10523,7 +10530,10 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #55 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
-[2018-04-29 23:23:33] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
+[2018-04-29 23:23:33] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -10586,7 +10596,10 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #58 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #59 {main}
 "} 
-[2018-04-29 23:24:29] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
+[2018-04-29 23:24:29] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -10649,7 +10662,10 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #58 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #59 {main}
 "} 
-[2018-04-29 23:24:37] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
+[2018-04-29 23:24:37] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -10712,7 +10728,10 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #58 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #59 {main}
 "} 
-[2018-04-29 23:24:45] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
+[2018-04-29 23:24:45] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -10775,7 +10794,10 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #58 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #59 {main}
 "} 
-[2018-04-29 23:26:05] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
+[2018-04-29 23:26:05] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -10838,7 +10860,10 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #58 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #59 {main}
 "} 
-[2018-04-29 23:26:23] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
+[2018-04-29 23:26:23] local.ERROR: Route [dashboard] not defined. (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) (View: C:\xampp\htdocs\employ\resources\views\layouts\app.blade.php) {"userId":2,"email":"user@user.com","exception":"[object] (ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, ErrorException(code: 0): Route [dashboard] not defined. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\layouts\\app.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370, InvalidArgumentException(code: 0): Route [dashboard] not defined. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:370)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -11392,7 +11417,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('area-user.exper...', Array)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(128): Illuminate\\View\\FileViewFinder->find('area-user.exper...')
 #2 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(990): Illuminate\\View\\Factory->make('area-user.exper...', Array, Array)
-#3 C:\\xampp\\htdocs\\employ\outes\\web.php(44): view('area-user.exper...')
+#3 C:\\xampp\\htdocs\\employ\
+outes\\web.php(44): view('area-user.exper...')
 #4 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(198): Illuminate\\Routing\\Router->{closure}()
 #5 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(172): Illuminate\\Routing\\Route->runCallable()
 #6 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Route->run()
@@ -11449,7 +11475,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('area-user.exper...', Array)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(128): Illuminate\\View\\FileViewFinder->find('area-user.exper...')
 #2 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(990): Illuminate\\View\\Factory->make('area-user.exper...', Array, Array)
-#3 C:\\xampp\\htdocs\\employ\outes\\web.php(44): view('area-user.exper...')
+#3 C:\\xampp\\htdocs\\employ\
+outes\\web.php(44): view('area-user.exper...')
 #4 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(198): Illuminate\\Routing\\Router->{closure}()
 #5 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(172): Illuminate\\Routing\\Route->runCallable()
 #6 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Route->run()
@@ -11506,7 +11533,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('area-user.exper...', Array)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(128): Illuminate\\View\\FileViewFinder->find('area-user.exper...')
 #2 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(990): Illuminate\\View\\Factory->make('area-user.exper...', Array, Array)
-#3 C:\\xampp\\htdocs\\employ\outes\\web.php(44): view('area-user.exper...')
+#3 C:\\xampp\\htdocs\\employ\
+outes\\web.php(44): view('area-user.exper...')
 #4 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(198): Illuminate\\Routing\\Router->{closure}()
 #5 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(172): Illuminate\\Routing\\Route->runCallable()
 #6 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Route->run()
@@ -11563,7 +11591,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('area-user.exper...', Array)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(128): Illuminate\\View\\FileViewFinder->find('area-user.exper...')
 #2 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(990): Illuminate\\View\\Factory->make('area-user.exper...', Array, Array)
-#3 C:\\xampp\\htdocs\\employ\outes\\web.php(44): view('area-user.exper...')
+#3 C:\\xampp\\htdocs\\employ\
+outes\\web.php(44): view('area-user.exper...')
 #4 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(198): Illuminate\\Routing\\Router->{closure}()
 #5 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(172): Illuminate\\Routing\\Route->runCallable()
 #6 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Route->run()
@@ -11740,7 +11769,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('area-user.exper...', Array)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(128): Illuminate\\View\\FileViewFinder->find('area-user.exper...')
 #2 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(990): Illuminate\\View\\Factory->make('area-user.exper...', Array, Array)
-#3 C:\\xampp\\htdocs\\employ\outes\\web.php(44): view('area-user.exper...')
+#3 C:\\xampp\\htdocs\\employ\
+outes\\web.php(44): view('area-user.exper...')
 #4 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(198): Illuminate\\Routing\\Router->{closure}()
 #5 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(172): Illuminate\\Routing\\Route->runCallable()
 #6 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Route->run()
@@ -11912,7 +11942,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #55 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
-[2018-04-30 01:36:49] local.ERROR: Undefined variable: vagas (View: C:\xampp\htdocs\employ\resources\views\area-empresa\vagas\listagem.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Undefined variable: vagas (View: C:\\xampp\\htdocs\\employ\esources\\views\\area-empresa\\vagas\\listagem.blade.php) at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\8f07566c97ec04342559dc986ecbaa2218819e55.php:13, ErrorException(code: 0): Undefined variable: vagas at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\8f07566c97ec04342559dc986ecbaa2218819e55.php:13)
+[2018-04-30 01:36:49] local.ERROR: Undefined variable: vagas (View: C:\xampp\htdocs\employ\resources\views\area-empresa\vagas\listagem.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Undefined variable: vagas (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\area-empresa\\vagas\\listagem.blade.php) at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\8f07566c97ec04342559dc986ecbaa2218819e55.php:13, ErrorException(code: 0): Undefined variable: vagas at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\8f07566c97ec04342559dc986ecbaa2218819e55.php:13)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -11972,7 +12003,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #55 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
-[2018-04-30 01:37:52] local.ERROR: Undefined variable: vagas (View: C:\xampp\htdocs\employ\resources\views\area-user\vagas\listagem.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Undefined variable: vagas (View: C:\\xampp\\htdocs\\employ\esources\\views\\area-user\\vagas\\listagem.blade.php) at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\3662ec283b8d25ca3614d4f6ddb957187419034f.php:13, ErrorException(code: 0): Undefined variable: vagas at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\3662ec283b8d25ca3614d4f6ddb957187419034f.php:13)
+[2018-04-30 01:37:52] local.ERROR: Undefined variable: vagas (View: C:\xampp\htdocs\employ\resources\views\area-user\vagas\listagem.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Undefined variable: vagas (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\area-user\\vagas\\listagem.blade.php) at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\3662ec283b8d25ca3614d4f6ddb957187419034f.php:13, ErrorException(code: 0): Undefined variable: vagas at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\3662ec283b8d25ca3614d4f6ddb957187419034f.php:13)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -12032,7 +12064,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #55 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
-[2018-04-30 01:39:12] local.ERROR: Undefined variable: vagas (View: C:\xampp\htdocs\employ\resources\views\area-user\vagas\listagem.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Undefined variable: vagas (View: C:\\xampp\\htdocs\\employ\esources\\views\\area-user\\vagas\\listagem.blade.php) at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\3662ec283b8d25ca3614d4f6ddb957187419034f.php:13, ErrorException(code: 0): Undefined variable: vagas at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\3662ec283b8d25ca3614d4f6ddb957187419034f.php:13)
+[2018-04-30 01:39:12] local.ERROR: Undefined variable: vagas (View: C:\xampp\htdocs\employ\resources\views\area-user\vagas\listagem.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Undefined variable: vagas (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\area-user\\vagas\\listagem.blade.php) at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\3662ec283b8d25ca3614d4f6ddb957187419034f.php:13, ErrorException(code: 0): Undefined variable: vagas at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\3662ec283b8d25ca3614d4f6ddb957187419034f.php:13)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -12152,7 +12185,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #55 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
-[2018-04-30 01:40:18] local.ERROR: Undefined variable: vagas (View: C:\xampp\htdocs\employ\resources\views\area-user\experiencia\listagem.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Undefined variable: vagas (View: C:\\xampp\\htdocs\\employ\esources\\views\\area-user\\experiencia\\listagem.blade.php) at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\5fb68ad6be4993fda68d36070a246af9e21cd7a7.php:13, ErrorException(code: 0): Undefined variable: vagas at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\5fb68ad6be4993fda68d36070a246af9e21cd7a7.php:13)
+[2018-04-30 01:40:18] local.ERROR: Undefined variable: vagas (View: C:\xampp\htdocs\employ\resources\views\area-user\experiencia\listagem.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Undefined variable: vagas (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\area-user\\experiencia\\listagem.blade.php) at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\5fb68ad6be4993fda68d36070a246af9e21cd7a7.php:13, ErrorException(code: 0): Undefined variable: vagas at C:\\xampp\\htdocs\\employ\\storage\\framework\\views\\5fb68ad6be4993fda68d36070a246af9e21cd7a7.php:13)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -12272,7 +12306,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #55 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
-[2018-04-30 01:42:18] local.ERROR: View [area-user.layouts.template] not found. (View: C:\xampp\htdocs\employ\resources\views\area-user\experiencia\form.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): View [area-user.layouts.template] not found. (View: C:\\xampp\\htdocs\\employ\esources\\views\\area-user\\experiencia\\form.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137, InvalidArgumentException(code: 0): View [area-user.layouts.template] not found. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
+[2018-04-30 01:42:18] local.ERROR: View [area-user.layouts.template] not found. (View: C:\xampp\htdocs\employ\resources\views\area-user\experiencia\form.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): View [area-user.layouts.template] not found. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\area-user\\experiencia\\form.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137, InvalidArgumentException(code: 0): View [area-user.layouts.template] not found. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(InvalidArgumentException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -12332,7 +12367,8 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #55 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
-[2018-04-30 01:43:11] local.ERROR: Cannot end a section without first starting one. (View: C:\xampp\htdocs\employ\resources\views\area-user\experiencia\form.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Cannot end a section without first starting one. (View: C:\\xampp\\htdocs\\employ\esources\\views\\area-user\\experiencia\\form.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Concerns\\ManagesLayouts.php:85, InvalidArgumentException(code: 0): Cannot end a section without first starting one. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Concerns\\ManagesLayouts.php:85)
+[2018-04-30 01:43:11] local.ERROR: Cannot end a section without first starting one. (View: C:\xampp\htdocs\employ\resources\views\area-user\experiencia\form.blade.php) {"userId":3,"email":"t@t.com","exception":"[object] (ErrorException(code: 0): Cannot end a section without first starting one. (View: C:\\xampp\\htdocs\\employ\
+esources\\views\\area-user\\experiencia\\form.blade.php) at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Concerns\\ManagesLayouts.php:85, InvalidArgumentException(code: 0): Cannot end a section without first starting one. at C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Concerns\\ManagesLayouts.php:85)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(InvalidArgumentException), 1)
 #1 C:\\xampp\\htdocs\\employ\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -12994,3 +13030,4 @@ esources\\views\\empresa-auth\\info.blade.php) at C:\\xampp\\htdocs\\employ\\sto
 #51 C:\\xampp\\htdocs\\employ\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #52 {main}
 "} 
+>>>>>>> fbd1a11523bb408e7600db2854211b9e5cf43d3c

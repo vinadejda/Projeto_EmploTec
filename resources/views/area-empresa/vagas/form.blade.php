@@ -15,7 +15,8 @@
   
 
       <div class="card-body">
-        <form role="form" method="post" action="{{isset($vaga) ? '/empresa/vagas/altera': '/empresa/vagas/adiciona'}}">
+        <form role="form" method="post" 
+        action="{{isset($vaga) ? '/painel/empresa/vagas/altera': '/painel/empresa/vagas/adiciona'}}">
           <fieldset>
             <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatorio</p>
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>

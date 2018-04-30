@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>{{ __('EmployTec') }}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('../vendor/bootstrap/css/bootstrap.min2.css') }}" rel="stylesheet">
@@ -40,7 +40,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="{{route('index')}}">
+                    <img  width="155px;" src="{{ asset('../images/logo.png') }}">
+                </a>
             </div>
             <!-- /.navbar-header -->
 
@@ -279,10 +281,10 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{{ url('/empresa/dashboard') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="{{ route('dashboard-empresa') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="{{url('/empresa/vagas')}}"><i class="fa  fa-crosshairs fa-fw"></i> Vagas</a>
+                            <a href="{{url('/painel/empresa/vagas')}}"><i class="fa  fa-crosshairs fa-fw"></i> Vagas</a>
                         </li>
                         <li>
                             <a href=""><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -301,7 +303,7 @@
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="{{url('/empresa/editar')}}"><i class="fa fa-edit fa-fw"></i> Atualizar Informações</a>
+                            <a href="{{url('/painel/empresa/editar')}}"><i class="fa fa-edit fa-fw"></i> Atualizar Informações</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -379,7 +381,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard Empresa</h1>
+                    <h1 class="page-header">Área da Empresa</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
