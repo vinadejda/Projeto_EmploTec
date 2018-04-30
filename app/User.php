@@ -14,7 +14,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-
+    public $timestamps = false;
+    
     protected $table = 'users';
     
     protected $fillable = [
@@ -32,7 +33,8 @@ class User extends Authenticatable
         'link_linkedin',
         'link_facebook',
         'link_twitter',
-        'link_site',   
+        'link_site', 
+        'fk_cidade',  
     ];
 
     /**

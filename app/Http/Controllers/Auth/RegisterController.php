@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/painel/candidato/dashboard';
 
     /**
      * Create a new controller instance.
@@ -79,6 +79,7 @@ class RegisterController extends Controller
             'link_facebook' => $data['facebook'],
             'link_twitter' => $data['twitter'],
             'link_site' => $data['portifolio'],
+            'fk_cidade' => $data['cidade'],
         ]);
     }
 
