@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="icon" href="{{ asset('../images/logoVetor.png') }}" type="image/x-icon">
         <title>{{ __('EmployTec') }}</title>
 
         <!-- Fonts -->
@@ -31,7 +32,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="{{ url('/') }}">{{ __('EmployTec') }}</a>
+                            <a class="navbar-brand" href="{{ url('/') }}">
+                                <img src="{{ asset('../images/logo.png') }}" style="width: 30%;">
+                            </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
                             </button>
@@ -47,7 +50,9 @@
                                     <li class="nav-item active">
                                         <a class="nav-link" href="{{ url('sobrenos') }}">{{ __('SOBRE NÓS') }}</a>
                                     </li>
-                                    
+
+
+                                    @guest
 
                                     <li class="nav-item dropdown">
                                         <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -56,16 +61,10 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             <a class="dropdown-item" href="{{ route('login') }}">Candidato</a>
-                                            <a class="dropdown-item" href="{{ route('register') }}">Empresa</a>
+                                            <a class="dropdown-item" href="{{ route('empresa.login') }}">Empresa</a>
                                         </div>
                                     </li>
-
-
-
-                                    @guest
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('home') }}">{{ __('LOGIN') }}</a>
-                                        </li>
+                                        
                                         <li><a href="{{ route('register') }}" class="btn btn-outline-light top-btn">
                                             <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} </a>
                                         </li>
@@ -136,7 +135,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="slider-content_wrap">
-                                    <h1>EmployTec</h1>
+                                    <a href="#">
+                                        <img src="{{ asset('../images/logo.png') }}" style="width: 50%;">
+                                    </a>
                                     <h5>Let's uncover the best places to eat, drink, and shop nearest to you.</h5>
                                 </div>
                             </div>

@@ -37,16 +37,18 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo e(asset('../css/sb-admin.css')); ?>" rel="stylesheet">
 <style>
-
-.fixed {
-   background: #252a33;
-  opacity: 1;
-}
-.slider {
-  background: #fff;
-  background-size: cover;
-  min-height: 800px;
-}
+    main{
+        margin-top: 74px;
+    }
+    .fixed {
+       background: #252a33;
+      opacity: 1;
+    }
+    .slider {
+      background: #fff;
+      background-size: cover;
+      min-height: 800px;
+    }
 </style>
 </head>
 <body>
@@ -69,52 +71,52 @@
                                     </li>
                                     
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="<?php echo e(url('empresa')); ?>"><?php echo e(__('EMPRESA')); ?></a>
+                                        <a class="nav-link" href="<?php echo e(url('empresas')); ?>"><?php echo e(__('EMPRESA')); ?></a>
                                     </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="<?php echo e(url('sobrenos')); ?>"><?php echo e(__('SOBRE NÓS')); ?></a>
                                     </li>
                                     
                                     <!--li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Login
-                    <span class="icon-arrow-down"></span>
-                  </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="<?php echo e(route('login')); ?>">Candidato</a>
-                                            <a class="dropdown-item" href="<?php echo e(route('register')); ?>">Empresa</a>
-                                          
-                                        </div>
-                                    </li-->
-                        <!-- Authentication Links -->
-                        <?php if(auth()->guard()->guest()): ?>
-                            <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('LOGIN')); ?></a>
-                                    </li>
-                                    <li><a href="<?php echo e(route('register')); ?>" class="btn btn-outline-light top-btn">
-                                        <span class="ti-plus"></span><?php echo e(__('CADASTRE-SE')); ?> </a>
-                                    </li>
-                        <?php else: ?>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                                </a>
+                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Login
+                                                <span class="icon-arrow-down"></span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="<?php echo e(route('login')); ?>">Candidato</a>
+                                                <a class="dropdown-item" href="<?php echo e(route('register')); ?>">Empresa</a>
+                                              
+                                            </div>
+                                        </li-->
+                                    <!-- Authentication Links -->
+                                    <?php if(auth()->guard()->guest()): ?>
+                                        <li class="nav-item">
+                                                    <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('LOGIN')); ?></a>
+                                                </li>
+                                                <li><a href="<?php echo e(route('register')); ?>" class="btn btn-outline-light top-btn">
+                                                    <span class="ti-plus"></span><?php echo e(__('CADASTRE-SE')); ?> </a>
+                                                </li>
+                                    <?php else: ?>
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
+                                            </a>
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <?php echo e(__('Logout')); ?>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    <?php echo e(__('Logout')); ?>
 
-                                    </a>
+                                                </a>
 
-                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
-                                        <?php echo csrf_field(); ?>
-                                    </form>
-                                </div>
-                            </li>
-                        <?php endif; ?>
-                     </ul>
+                                                <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                                    <?php echo csrf_field(); ?>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    <?php endif; ?>
+                                 </ul>
                             </div>
                         </nav>
                     </div>
@@ -122,7 +124,6 @@
             </div>
         </div>
     </div>
-
         <main class="py-4">
             <?php echo $__env->yieldContent('content'); ?>
         </main>

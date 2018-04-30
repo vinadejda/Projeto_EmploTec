@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="icon" href="<?php echo e(asset('../images/logoVetor.png')); ?>" type="image/x-icon">
         <title><?php echo e(__('EmployTec')); ?></title>
 
         <!-- Fonts -->
@@ -31,7 +32,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="<?php echo e(url('/')); ?>"><?php echo e(__('EmployTec')); ?></a>
+                            <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
+                                <img src="<?php echo e(asset('../images/logo.png')); ?>" style="width: 30%;">
+                            </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
                             </button>
@@ -42,56 +45,54 @@
                                     </li>
                                     
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="<?php echo e(url('empresa')); ?>"><?php echo e(__('EMPRESA')); ?></a>
+                                        <a class="nav-link" href="<?php echo e(url('empresas')); ?>"><?php echo e(__('EMPRESA')); ?></a>
                                     </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="<?php echo e(url('sobrenos')); ?>"><?php echo e(__('SOBRE NÓS')); ?></a>
                                     </li>
-                                    
-                                    <!--li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Login
-                    <span class="icon-arrow-down"></span>
-                  </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="<?php echo e(route('login')); ?>">Candidato</a>
-                                            <a class="dropdown-item" href="<?php echo e(route('register')); ?>">Empresa</a>
-                                          
-                                        </div>
-                                    </li-->
+
 
                                     <?php if(auth()->guard()->guest()): ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo e(route('home')); ?>"><?php echo e(__('LOGIN')); ?></a>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        LOGIN
+                                            <span class="icon-arrow-down"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="<?php echo e(route('login')); ?>">Candidato</a>
+                                            <a class="dropdown-item" href="<?php echo e(route('empresa.login')); ?>">Empresa</a>
+                                        </div>
                                     </li>
-                                    <li><a href="<?php echo e(route('register')); ?>" class="btn btn-outline-light top-btn">
-                                        <span class="ti-plus"></span><?php echo e(__('CADASTRE-SE')); ?> </a>
-                                    </li>
+                                        
+                                        <li><a href="<?php echo e(route('register')); ?>" class="btn btn-outline-light top-btn">
+                                            <span class="ti-plus"></span><?php echo e(__('CADASTRE-SE')); ?> </a>
+                                        </li>
                                     <?php else: ?>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="<?php echo e(url('home')); ?>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>  
-                                    <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
-                                </a>
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="<?php echo e(url('home')); ?>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>  
+                                                <?php echo e(Auth::user()->name); ?> <span class="caret"></span>
+                                            </a>
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<?php echo e(url('home')); ?>">
-                                        <?php echo e(__('Area da Empresa')); ?>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="<?php echo e(url('home')); ?>">
+                                                    <?php echo e(__('Area da Empresa')); ?>
 
-                                    </a>
-                                    
-                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <?php echo e(__('Logout')); ?>
+                                                </a>
+                                                
+                                                <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    <?php echo e(__('Logout')); ?>
 
-                                    </a>
+                                                </a>
 
-                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
-                                        <?php echo csrf_field(); ?>
-                                    </form>
-                                </div>
-                            </li>
-                        <?php endif; ?>
+                                                <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                                    <?php echo csrf_field(); ?>
+                                                </form>
+                                            </div>
+                                        </li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                         </nav>
@@ -136,7 +137,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="slider-content_wrap">
-                                    <h1>EmployTec</h1>
+                                    <a href="#">
+                                        <img src="<?php echo e(asset('../images/logo.png')); ?>" style="width: 50%;">
+                                    </a>
                                     <h5>Let's uncover the best places to eat, drink, and shop nearest to you.</h5>
                                 </div>
                             </div>
@@ -146,7 +149,7 @@
                                 <form class="form-wrap mt-4">
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <input type="text" placeholder="Qual cargo você procura?" class="btn-group1 col-md-9">
-                                        <button type="submit" class="btn-form"><span class="icon-magnifier search-icon"></span>SEARCH<i class="pe-7s-angle-right"></i></button>
+                                        <button type="submit" class="btn-form"><span class="icon-magnifier search-icon"></span>PESQUISAR<i class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
                                 <div class="slider-link">
@@ -579,7 +582,7 @@
                 <div class="col-md-12">
                     <div class="copyright">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright &copy; 2018 Listing. All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                        <p>Copyright &copy; 2018 EmployTec.</p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <ul>
                             <li><a href="#"><span class="ti-facebook"></span></a></li>
