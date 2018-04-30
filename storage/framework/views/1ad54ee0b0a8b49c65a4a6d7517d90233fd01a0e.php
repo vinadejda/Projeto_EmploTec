@@ -69,7 +69,7 @@
                                     </li>
                                     
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="<?php echo e(url('empresa')); ?>"><?php echo e(__('EMPRESA')); ?></a>
+                                        <a class="nav-link" href="<?php echo e(url('empresas')); ?>"><?php echo e(__('EMPRESA')); ?></a>
                                     </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="<?php echo e(url('sobrenos')); ?>"><?php echo e(__('SOBRE NÓS')); ?></a>
@@ -87,8 +87,15 @@
                                         </div>
                                     </li-->
                                     <?php if(auth()->guard()->guest()): ?>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo e(route('empresa.login')); ?>"><?php echo e(__('LOGIN')); ?></a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        LOGIN
+                                            <span class="icon-arrow-down"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="<?php echo e(route('login')); ?>">Candidato</a>
+                                            <a class="dropdown-item" href="<?php echo e(route('empresa.login')); ?>">Empresa</a>
+                                        </div>
                                     </li>
                                     <li><a href="<?php echo e(route('empresa.register')); ?>" class="btn btn-outline-light top-btn">
                                         <span class="ti-plus"></span><?php echo e(__('CADASTRE-SE')); ?> </a>

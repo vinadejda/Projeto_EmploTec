@@ -69,7 +69,7 @@
                                     </li>
                                     
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="{{ url('empresa') }}">{{ __('EMPRESA') }}</a>
+                                        <a class="nav-link" href="{{ url('empresas') }}">{{ __('EMPRESA') }}</a>
                                     </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="{{ url('sobrenos') }}">{{ __('SOBRE NÓS') }}</a>
@@ -87,8 +87,15 @@
                                         </div>
                                     </li-->
                                     @guest
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('empresa.login') }}">{{ __('LOGIN') }}</a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        LOGIN
+                                            <span class="icon-arrow-down"></span>
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <a class="dropdown-item" href="{{ route('login') }}">Candidato</a>
+                                            <a class="dropdown-item" href="{{ route('empresa.login') }}">Empresa</a>
+                                        </div>
                                     </li>
                                     <li><a href="{{ route('empresa.register') }}" class="btn btn-outline-light top-btn">
                                         <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} </a>
