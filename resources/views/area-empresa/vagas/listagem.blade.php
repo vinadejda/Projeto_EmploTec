@@ -44,13 +44,19 @@
                                     <td> {{$vaga->vl_salario_vaga }}</td>
                                     <td> {{$vaga->dt_expiracao}} </td>
                                     <td alt="Detalhes">
-                                        <a href="/painel/empresa/vagas/mostra/{{$vaga->cd_vaga}}"><span class="fa fa-eye" aria-hidden="true"></span></a>
+                                        <a href="/painel/empresa/vagas/mostra/{{$vaga->cd_vaga}}">
+                                            <span class="fa fa-eye" aria-hidden="true"></span>
+                                        </a>
                                     </td>
                                     <td>
-                                        <a href="/painel/empresa/vagas/editar/{{$vaga->cd_vaga}}" alt="Editar" class="teste"><span class="fa fa-edit" aria-hidden="true"></span></a>
+                                        <a href="/painel/empresa/vagas/editar/{{$vaga->cd_vaga}}" alt="Editar" class="teste">
+                                            <span class="fa fa-edit" aria-hidden="true"></span>
+                                        </a>
                                     </td>
                                     <td class="excluir" >
-                                        <a href="javascript:func" onclick="alertConfirmaExclusao('/painel/empresa/vagas/remove/{{$vaga->cd_vaga}}')" alt="Excluir"><span class="fa fa-trash-o" aria-hidden="true" ></span></a>
+                                        <a href="javascript:func" onclick="alertConfirmaExclusao('/painel/empresa/vagas/remove/{{$vaga->cd_vaga}}')" alt="Excluir">
+                                            <span class="fa fa-trash-o" aria-hidden="true" ></span>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

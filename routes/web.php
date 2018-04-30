@@ -85,6 +85,10 @@ Route::group(['prefix'=>'painel/empresa'], function(){
             Route::get('/mostra/{id}', 'VagaController@mostra')->where('id', '[0-9]+');
             Route::get('/remove/{id}', 'VagaController@remove')->where('id', '[0-9]+');
             Route::get('/editar/{id}', 'VagaController@editar')->where('id', '[0-9]+');
+
+            Route::group(['prefix'=>'/perfil'], function(){
+                Route::get('/cadastro/{id}', 'PerfilVagaController@novo')->where('id', '[0-9]+');
+            });
             
         });
         
