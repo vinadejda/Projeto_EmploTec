@@ -42,54 +42,56 @@
                                     </li>
                                     
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="{{ url('empresa') }}">{{ __('EMPRESA') }}</a>
+                                        <a class="nav-link" href="{{ url('empresas') }}">{{ __('EMPRESA') }}</a>
                                     </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="{{ url('sobrenos') }}">{{ __('SOBRE NÓS') }}</a>
                                     </li>
                                     
-                                    <!--li class="nav-item dropdown">
+
+                                    <li class="nav-item dropdown">
                                         <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Login
-                    <span class="icon-arrow-down"></span>
-                  </a>
+                                        LOGIN
+                                            <span class="icon-arrow-down"></span>
+                                        </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                             <a class="dropdown-item" href="{{ route('login') }}">Candidato</a>
                                             <a class="dropdown-item" href="{{ route('register') }}">Empresa</a>
-                                          
                                         </div>
-                                    </li-->
+                                    </li>
+
+
 
                                     @guest
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('home') }}">{{ __('LOGIN') }}</a>
-                                    </li>
-                                    <li><a href="{{ route('register') }}" class="btn btn-outline-light top-btn">
-                                        <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} </a>
-                                    </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('home') }}">{{ __('LOGIN') }}</a>
+                                        </li>
+                                        <li><a href="{{ route('register') }}" class="btn btn-outline-light top-btn">
+                                            <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} </a>
+                                        </li>
                                     @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ url('home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>  
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ url('home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>  
+                                                {{ Auth::user()->name }} <span class="caret"></span>
+                                            </a>
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('home') }}">
-                                        {{ __('Area da Empresa') }}
-                                    </a>
-                                    
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ url('home') }}">
+                                                    {{ __('Area da Empresa') }}
+                                                </a>
+                                                
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+                                    @endguest
                                 </ul>
                             </div>
                         </nav>
@@ -144,7 +146,7 @@
                                 <form class="form-wrap mt-4">
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <input type="text" placeholder="Qual cargo você procura?" class="btn-group1 col-md-9">
-                                        <button type="submit" class="btn-form"><span class="icon-magnifier search-icon"></span>SEARCH<i class="pe-7s-angle-right"></i></button>
+                                        <button type="submit" class="btn-form"><span class="icon-magnifier search-icon"></span>PESQUISAR<i class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
                                 <div class="slider-link">
@@ -577,7 +579,7 @@
                 <div class="col-md-12">
                     <div class="copyright">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright &copy; 2018 Listing. All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                        <p>Copyright &copy; 2018 EmployTec.</p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <ul>
                             <li><a href="#"><span class="ti-facebook"></span></a></li>

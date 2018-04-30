@@ -19,8 +19,8 @@ Route::get('/vagas', function () {
     return view('vagas');
 });
 
-Route::get('/empresa', function () {
-    return view('empresa');
+Route::get('/empresas', function () {
+    return view('empresas');
 });
 
 Route::get('/sobrenos', function () {

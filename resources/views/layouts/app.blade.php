@@ -37,16 +37,18 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('../css/sb-admin.css') }}" rel="stylesheet">
 <style>
-
-.fixed {
-   background: #252a33;
-  opacity: 1;
-}
-.slider {
-  background: #fff;
-  background-size: cover;
-  min-height: 800px;
-}
+    main{
+        margin-top: 74px;
+    }
+    .fixed {
+       background: #252a33;
+      opacity: 1;
+    }
+    .slider {
+      background: #fff;
+      background-size: cover;
+      min-height: 800px;
+    }
 </style>
 </head>
 <body>
@@ -69,51 +71,51 @@
                                     </li>
                                     
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="{{ url('empresa') }}">{{ __('EMPRESA') }}</a>
+                                        <a class="nav-link" href="{{ url('empresas') }}">{{ __('EMPRESA') }}</a>
                                     </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="{{ url('sobrenos') }}">{{ __('SOBRE NÓS') }}</a>
                                     </li>
                                     
                                     <!--li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Login
-                    <span class="icon-arrow-down"></span>
-                  </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="{{ route('login') }}">Candidato</a>
-                                            <a class="dropdown-item" href="{{ route('register') }}">Empresa</a>
-                                          
-                                        </div>
-                                    </li-->
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
-                                    </li>
-                                    <li><a href="{{ route('register') }}" class="btn btn-outline-light top-btn">
-                                        <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} </a>
-                                    </li>
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Login
+                                                <span class="icon-arrow-down"></span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="{{ route('login') }}">Candidato</a>
+                                                <a class="dropdown-item" href="{{ route('register') }}">Empresa</a>
+                                              
+                                            </div>
+                                        </li-->
+                                    <!-- Authentication Links -->
+                                    @guest
+                                        <li class="nav-item">
+                                                    <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
+                                                </li>
+                                                <li><a href="{{ route('register') }}" class="btn btn-outline-light top-btn">
+                                                    <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} </a>
+                                                </li>
+                                    @else
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }} <span class="caret"></span>
+                                            </a>
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                                 document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                     </ul>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+                                    @endguest
+                                 </ul>
                             </div>
                         </nav>
                     </div>
@@ -121,7 +123,6 @@
             </div>
         </div>
     </div>
-
         <main class="py-4">
             @yield('content')
         </main>
