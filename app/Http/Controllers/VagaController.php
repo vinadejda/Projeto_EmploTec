@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+public function ()
 
 use Request;
 use App\Http\Controllers\Controller;
