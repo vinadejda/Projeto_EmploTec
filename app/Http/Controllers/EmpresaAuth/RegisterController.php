@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\EmpresaAuth;
 
 
-use App\Empresa;
+use App\Models\EmpresaAuth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -66,7 +66,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Empresa::create([
+        return EmpresaAuth::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

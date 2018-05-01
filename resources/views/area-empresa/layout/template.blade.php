@@ -44,9 +44,10 @@
                     <img  width="155px;" src="{{ asset('../images/logo.png') }}">
                 </a>
             </div>
-            <!-- /.navbar-header -->
+            
 
             <ul class="nav navbar-top-links navbar-right">
+                <!-- 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -95,9 +96,10 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-messages -->
+                   
                 </li>
-                <!-- /.dropdown -->
+                -->
+                <!-- 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -174,9 +176,10 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-tasks -->
+                    
                 </li>
-                <!-- /.dropdown -->
+                -->
+                <!-- 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -234,30 +237,30 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-alerts -->
+                    
                 </li>
+            -->
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i>{{ Auth::guard('empresa')->user()->name }} <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="/painel/empresa/editar/"><i class="fa  fa-edit fa-fw"></i>Dados Cadastrais</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
+                        <!--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a></li>-->
                         <li class="divider"></li>
                         <li> 
                             <a class="dropdown-item" href="{{ route('empresa.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                     <i class="fa fa-sign-out fa-fw"></i>
-                                        {{ __('Logout') }}
-                                    </a>
+                                <i class="fa fa-sign-out fa-fw"></i>
+                                    {{ __('Logout') }}
+                             </a>
 
-                                    <form id="logout-form" action="{{ route('empresa.logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                            <form id="logout-form" action="{{ route('empresa.logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -287,23 +290,14 @@
                             <a href="{{url('/painel/empresa/vagas')}}"><i class="fa  fa-crosshairs fa-fw"></i> Vagas</a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a href="{{url('/painel/empresa/perfil-vagas')}}"><i class="fa  fa-bullseye  fa-fw"></i> Perfil das Vagas</a>
                         </li>
-                        
+                        <li>
+                            <a href="/painel/empresa/editar/"><i class="fa fa-edit fa-fw"></i> Dados Cadastrais </a>
+                        </li>
+                        <!--
                         <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="{{url('/painel/empresa/editar')}}"><i class="fa fa-edit fa-fw"></i> Atualizar Informações</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -324,10 +318,10 @@
                                     <a href="icons.html"> Icons</a>
                                 </li>
                                 <li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <a href="grid.html">Grid</a>
+                                    
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
+                        
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
@@ -354,10 +348,9 @@
                                             <a href="#">Third Level Item</a>
                                         </li>
                                     </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
+                                    
                             </ul>
-                            <!-- /.nav-second-level -->
+                           
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
@@ -369,8 +362,9 @@
                                     <a href="login.html">Login Page</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
+                            
                         </li>
+                    -->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
