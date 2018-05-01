@@ -37,22 +37,34 @@ Route::get('/painel/candidato/dashboard', function () {
 });
 
 
+//-----------------------ROTAS DO USUARIO-------------------------------------
+//-----------------------DADOS PESSOAIS------------------------------------------
 
-Route::post('/painel/candidato/adiciona', 'CandidatoController@adiciona');
-Route::get('/painel/candidato/edita', 'CandidatoController@editar');
-Route::post('/painel/candidato/altera', 'CandidatoController@altera'); 
-Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
-Route::get('/painel/candidato/cadastrar', 'CandidatoController@listarDeficiencia');
-    //return view('area-user.candidato.form');
+Route::get('/painel/candidato/dados/informacoes', 'CandidatoController@informacoes');
+Route::post('/painel/candidato/dados/adiciona', 'CandidatoController@adiciona');
+Route::get('/painel/candidato/dados/adiciona', 'CandidatoController@listarDeficiencia');
+Route::get('/painel/candidato/dados/edita', 'CandidatoController@editar');
+Route::post('/painel/candidato/dados/altera', 'CandidatoController@altera'); 
 
-//ROTAS USUARIO
-Route::get('/painel/candidato/curriculo', 'CurriculoController@index');
-Route::post('/painel/candidato/curriculo/adicionarcurriculo', 'CurriculoController@adiciona');
-Route::get('/painel/candidato/experiencia','ExperienciaController@infoExperiencia');
 
-Route::post('/painel/candidato/experiencia/adiciona', 'ExperienciaController@adiciona');
+//-----------------------------CURRICULO---------------------------------------------------------
+
+Route::get('/painel/candidato/curriculo/informacoes','CurriculoController@infoCurriculo');
+Route::get('/painel/candidato/curriculo/adiciona', 'CurriculoController@adiciona');
+Route::post('/painel/candidato/curriculo/salva', 'CurriculoController@salva');
+Route::get('/painel/candidato/curriculo/edita', 'CurriculoController@edita');
+Route::post('/painel/candidato/curriculo/altera', 'CurriculoController@altera');
+
+
+//------------------------------EXPERIENCIA------------------------------------------------------
+
+Route::get('/painel/candidato/experiencia/informacoes','ExperienciaController@infoExperiencia');
+Route::get('/painel/candidato/experiencia/adiciona', 'ExperienciaController@adiciona');
+Route::post('/painel/candidato/experiencia/salva', 'ExperienciaController@salva');
+Route::get('/painel/candidato/experiencia/edita', 'ExperienciaController@edita');
+Route::post('/painel/candidato/experiencia/altera', 'ExperienciaController@altera');
 //Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
-Route::get('/painel/candidato/atualizar', 'CandidatoController@atualiza');
+
 
 
 //------------------------ROTAS ACESSO EMPRESA---------------------------------

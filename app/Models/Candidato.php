@@ -24,10 +24,10 @@ class Candidato extends Model
 
     
     public function curriculo(){
-    	return $this->belongsTo('employ/Models/Curriculo');
+    	return $this->belongsTo('App/Models/Curriculo', 'fk_candidato', 'cd_cpf');
     }
 
     public function experiencia(){
-    	return $this->belongsTo('employ/Models/Experiencia');
+    	return $this->belongsTo('App/Models/Candidato', 'fk_candidato', 'cd_cpf');
     }
 }

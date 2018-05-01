@@ -6,16 +6,17 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <a href="{{url('/painel/candidato/edita')}}" class="btn btn-primary btn-add">Atualizar Informações</a><br>
+       
         <div class="panel panel-default">
             <div class="panel-heading">
-                Suas Informações
+               <h2> Suas Informações</h2>
             </div>
             <div class="panel-body">
-                @if(!isset($candidato))
+                @if(!count($candidato) > 0)
                     <div class="alert alert-warning">
-                        Você ainda não terminou o seu cadastro :/ <br>Melhor fazer isso o mais rápido possível
+                        Você ainda não terminou o seu cadastro :( <br>Melhor fazer isso o mais rápido possível
                     </div>
+                    <a href="{{url('/painel/candidato/dados/adiciona')}}" class="btn btn-primary btn-add">Cadastrar Curriculo</a><br>
                 @else
                     @if(old('nome'))
                         <div class="alert alert-success">
@@ -30,7 +31,7 @@
                                     <label><strong> Genero: </strong> {{$c->ic_genero}} </label><br>
                                     <label><strong> Data Nascimento: </strong> {{$c->dt_nascimento}} </label><br>
                                     <label><strong> Nacionalidade: </strong> {{$c->ds_nacionalidade }}</label><br>
-                                    <label><strong> Deficiencia: </strong> {{$c->fk_deficiencia}} </label><br>
+                                    <label><strong> Deficiencia: </strong> {{ $c->fk_deficiencia == NULL ? "Não Consta" : $c->fk_deficiencia }} </label><br>
                                     <!--td alt="Detalhes">
                                         <a href="/painel/empresa/vagas/mostra/{{$c->cd_cpf}}"><span class="fa fa-eye" aria-hidden="true"></span></a>
                                     </td>
@@ -51,9 +52,11 @@
                             }
                         }
                     </script>
-                @endif
+                
             </div>
         </div>
+         <a href="{{url('/painel/candidato/dados/edita')}}" class="btn btn-primary btn-add">Atualizar Informações</a><br>
+         @endif
     </div>
 </div>
 

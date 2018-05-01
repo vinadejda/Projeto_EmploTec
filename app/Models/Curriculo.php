@@ -21,4 +21,8 @@ class Curriculo extends Model
     ];
 
     protected $guarded = ['cd_curriculo'];
+
+    public function candidato(){
+        return $this->hasOne('App\Models\Candidato', 'cd_cpf', 'fk_candidato');
+    }
 }

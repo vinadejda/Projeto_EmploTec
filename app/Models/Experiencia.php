@@ -26,6 +26,6 @@ class Experiencia extends Model
     protected $guarded = ['cd_experiencia'];
 
     public function candidato(){
-    	return $this->hasMany('employ\Models\Candidato');
+    	return $this->hasOne('App\Models\Candidato', 'cd_cpf', 'fk_candidato');
     }
 }

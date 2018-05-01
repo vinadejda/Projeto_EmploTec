@@ -9,11 +9,15 @@ use App\Models\Deficiencia;
 
 class CandidatoController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('web');
+    }
     public function informacoes()
     {
         $candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->get();
         return view('area-user.candidato.informacoes')
-        //->with('categorias',Categoria::all())
         ->with('candidato',$candidato);
     }
 
@@ -24,13 +28,12 @@ class CandidatoController extends Controller
 
     public function adiciona(){
         Candidato::create($this->getParams());
-        return redirect('/painel/candidato/dashboard')->withInput(Request::only('cpf'));
+        return redirect('/painel/candidato/dados/informacoes')->withInput(Request::only('cpf'));
     }
     public function editar(){
-    	$candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->get();
+    	$candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first();
         return view('area-user.candidato.form')
-        //->with('categorias',Categoria::all())
-        ->withCandidato('candidato',$candidato)
+        ->with('candidato',$candidato)
         ->with('deficiencia',Deficiencia::all());
     }
 
