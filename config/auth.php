@@ -80,7 +80,7 @@ return [
         ],
         'empresa' => [
             'driver' => 'eloquent',
-            'model' => App\Empresa::class,
+            'model' => App\Models\EmpresaAuth::class,
         ],
 
         'admin' => [

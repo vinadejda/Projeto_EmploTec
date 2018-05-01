@@ -1,4 +1,4 @@
-@extends('layouts.empresa-app')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -12,8 +12,7 @@
 
                 <div class="card-body">
                     
-                    <form method="POST" action="{{isset($info) ? '/empresa/atualizar': '/empresa/info'}}">
-
+                    <form method="POST" action="{{route('cadastro-empresa')}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>  
                         
 
@@ -31,9 +30,6 @@
                                 <input type="text" class="form-control" name="rz_social"  required value="{{isset($info) ? $info->ds_razao_social : old('rz_social')}}">
                             </div>
                         </div>
-
-                       
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

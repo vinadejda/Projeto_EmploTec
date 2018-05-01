@@ -33,12 +33,17 @@
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
 
+
+                            <a class="navbar-brand" href="{{route('index')}}">
+                                <img  width="25%;" src="{{ asset('../images/logo.png') }}">
+<!--
                             <a class="navbar-brand" href="{{ url('/') }}">
                                 <img src="{{ asset('../images/logo.png') }}" style="width: 30%;">
 
                             <a class="navbar-brand" href="{{route('index')}}">
                                 <img  width="25%;" src="{{ asset('../images/logo.png') }}">
 
+-->
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
@@ -55,24 +60,6 @@
                                     <li class="nav-item active">
                                         <a class="nav-link" href="{{ url('sobrenos') }}">{{ __('SOBRE NÓS') }}</a>
                                     </li>
-
-
-
-                                    @guest
-
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        LOGIN
-                                            <span class="icon-arrow-down"></span>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="{{ route('login') }}">Candidato</a>
-                                            <a class="dropdown-item" href="{{ route('empresa.login') }}">Empresa</a>
-                                        </div>
-                                    </li>
-                                        
-                                        <li><a href="{{ route('register') }}" class="btn btn-outline-light top-btn">
-                                            <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} </a>
 
                                     @if(auth()->guard('empresa')->check())
                                         <li class="nav-item dropdown">
@@ -224,7 +211,7 @@
     </section>
     <!--// SLIDER -->
     <!--//END HEADER -->
-    <!--============================= FIND PLACES =============================-->
+    <!--= FIND PLACES =-->
     <section class="main-block">
         <div class="container">
             <div class="row justify-content-center">
@@ -316,7 +303,7 @@
         </div>
     </section>
     <!--//END FIND PLACES -->
-    <!--============================= FEATURED PLACES =============================-->
+    <!--= FEATURED PLACES =-->
     <section class="main-block light-bg">
         <div class="container">
             <div class="row justify-content-center">
@@ -431,7 +418,7 @@
         </div>
     </section>
     <!--//END FEATURED PLACES -->
-    <!--============================= CATEGORIES =============================-->
+    <!-- CATEGORIES -->
     <section class="main-block">
         <div class="container">
             <div class="row justify-content-center">
@@ -614,7 +601,7 @@
         </div>
     </section>
     <!--//END CATEGORIES -->
-    <!--============================= ADD LISTING =============================-->
+    <!--= ADD LISTING =-->
     <section class="main-block light-bg">
         <div class="container">
             <div class="row">
@@ -635,7 +622,7 @@
         </div>
     </section>
     <!--//END ADD LISTING -->
-    <!--============================= FOOTER =============================-->
+    <!--= FOOTER =-->
     <footer class="main-block dark-bg">
         <div class="container">
             <div class="row">
