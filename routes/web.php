@@ -32,12 +32,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/painel/candidato/dashboard', function () {
-    return view('area-user.dashboard.index');
-});
+
 
 
 //-----------------------ROTAS DO USUARIO-------------------------------------
+
+Route::get('/painel/candidato/dashboard', function () {
+    return view('area-user.dashboard.index');
+});
 //-----------------------DADOS PESSOAIS------------------------------------------
 
 Route::get('/painel/candidato/dados/informacoes', 'CandidatoController@informacoes');
@@ -64,6 +66,10 @@ Route::post('/painel/candidato/experiencia/salva', 'ExperienciaController@salva'
 Route::get('/painel/candidato/experiencia/edita', 'ExperienciaController@edita');
 Route::post('/painel/candidato/experiencia/altera', 'ExperienciaController@altera');
 //Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
+
+
+//-------------------------END ROTAS USUARIO-------------------------------------
+
 
 
 
@@ -117,6 +123,12 @@ Route::group(['prefix'=>'painel/empresa'], function(){
 
 //-------------------------END ROTAS EMPRESA---------------------------------
 
+
+
+
+
+
+
 //-------------------------ROTAS ADMINISTRATIVAS-----------------------------
 
 Route::group(['prefix'=>'admin'], function(){
@@ -136,6 +148,26 @@ Route::group(['prefix'=>'admin'], function(){
     Route::post('password/reset', ['uses' => 'AdminAuth\ResetPasswordController@reset']);
 });
 
+        Route::view('/admin/home','admin-home')->middleware('admin');
 
-Route::view('/admin/home','admin-home')->middleware('admin');
+//--------------------Rotas do painel da empresa-------------------
+
+Route::group(['prefix'=>'painel/admin'], function(){
+
+    //------------------Rotas protegidas do painel empresa-------------------
+    Route::group(['middleware' => ['admin']], function(){
+
+        Route::view('dashboard','area-admin.dashboard.index');
+
+        Route::get('/perfil', 'AdminController@infoAdmin');
+        Route::get('/perfil/edita', 'AdminController@edita');
+        Route::post('/perfil/altera', 'AdminController@altera');
+        Route::get('/lista', 'AdminController@listaAdmin');
+        Route::get('/cadastrarnovo', 'AdminController@adiciona');
+        Route::post('/perfil/salva', 'AdminController@salva');
+        Route::post('/listaradmin', 'AdminController@salva');
+        Route::get('/remove/{id}', 'AdminController@remove')->where('id', '[0-9]+');
+        Route::get('/mostra/{id}', 'AdminController@mostra')->where('id', '[0-9]+');
+    });
+});
 

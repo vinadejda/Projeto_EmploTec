@@ -11,6 +11,9 @@ class Admin extends Authenticatable
 
     
     protected $table = 'users';
+    
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
         'email', 
@@ -26,7 +29,7 @@ class Admin extends Authenticatable
         'link_linkedin',
         'link_facebook',
         'link_twitter',
-        'link_site_pessoal',   
+        'link_site',   
     ];
 
     
