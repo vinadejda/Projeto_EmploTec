@@ -17,18 +17,17 @@ class Candidato extends Model
         'ic_genero',
         'dt_nascimento',
         'ds_nacionalidade',
-        'nm_candidato',
         'fk_usuario',
         'fk_deficiencia',
     ];
 
-    protected $guarded = ['cd_cpf'];
+
     
     public function curriculo(){
-    	return $this->belongsTo('employ/Models/Curriculo');
+    	return $this->belongsTo('App/Models/Curriculo', 'fk_candidato', 'cd_cpf');
     }
 
     public function experiencia(){
-    	return $this->belongsTo('employ/Models/Experiencia');
+    	return $this->belongsTo('App/Models/Candidato', 'fk_candidato', 'cd_cpf');
     }
 }

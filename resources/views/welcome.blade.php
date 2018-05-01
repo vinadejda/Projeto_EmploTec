@@ -33,8 +33,17 @@
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
 
+
                             <a class="navbar-brand" href="{{route('index')}}">
                                 <img  width="25%;" src="{{ asset('../images/logo.png') }}">
+<!--
+                            <a class="navbar-brand" href="{{ url('/') }}">
+                                <img src="{{ asset('../images/logo.png') }}" style="width: 30%;">
+
+                            <a class="navbar-brand" href="{{route('index')}}">
+                                <img  width="25%;" src="{{ asset('../images/logo.png') }}">
+
+-->
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
@@ -73,6 +82,7 @@
                                                     @csrf
                                                 </form>
                                             </div>
+
                                         </li>
                                     @elseif(auth()->guard('web')->check())
                                         <li class="nav-item dropdown">
@@ -117,7 +127,7 @@
                                                 <a class="dropdown-item" href="{{ route('empresa.register') }}">Empresa</a>
                                             </div>
                                         </li>
-                                        <!--<li>
+                                        <!--<li-->
                                             <!--<a href="{{ route('register') }}" class="nav-link btn btn-outline-light top-btn">
                                                 <span class="ti-plus"></span>{{ __('CADASTRE-SE') }} 
                                             </a>-->

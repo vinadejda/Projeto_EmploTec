@@ -14,7 +14,7 @@
     <h2>Experiencias Relevantes</h2>  
 
       <div class="card-body">
-        <form role="form" method="post" action="{{isset($exp) ? '/empresa/vagas/altera': '/painel/candidato/experiencia/adiciona'}}">
+        <form role="form" method="post" action="{{isset($exp) ? '/painel/candidato/experiencia/altera': '/painel/candidato/experiencia/salva'}}">
           <fieldset>
             <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatorio</p>
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
@@ -64,9 +64,9 @@
 
             <div class="form-group col-md-4">
               <label for="dataExpiracao">
-                <span class="text-danger">* </span> Data de Termino
+              Data de Termino
               </label>
-              <input type="date" name="dataTermino" class="form-control" required="required" value="{{isset($exp) ? $exp->dt_termino_experiencia : old('dataTermino')}}">
+              <input type="date" name="dataTermino" class="form-control"  value="{{isset($exp) ? $exp->dt_termino_experiencia : old('dataTermino')}}">
             </div>
 
           </fieldset>

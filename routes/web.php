@@ -36,13 +36,34 @@ Route::get('/painel/candidato/dashboard', function () {
     return view('area-user.dashboard.index');
 });
 
-//ROTAS USUARIO
-Route::get('/painel/candidato/curriculo', 'CurriculoController@index');
-Route::post('/painel/candidato/curriculo/adicionarcurriculo', 'CurriculoController@adiciona');
-Route::get('/painel/candidato/experiencia','ExperienciaController@infoExperiencia');
 
-Route::post('/painel/candidato/experiencia/adiciona', 'ExperienciaController@adiciona');
+//-----------------------ROTAS DO USUARIO-------------------------------------
+//-----------------------DADOS PESSOAIS------------------------------------------
 
+Route::get('/painel/candidato/dados/informacoes', 'CandidatoController@informacoes');
+Route::post('/painel/candidato/dados/adiciona', 'CandidatoController@adiciona');
+Route::get('/painel/candidato/dados/adiciona', 'CandidatoController@listarDeficiencia');
+Route::get('/painel/candidato/dados/edita', 'CandidatoController@editar');
+Route::post('/painel/candidato/dados/altera', 'CandidatoController@altera'); 
+
+
+//-----------------------------CURRICULO---------------------------------------------------------
+
+Route::get('/painel/candidato/curriculo/informacoes','CurriculoController@infoCurriculo');
+Route::get('/painel/candidato/curriculo/adiciona', 'CurriculoController@adiciona');
+Route::post('/painel/candidato/curriculo/salva', 'CurriculoController@salva');
+Route::get('/painel/candidato/curriculo/edita', 'CurriculoController@edita');
+Route::post('/painel/candidato/curriculo/altera', 'CurriculoController@altera');
+
+
+//------------------------------EXPERIENCIA------------------------------------------------------
+
+Route::get('/painel/candidato/experiencia/informacoes','ExperienciaController@infoExperiencia');
+Route::get('/painel/candidato/experiencia/adiciona', 'ExperienciaController@adiciona');
+Route::post('/painel/candidato/experiencia/salva', 'ExperienciaController@salva');
+Route::get('/painel/candidato/experiencia/edita', 'ExperienciaController@edita');
+Route::post('/painel/candidato/experiencia/altera', 'ExperienciaController@altera');
+//Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
 
 
 

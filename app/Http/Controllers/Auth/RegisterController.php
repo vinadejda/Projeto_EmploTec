@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/painel/candidato/dashboard';
+    protected $redirectTo = '/painel/candidato/dados/adiciona';
 
     /**
      * Create a new controller instance.
