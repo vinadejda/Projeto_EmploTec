@@ -290,7 +290,7 @@
                             <a href="{{url('/painel/empresa/vagas')}}"><i class="fa  fa-crosshairs fa-fw"></i> Vagas</a>
                         </li>
                         <li>
-                            <a href="{{url('/painel/empresa/perfil-vagas')}}"><i class="fa  fa-bullseye  fa-fw"></i> Perfil das Vagas</a>
+                            <a href="{{url('/painel/empresa/perfil')}}"><i class="fa  fa-bullseye  fa-fw"></i> Perfil das Vagas</a>
                         </li>
                         <li>
                             <a href="/painel/empresa/editar/"><i class="fa fa-edit fa-fw"></i> Dados Cadastrais </a>

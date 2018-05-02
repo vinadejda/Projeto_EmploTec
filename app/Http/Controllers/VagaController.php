@@ -9,6 +9,7 @@ use App\Models\Vaga;
 use App\Models\Cidade;
 use App\Models\Empresa;
 use App\Models\AreaTI;
+use App\Models\PerfilVaga;
 
 class VagaController extends Controller
 {
@@ -25,11 +26,14 @@ class VagaController extends Controller
     public function mostra($id)
     {
         $vaga = Vaga::where('cd_vaga', $id)->first();
+        $perfil = PerfilVaga::where('fk_vaga', $id)->first();
         if(empty($vaga))
         {
         	return "Esta vaga não existe";
         }
-        return view('area-empresa.vagas.detalhes')->with('vaga', $vaga);
+        return view('area-empresa.vagas.detalhes')
+        	->with('perfil', $perfil)
+        	->with('vaga', $vaga);
     }
     
     public function novo(){

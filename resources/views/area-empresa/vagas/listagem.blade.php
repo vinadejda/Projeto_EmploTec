@@ -40,8 +40,8 @@
                                     <td> {{$vaga->nm_vaga}} </td>
                                     <td> {{$vaga->ds_nivel }}</td>
                                     <td> {{$vaga->ds_localidade}} </td>
-                                    <td> {{$vaga->qt_vagas}} </td>
                                     <td> {{$vaga->vl_salario_vaga }}</td>
+                                    <td> {{$vaga->qt_vagas}} </td>
                                     <td> {{$vaga->dt_expiracao}} </td>
                                     <td alt="Detalhes">
                                         <a href="/painel/empresa/vagas/mostra/{{$vaga->cd_vaga}}">
