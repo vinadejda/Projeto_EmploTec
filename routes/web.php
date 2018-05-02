@@ -105,11 +105,17 @@ Route::group(['prefix'=>'painel/empresa'], function(){
             Route::get('/editar/{id}', 'VagaController@editar')->where('id', '[0-9]+');
 
             Route::group(['prefix'=>'/perfil'], function(){
-                Route::get('/cadastro/{id}', 'PerfilVagaController@novo')->where('id', '[0-9]+');
+                Route::get('/cadastro/{id?}', 'PerfilVagaController@novo')->where('id', '[0-9]+');
             });
             
         });
-        
+        Route::group(['prefix'=>'/perfil'], function(){
+            Route::get('/','PerfilVagaController@lista');
+            Route::post('/adiciona', 'PerfilVagaController@adiciona');
+            Route::post('/altera', 'PerfilVagaController@altera');
+            Route::get('/remove/{id}', 'PerfilVagaController@remove')->where('id', '[0-9]+');
+            Route::get('/editar/{id}', 'PerfilVagaController@editar')->where('id', '[0-9]+');
+        });
         //Empresa Info
         Route::get('info', ['as' => 'empresa.info','uses' => 'EmpresaController@showRegistrationInfoForm']);
         Route::post('info', ['uses' => 'EmpresaController@cadastrar'])->name('cadastro-empresa');

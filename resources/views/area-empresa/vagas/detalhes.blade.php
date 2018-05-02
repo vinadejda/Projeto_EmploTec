@@ -27,7 +27,7 @@
 		    	</section><HR>
 		    	<section name="dados-perfil-vaga">
 		    		<h2>Perfil da Vaga</h2>
-		    		@if(!isset($perfil))
+		    		@if(empty($perfil))
 			    		<div class="form-group col-md-12">
 			    			<p class="text-danger">Sua vaga não possui nenhum perfil desejado cadastrado!</p>
 			            	<a href="/painel/empresa/vagas/perfil/cadastro/{{$vaga->cd_vaga}}" class="btn btn-primary btn-add">Cadastrar Perfil</a><br>
@@ -36,7 +36,11 @@
 			            	@endif
 			          	</div>
 			        @else
-			        	<p>dados aqui</p>
+			        	<p><strong>Nome do Perfil:</strong> {{$perfil->nm_perfil_vaga}}</p>
+			    		<p><strong>Gênero:</strong> {{ $perfil->ds_genero }}</p>
+			    		<p><strong>Idade:</strong> {{$perfil->nr_idade}}</p>
+			    		<p><strong>Formação:</strong> {{$perfil->ds_formacao}}</p>
+			    		<p><strong>Competências:</strong> {{$perfil->ds_interresse}}</p>
 		          	@endif	
 		    	</section>
     		@endif
