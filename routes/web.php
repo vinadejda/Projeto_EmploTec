@@ -40,7 +40,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/painel/candidato/dashboard', function () {
     return view('area-user.dashboard.index');
 });
+
+
+
+
+
+
 //-----------------------DADOS PESSOAIS------------------------------------------
+
 
 Route::get('/painel/candidato/dados/informacoes', 'CandidatoController@informacoes');
 Route::post('/painel/candidato/dados/adiciona', 'CandidatoController@adiciona');
@@ -76,6 +83,9 @@ Route::post('/painel/candidato/experiencia/altera', 'ExperienciaController@alter
 //------------------------ROTAS ACESSO EMPRESA---------------------------------
 
 Route::group(['prefix'=>'/empresa'], function(){
+
+
+
 	Route::get('login', ['as' => 'empresa.login', 'uses' => 'EmpresaAuth\LoginController@showLoginForm']);
 	Route::post('login', ['uses' => 'EmpresaAuth\LoginController@login']);
     Route::post('logout', ['as' => 'empresa.logout', 'uses' => 'EmpresaAuth\LoginController@logout']);

@@ -17,4 +17,8 @@ class Cidade extends Model
     public function vaga(){
 		return $this->belongsTo('App\Models\Vaga','fk_cidade', 'cd_cidade');
 	}
+
+    public function estado(){
+        return $this->hasOne('App\Models\Estado', 'cd_estado','fk_estado');
+    }
 }
