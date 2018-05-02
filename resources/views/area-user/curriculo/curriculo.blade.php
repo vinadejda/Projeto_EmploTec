@@ -25,7 +25,7 @@
                     
                      @foreach ($curriculo as $c)
                     
-                                    <label><strong> Objetivo Profssisional: </strong> {{$c->ds_objetivo_profissional }}</label><br>
+                                    <label><strong> Objetivo Profissional: </strong> {{$c->ds_objetivo_profissional }}</label><br>
                                     <label><strong> Pretenção Salarial: </strong> {{$c->vl_prentencao_salarial}} </label><br>
                                     <label><strong> Informações Complementares: </strong> {{$c->ds_info_complementar }}</label><br>
                                     <label><strong> Resumo Profissional: </strong> {{$c->ds_resumo_profissional}} </label><br>

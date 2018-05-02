@@ -7,13 +7,17 @@
             <div class="card">
                 <div class="card-header">{{ __('Cadastro do Candidato') }}</div>
 
+                <!--<div class="card-header">{{ __('Registra-se') }}</div>-->
+
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
                         <div class="form-group row">
+
                             <label for="name" class="col-md-4 col-form-label text-md-right">
-                                <span class="text-danger">*</span>{{ __('Nome') }}
+                                <span class="text-danger">*</span>{{ __('Nome Completo') }}
                             </label>
 
                             <div class="col-md-6">
@@ -29,7 +33,7 @@
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">
-                                <span class="text-danger">*</span>{{ __('E-Mail') }}
+                                <span class="text-danger">*</span>{{ __('E-mail') }}
                             </label>
 
                             <div class="col-md-6">
@@ -60,6 +64,7 @@
                         </div>
 
                         <div class="form-group row">
+
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
                                 <span class="text-danger">*</span>{{ __('Confirmar Senha') }}</label>
 
@@ -72,7 +77,6 @@
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
                                 <span class="text-danger">*</span>{{ __('Endereço') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="text" class="form-control" name="rua" required>
                             </div>
@@ -82,7 +86,6 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
                                 <span class="text-danger">*</span>{{ __('Número') }}
                             </label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="text" class="form-control" name="nr" required>
                             </div>
@@ -106,7 +109,6 @@
                         
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
-
                             <div class="col-md-6">
                                 <select name="estado" class="form-control">
                                     <option selected="selected"></option>
@@ -130,20 +132,18 @@
                         </div>
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="tel" class="form-control" name="tel" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="tel" class="form-control" name="celular" >
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Imagem de perfil') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="file"  name="img">
@@ -151,7 +151,6 @@
                         </div>
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Linkedin') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="url" class="form-control" name="linkedin" >
                             </div>
@@ -159,7 +158,6 @@
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Facebook') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="url" class="form-control" name="facebook" >
                             </div>
@@ -167,7 +165,6 @@
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Twitter') }}</label>
-
                             <div class="col-md-6">
                                 <input id="password-confirm" type="url" class="form-control" name="twitter" >
                             </div>
@@ -184,6 +181,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
+
                                     {{ __('Cadastrar') }}
                                 </button>
                             </div>

@@ -71,8 +71,8 @@ class AdminController extends Controller
         ->where('nl_user', '=', 1)
         ->where('id', '<>', auth()->guard('admin')->user()->id)
         ->get();
-        $teste = Admin::where('nl_user', 1)->first();
-        if( $teste->id != auth()->guard('admin')->user()->id)
+        //$teste = Admin::where('nl_user', 1)->first();
+        //if( $teste->id != auth()->guard('admin')->user()->id)
             return view('area-admin.cadastrar-admin.listagem', ['adm' => $adm]);
     }
 

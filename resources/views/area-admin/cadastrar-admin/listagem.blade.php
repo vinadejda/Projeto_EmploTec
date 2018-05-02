@@ -13,8 +13,9 @@
             <div class="panel-body">
                 @if(!count($adm) > 0)
                     <div class="alert alert-warning">
-                        Nenhuma vaga cadastrada.
+                        Nennhum administrador cadastrado.
                     </div>
+                    <a href="{{url('/painel/admin/cadastrarnovo')}}" class="btn btn-primary btn-add">Cadastrar Administrador</a>
                 @else
                     @if(old('nome'))
                         <div class="alert alert-success">

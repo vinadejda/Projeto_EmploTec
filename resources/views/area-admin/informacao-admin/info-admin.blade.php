@@ -33,7 +33,7 @@
                             @endforeach
                 
             </div>
-            <a href="{{url('/painel/admin/cadastrarnovo')}}" class="btn btn-primary btn-add">Atualizar Informações</a>
+            <a href="{{url('/painel/admin/perfil/edita')}}" class="btn btn-primary btn-add">Atualizar Informações</a>
         </div>
     </div>
 </div>
