@@ -146,11 +146,11 @@
                         </div>
 
                         <div class="form-group row">
-<<<<<<< HEAD
+
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Sua cidade') }}</label>
-=======
+
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
->>>>>>> 28957e23482c047ac5f4f729c1d5dcd1a4b0292e
+
 
                             <div class="col-md-6">
                                 <select name="estado">
