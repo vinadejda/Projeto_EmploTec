@@ -8,14 +8,14 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2>Experiencias Relevantes</h2>
+                <h2>Experiências Relevantes</h2>
             </div>
             <div class="panel-body">
                 @if(!count($exp) > 0)
                     <div class="alert alert-warning">
                         Você ainda não cadastrou nenhuma experiência.
                     </div>
-                    <a href="{{url('/painel/candidato/experiencia/adiciona')}}" class="btn btn-primary btn-add">Cadastrar Experiencia</a><br>
+                    <a href="{{url('/painel/candidato/experiencia/adiciona')}}" class="btn btn-primary btn-add">Cadastrar Experiência</a><br>
                 @else
                     @if(old('nome'))
                         <div class="alert alert-success">
