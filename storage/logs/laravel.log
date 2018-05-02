@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2018-05-01 20:40:52] local.ERROR: Parse error: syntax error, unexpected 'public' (T_PUBLIC), expecting end of file {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Parse error: syntax error, unexpected 'public' (T_PUBLIC), expecting end of file at C:\\xampp\\htdocs\\Projeto_EmployTec\\app\\Http\\Controllers\\VagaController.php:5)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\Projeto_EmployTec\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile('C:\\\\xampp\\\\htdocs...')
@@ -6697,3 +6698,5 @@
 #55 C:\\xampp\\htdocs\\Projeto_EmployTec\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #56 {main}
 "} 
+=======
+>>>>>>> 28957e23482c047ac5f4f729c1d5dcd1a4b0292e

@@ -146,11 +146,28 @@
                         </div>
 
                         <div class="form-group row">
+<<<<<<< HEAD
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Sua cidade') }}</label>
+=======
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
+>>>>>>> 28957e23482c047ac5f4f729c1d5dcd1a4b0292e
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="cidade" value="1" >
+                                <select name="estado">
+                                    @foreach ($estado as $e)
+                                        <option value="{{ $e->cd_estado }}">{{ $e->nm_estado }}</option>
+                                    @endforeach
+                                </select>
                             </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Cidade') }}</label>
+                             <select name="cidade">
+                                    @foreach ($cidade as $c)
+                                        <option value="{{ $c->cd_cidade }}">{{ $c->nm_cidade }}</option>
+                                    @endforeach
+                                </select>
                         </div>
 
 
