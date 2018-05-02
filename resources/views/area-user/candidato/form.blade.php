@@ -52,7 +52,7 @@
               <label for="salario" >
                 <span class="text-danger">* </span> Nacionalidade
               </label>
-              <input type="text" name="nacionalidade" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($candidato) ? $candidato->ds_nacionalidade : old('nacionalidade')}}">
+              <input type="text" name="nacionalidade" class="form-control" placeholder="Sua nacionalidade" required="required"  value="{{isset($candidato) ? $candidato->ds_nacionalidade : old('nacionalidade')}}">
             </div>
 
             <div class="form-group col-md-6">
@@ -79,13 +79,13 @@
 
             <div class="form-group col-md-4">
               <label for="dataExpiracao">
-                <span class="text-danger">* </span> Possui alguma deficiencia?
+                <span class="text-danger">* </span>Possui alguma deficiencia?
               </label>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" name="op" type="radio"  class="form-control"  required="required" value="Sim"> 
                  <label class="form-check-label">
                   Sim
-                </label>
+                 </label>
                 <input class="form-check-input" name="op" type="radio"  class="form-control"  required="required" value="Não"> 
                 <label class="form-check-label">
                   Não
@@ -97,9 +97,9 @@
                    <label class="form-check-label" for="exampleRadios2">
                     {{$d->nm_deficiencia}}
                   </label><br>
-                   
                 @endforeach
-              </div>
+              </div>  
+            </div>
 
             </div>
 
@@ -110,7 +110,5 @@
           </div>
         </form>    
       </div> 
-  
   </div>
-
 @endsection

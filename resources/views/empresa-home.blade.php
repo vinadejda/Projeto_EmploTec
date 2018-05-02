@@ -2,6 +2,7 @@
 
 @section('content')
 
-<h1>PÁGINA EM CONTRUÇÃO</h1>
+<h1> PAGINA AINDA EM CONTRUÇÃO</h1>
+
 
 @endsection
