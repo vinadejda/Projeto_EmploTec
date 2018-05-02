@@ -58,7 +58,7 @@ class CurriculoController extends Controller
 			'vl_prentencao_salarial' => Request::input('vl_salario'), 
 			'ds_info_complementar' => Request::input('informacoes'), 
 			'ds_resumo_profissional' =>  Request::input('resumo'), 
-			'fk_candidato' => $cpf->cd_cpf,
+			'fk_candidato' => $cpf,
 		];
 		return $params;
 	}

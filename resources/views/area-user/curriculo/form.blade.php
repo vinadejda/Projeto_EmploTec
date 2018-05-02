@@ -16,38 +16,36 @@
       <div class="card-body">
         <form role="form" method="post" action="{{isset($curriculo) ? '/painel/candidato/curriculo/altera': '/painel/candidato/curriculo/salva'}}">
           <fieldset>
-            <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatorio</p>
+            <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
             <div class="form-group col-md-6">
-              <label for="nome">
+              <label for="objetivo">
                 <span class="text-danger">*</span> Objetivo Profssisional
               </label>
-              <input type="text" name="objetivo" class="form-control" placeholder="Nome do Cargo Exercido" required="required" value="{{isset($curriculo) ? $curriculo->ds_objetivo_profissional : old('objetivo')}}">
+              <input type="text" name="objetivo" class="form-control" maxlength="50" placeholder="Digite o seu objetivo" required value="{{isset($curriculo) ? $curriculo->ds_objetivo_profissional : old('objetivo')}}">
             </div>
 
             <div class="form-group col-md-6">
-              <label for="localidade">
-                <span class="text-danger">* </span> Pretenção Salarial
+              <label for="vl_salario">
+                Pretensão Salarial
               </label>
-              <input type="number" name="vl_salario" class="form-control" placeholder="Localidade da vaga" required="required" value="{{isset($curriculo) ? $curriculo->vl_prentencao_salarial : old('vl_salario')}}">
+              <input type="number" name="vl_salario" class="form-control" min="1" max="9999999" placeholder="Digite sua pretensão salarial" value="{{isset($curriculo) ? $curriculo->vl_prentencao_salarial : old('vl_salario')}}">
             </div>
-
-            <div class="form-group col-md-4">
-              <label for="quantidade">
-                <span class="text-danger">* </span> Informações Complementares
-              </label>
-              <input name="informacoes" type="text" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($curriculo) ? $curriculo->ds_info_complementar : old('informacoes')}}">
-            </div>
-
-            <div class="form-group col-md-4">
-              <label for="salario" >
-                <span class="text-danger">* </span>  Resumo Profissional
-              </label>
-              <input type="text" name="resumo" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($curriculo) ? $curriculo->ds_resumo_profissional : old('resumo')}}">
-            </div>
-
             
+            <div class="form-group col-md-6">
+              <label for="resumo" >
+                 Resumo Profissional
+              </label>
+              <textarea name="resumo" class="form-control" maxlength="250" placeholder="Digite seu resumo profissional">{{isset($curriculo) ? $curriculo->ds_resumo_profissional : old('resumo')}}</textarea>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="informacoes">
+                 Informações Complementares
+              </label>
+              <input name="informacoes" type="text" maxlength="40" class="form-control" placeholder="Digite as informações complementares" value="{{isset($curriculo) ? $curriculo->ds_info_complementar : old('informacoes')}}">
+            </div>
           </fieldset>
           <div class="form-group col-md-6">
             <button type="submit" class="btn btn-success">Salvar</button>
