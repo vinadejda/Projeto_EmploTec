@@ -51,7 +51,7 @@ class CurriculoController extends Controller
 
 
     public function getParams(){
-        $cpf = Candidato::where('fk_usuario',auth()->guard('web')->user()->id)->first();
+        $cpf = Candidato::where('fk_usuario',auth()->guard('web')->user()->id)->value('cd_cpf');
       	
 		$params = [
 			'ds_objetivo_profissional' =>  Request::input('objetivo'), 

@@ -16,7 +16,7 @@
                     <div class="alert alert-warning">
                         Você ainda não terminou o seu cadastro :( <br>Melhor fazer isso o mais rápido possível
                     </div>
-                    <a href="{{url('/painel/candidato/dados/adiciona')}}" class="btn btn-primary btn-add">Cadastrar Curriculo</a><br>
+                    <a href="{{url('/painel/candidato/dados/adiciona')}}" class="btn btn-primary btn-add">Continuar Cadastro</a><br>
                 @else
                     @if(old('nome'))
                         <div class="alert alert-success">

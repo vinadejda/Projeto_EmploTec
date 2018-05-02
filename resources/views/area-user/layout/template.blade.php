@@ -49,6 +49,7 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+                <!--
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -97,9 +98,9 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-messages -->
                 </li>
-                <!-- /.dropdown -->
+                -->
+                <!--
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -176,9 +177,9 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-tasks -->
                 </li>
-                <!-- /.dropdown -->
+                -->
+                <!--
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -236,9 +237,8 @@
                             </a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-alerts -->
                 </li>
-                <!-- /.dropdown -->
+                -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -293,13 +293,13 @@
                         </li>
                         
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Vagas Candidatadas</a>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Vagas Candidatadas</a>
                         </li>
                         <li>
                             <a href="{{url('/painel/candidato/dados/informacoes')}}"><i class="fa fa-edit fa-fw"></i> Dados Pessoais</a>
                         </li>
                         <li>
-                            <a href="{{url('register')}}"><i class="fa fa-wrench fa-fw"></i> Informações</a>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Informações</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Teste</a>
@@ -314,7 +314,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Seja Bem-Vind@, {{ Auth::user()->name }}  </h1>
+                    <h1 class="page-header">Seja Bem-Vindo(a), {{ Auth::user()->name }}  </h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
