@@ -39,7 +39,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/painel/candidato/dashboard', function () {
     return view('area-user.dashboard.index');
-});
+})->name('dashboard-candidato');
 
 
 

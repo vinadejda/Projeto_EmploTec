@@ -26,9 +26,10 @@
                         <thead>
                             <tr>
                                 <th>Cargo</th>
+                                <th>Área de TI</th>
                                 <th>Nivel</th>
-                                <th>Localidade</th>
                                 <th>Salário</th>
+                                <th>Cidade</th>
                                 <th>Quantidade</th>
                                 <th>Data Expiração</th>
                                 <th colspan="3">Opções</th>
@@ -38,9 +39,10 @@
                             @foreach ($vagas as $vaga)
                                 <tr>
                                     <td> {{$vaga->nm_vaga}} </td>
+                                    <td> {{$vaga->areaTI->nm_areaTI}} </td>
                                     <td> {{$vaga->ds_nivel }}</td>
-                                    <td> {{$vaga->ds_localidade}} </td>
                                     <td> {{$vaga->vl_salario_vaga }}</td>
+                                    <td> {{$vaga->cidade->nm_cidade }}</td>
                                     <td> {{$vaga->qt_vagas}} </td>
                                     <td> {{$vaga->dt_expiracao}} </td>
                                     <td alt="Detalhes">

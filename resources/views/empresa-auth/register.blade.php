@@ -5,14 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Cadastro da Empresa') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('empresa.register') }}">
                         @csrf
-
+                        <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">
+                                <span class="text-danger">*</span>{{ __('Nome') }}
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -26,7 +28,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">
+                                <span class="text-danger">*</span>{{ __('E-Mail') }}
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -40,7 +44,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">
+                                <span class="text-danger">*</span>{{ __('Senha') }}
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -54,32 +60,31 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
+                                <span class="text-danger">*</span>{{ __('Confirmar Senha') }}
+                            </label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('rua') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
+                                <span class="text-danger">*</span>{{ __('Endereço') }}
+                            </label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="rua" >
+                                <input id="password-confirm" type="text" class="form-control" name="rua" required>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('n°') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
+                                <span class="text-danger">*</span>{{ __('Número') }}
+                            </label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="nr" >
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Bairro') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="bairro" >
+                                <input id="password-confirm" type="text" class="form-control" name="nr" required>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -89,72 +94,100 @@
                                 <input id="password-confirm" type="text" class="form-control" name="complemento" >
                             </div>
                         </div>
-
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('telefone') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
+                                <span class="text-danger">*</span>{{ __('Bairro') }}
+                            </label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="number" class="form-control" name="tel" >
+                                <input id="password-confirm" type="text" class="form-control" name="bairro" required>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('celular') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="celular" >
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('img') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="file" class="form-control" name="img" >
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('linkedin') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="linkedin" >
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('facebook') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Estado') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="facebook" >
+                                <select name="estado" class="form-control">
+                                    <option selected="selected"></option>
+                                    @foreach ($estado as $e)
+                                        <option value="{{ $e->cd_estado }}">{{ $e->nm_estado }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('twitter') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="twitter" >
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('portifolio') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="portifolio" >
-                            </div>
-                        </div>
-
+                        
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Cidade') }}</label>
-
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="cidade" value='1'>
+                                <select name="cidade" class="form-control">
+                                    <option selected></option>
+                                    @foreach ($cidade as $c)
+                                        <option value="{{ $c->cd_cidade }}">{{ $c->nm_cidade }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="tel" class="form-control" name="tel" >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="tel" class="form-control" name="celular" >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Foto') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="file" name="img" >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Linkedin') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="url" class="form-control" name="linkedin" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Facebook') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="url" class="form-control" name="facebook" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Twitter') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="url" class="form-control" name="twitter" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Site') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="url" class="form-control" name="portifolio" >
+                            </div>
+                        </div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Cadastrar') }}
                                 </button>
                             </div>
                         </div>

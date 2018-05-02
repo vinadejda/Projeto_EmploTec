@@ -15,16 +15,20 @@
                     <form method="POST" action="{{route('cadastro-empresa')}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}"/>  
                         
-
+                        <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
                         <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">{{ __('CNPJ') }}</label>
+                            <label class="col-md-4 col-form-label text-md-right">
+                                <span class="text-danger">*</span>{{ __('CNPJ') }}
+                            </label>
 
                             <div class="col-md-6">
                                 <input  type="text" class="form-control" name="cnpj" required value="{{isset($info) ? $info->cd_cnpj : old('cnpj')}}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">{{ __('Razão Social') }}</label>
+                            <label class="col-md-4 col-form-label text-md-right">
+                                <span class="text-danger">*</span>{{ __('Razão Social') }}
+                            </label>
 
                             <div class="col-md-6">
                                 <input type="text" class="form-control" name="rz_social"  required value="{{isset($info) ? $info->ds_razao_social : old('rz_social')}}">
@@ -33,7 +37,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Cadastrar') }}
                                 </button>
                             </div>
                         </div>

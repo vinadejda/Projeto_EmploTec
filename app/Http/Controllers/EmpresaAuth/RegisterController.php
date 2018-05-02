@@ -4,6 +4,8 @@ namespace App\Http\Controllers\EmpresaAuth;
 
 
 use App\Models\EmpresaAuth;
+use App\Models\Estado;
+use App\Models\Cidade;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -91,7 +93,9 @@ class RegisterController extends Controller
     }
     public function showRegistrationForm()
     {
-        return view('empresa-auth.register');
+        return view('empresa-auth.register')
+        ->with('estado', Estado::all())
+        ->with('cidade', Cidade::all());
     }
 }
 

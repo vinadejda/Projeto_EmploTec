@@ -40,8 +40,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{route('index')}}">
-                    <img  width="155px;" src="{{ asset('../images/logo.png') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img  width="16%;" src="{{ asset('../../images/logo.png') }}">
                 </a>
             </div>
             
@@ -269,7 +269,7 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
+            <div class="navbar-default sidebar" role="navigation" style="margin-top: 6.2%;>
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">

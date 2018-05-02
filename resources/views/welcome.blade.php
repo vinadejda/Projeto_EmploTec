@@ -69,7 +69,7 @@
 
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <a class="dropdown-item" href="{{ route('dashboard-empresa') }}">
-                                                    {{ __('Area da Empresa') }}
+                                                    {{ __('Área da Empresa') }}
                                                 </a>
                                                 
                                                 <a class="dropdown-item" href="{{ route('empresa.logout') }}"
@@ -91,8 +91,8 @@
                                             </a>
 
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{ route('dashboard-empresa') }}">
-                                                    {{ __('Area do Candidato') }}
+                                                <a class="dropdown-item" href="{{route('dashboard-candidato')}}">
+                                                    {{ __('Área do Candidato') }}
                                                 </a>
                                                 
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
