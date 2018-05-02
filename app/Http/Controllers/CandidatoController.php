@@ -6,6 +6,7 @@ use Request;
 use App\Http\Controllers\Controller;
 use App\Models\Candidato;
 use App\Models\Deficiencia;
+use App\Models\Cidade;
 
 class CandidatoController extends Controller
 {
