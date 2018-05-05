@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\AdminAuth;
 
-use App\Admin;
+use App\Models\AdminAuth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;

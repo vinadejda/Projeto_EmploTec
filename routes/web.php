@@ -150,6 +150,8 @@ Route::group(['prefix'=>'painel/empresa'], function(){
 Route::group(['prefix'=>'admin'], function(){
     Route::get('login', ['as' => 'admin.login', 'uses' => 'AdminAuth\LoginController@showLoginForm']);
 
+    Route::get('/', function(){return view('area-admin.dashboard.index');})->name('dashboard-admin');
+
     Route::post('login', ['uses' => 'AdminAuth\LoginController@login']);
     Route::post('logout', ['as' => 'admin.logout', 'uses' => 'AdminAuth\LoginController@logout']);
 
@@ -184,6 +186,10 @@ Route::group(['prefix'=>'painel/admin'], function(){
         Route::post('/listaradmin', 'AdminController@salva');
         Route::get('/remove/{id}', 'AdminController@remove')->where('id', '[0-9]+');
         Route::get('/mostra/{id}', 'AdminController@mostra')->where('id', '[0-9]+');
+        Route::get('/testes', 'AdminController@teste');
+        Route::group(['prefix'=>'/teste'], function(){
+            Route::get('/cadastrarteste', 'TesteController@criarTeste');
+        });
     });
 });
 

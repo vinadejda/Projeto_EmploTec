@@ -16,4 +16,7 @@ class AreaTI extends Model
     public function vaga(){
 		return $this->belongsTo('App\Models\Vaga','fk_area_ti', 'cd_areaTI');
 	}
+	public function pergunta(){
+		return $this->belongsTo('App\Models\Pergunta','fk_area_ti', 'cd_areaTI');
+	}
 }

@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="{{ asset('../images/logoVetor.png') }}" type="image/x-icon">
-    <title>{{ __('EmployTec - Area do Admin') }}</title>
+    <title>{{ __('EmployTec - Área do Admin') }}</title>
   <!-- Bootstrap core CSS-->
   <link href="{{ asset('../vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -49,7 +49,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link" data-toggle="collapse" href="{{ url('/painel/admin/testes') }}" data-parent="#exampleAccordion">
+          <a class="nav-link" href="{{ url('/painel/admin/testes') }}">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Teste</span>
           </a>
@@ -202,15 +202,15 @@
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             <a class="btn btn-primary" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                     <i class="fa fa-sign-out fa-fw"></i>
-                                        {{ __('Logout') }}
-                                    </a>
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                  <i class="fa fa-sign-out fa-fw"></i>
+                    {{ __('Logout') }}
+            </a>
 
-                                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
 </a>
           </div>
         </div>

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Request;
 use Illuminate\Support\Facades\DB;
-use App\Admin;
+use App\Models\AdminAuth;
+use App\Models\AreaTI;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -25,16 +26,16 @@ class AdminController extends Controller
 
     public function mostra($id)
     {
-        $adm = Admin::where('id', $id)->first();
+        $adm = AdminAuth::where('id', $id)->first();
         if(empty($adm))
         {
-            return "Este Adminidtrador não existe";
+            return "Este Administrador não existe";
         }
         return view('area-admin.cadastrar-admin.detalhes')->with('adm', $adm);
     }
     public function infoAdmin()
     {    
-        $admin = Admin::where('id', auth()->guard('admin')->user()->id)->get(); 
+        $admin = AdminAuth::where('id', auth()->guard('admin')->user()->id)->get(); 
         return view('area-admin.informacao-admin.info-admin')
         ->with('admin',$admin);
     }
@@ -49,19 +50,19 @@ class AdminController extends Controller
 
 
     public function edita(){
-        $admin = Admin::where('id', auth()->guard('admin')->user()->id)->first();
+        $admin = AdminAuth::where('id', auth()->guard('admin')->user()->id)->first();
         return view('area-admin.informacao-admin.form')
         ->with('admin',$admin);
     }
 
     public function altera(){
         $params = $this->getParams();
-        Admin::where('id', auth()->guard('admin')->user()->id)->update($params);
+        AdminAuth::where('id', auth()->guard('admin')->user()->id)->update($params);
         return redirect()->action('AdminController@infoAdmin');
     }
 
     public function remove($id){
-        $empresas = Admin::where('id', $id)->delete();
+        $empresas = AdminAuth::where('id', $id)->delete();
         return redirect()
         ->action('AdminController@listaAdmin');
     }
@@ -76,6 +77,12 @@ class AdminController extends Controller
             return view('area-admin.cadastrar-admin.listagem', ['adm' => $adm]);
     }
 
+    public function teste(){
+       // $areaTI = DB::select('select * from area_ti')->get();
+        return view('area-admin.teste.form')
+        //->with('areaTI', $areaTI); 
+        ->with('areasTI',AreaTI::all());
+    }
 
      public function getNewParams(){
        
@@ -99,7 +106,7 @@ class AdminController extends Controller
         return $params;
     }
     public function getParams(){
-        $usuario = Admin::where('id', auth()->guard('admin')->user()->id)->first();
+        $usuario = AdminAuth::where('id', auth()->guard('admin')->user()->id)->first();
         $params = [
             'name' => Request::input('nome'),
             'email' => $usuario->email,
