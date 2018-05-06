@@ -7,8 +7,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">SOBRE</h2>
+            <h3 class="section-subheading text-muted">EmployTec a solução para a vaga do seu emprego.</h3>
           </div>
         </div>
         <div class="row">
@@ -16,29 +16,29 @@
             <ul class="timeline">
               <li>
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="teste/img/about/1.jpg" alt="">
+                  <img class="rounded-circle img-fluid" src="images/about/1.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>2009-2011</h4>
-                    <h4 class="subheading">Our Humble Beginnings</h4>
+                    <h4>2016-2018</h4>
+                    <h4 class="subheading">O começo de tudo</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">A ideia da empresa EmployTec surgiu no ano de 2016, quando um grupo de amigos iniciaram as suas carreiras na Faculdade de Tecnologia de Praia Grande!</p>
                   </div>
                 </div>
               </li>
               <li class="timeline-inverted">
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="teste/img/about/2.jpg" alt="">
+                  <img class="rounded-circle img-fluid" src="images/about/2.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>March 2011</h4>
-                    <h4 class="subheading">An Agency is Born</h4>
+                    <h4>Março de 2018</h4>
+                    <h4 class="subheading">O nascimento de um projeto</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">Em março de 2018, os empreendedores da área de tecnologia da informação em conjunto com o professor Rodrigo Lopes Salgado educador da Faculdade de Tecnologia de Praia Grande começaram a desenvolver o seu primeiro site!</p>
                   </div>
                 </div>
               </li>
@@ -48,33 +48,33 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>December 2012</h4>
-                    <h4 class="subheading">Transition to Full Service</h4>
+                    <h4>Abril de 2018</h4>
+                    <h4 class="subheading">Fechamento do Escopo</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">Apesar do projeto já estar na sua fase de construção, o escopo sobre o tema principal do site ainda não estava totalmente fechado, mas ao observar o mercado de trabalho os fundadores descobriram a grande necessidade de criar-se um site que seja acessível e fácil de achar estágios na área de T.I e com isso foi fechada a ideia principal do site. </p>
                   </div>
                 </div>
               </li>
               <li class="timeline-inverted">
                 <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="teste/img/about/4.jpg" alt="">
+                  <img class="rounded-circle img-fluid" src="images/about/4.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>July 2014</h4>
-                    <h4 class="subheading">Phase Two Expansion</h4>
+                    <h4>Maio de 2018</h4>
+                    <h4 class="subheading">Entrega dos CRUDS</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">Em maio de 2018 a EmployTec dá um grande passo para o futuro, fazendo a entrega dos CRUDS!</p>
                   </div>
                 </div>
               </li>
               <li class="timeline-inverted">
                 <div class="timeline-image">
-                  <h4>Be Part
-                    <br>Of Our
-                    <br>Story!</h4>
+                  <h4>Faça parte 
+                    <br>da nossa
+                    <br>História!</h4>
                 </div>
               </li>
             </ul>
@@ -88,16 +88,16 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">NOSSA EQUIPE SURPREENDENTE</h2>
+            <h3 class="section-subheading text-muted">Equipe pronta para receber você.</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-3">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="teste/img/team/1.jpg" alt="">
-              <h4>Kay Garland</h4>
-              <p class="text-muted">Lead Designer</p>
+              <img class="mx-auto rounded-circle" src="images/team/bryan.jpg" alt="">
+              <h4>Bryan Higa</h4>
+              <p class="text-muted">Analista de Negócios<BR>Desenvolvedor PHP</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
@@ -119,9 +119,9 @@
           </div>
           <div class="col-sm-3">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="teste/img/team/2.jpg" alt="">
-              <h4>Larry Parker</h4>
-              <p class="text-muted">Lead Marketer</p>
+              <img class="mx-auto rounded-circle" src="images/team/luciana.jpg" alt="">
+              <h4>Luciana Oliveira</h4>
+              <p class="text-muted">Analista de Teste<br>Analista de Negócios</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
@@ -143,9 +143,9 @@
           </div>
           <div class="col-sm-3">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="teste/img/team/3.jpg" alt="">
-              <h4>Diana Pertersen</h4>
-              <p class="text-muted">Lead Developer</p>
+              <img class="mx-auto rounded-circle" src="images/team/saulo.jpg" alt="">
+              <h4>Saulo Pedro</h4>
+              <p class="text-muted">Administrador de Banco de Dados<br>Desenvolvedor PHP </p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
@@ -167,9 +167,9 @@
           </div>
           <div class="col-sm-3">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="teste/img/team/3.jpg" alt="">
-              <h4>Diana Pertersen</h4>
-              <p class="text-muted">Lead Developer</p>
+              <img class="mx-auto rounded-circle" src="images/team/vitoria.jpg" alt="">
+              <h4>Vitória Nadejda</h4>
+              <p class="text-muted">Desenvolvedora PHP<br>Designer</p>
               <ul class="list-inline social-buttons">
                 <li class="list-inline-item">
                   <a href="#">
