@@ -24,7 +24,7 @@
               <label for="nome">
                 <span class="text-danger">*</span> Nome
               </label>
-              <input type="text" name="nome" class="form-control" placeholder="Nome" required="required">
+              <input type="text" name="nome" pattern="[A-Za-z\s]+$" title="Nome digitado em formato invalido." maxlength="45" class="form-control" placeholder="Nome" required="required">
             </div>
 
             <div class=" form-group col-md-6">
@@ -32,16 +32,15 @@
                 <span class="text-danger">*</span> Email
               </label>
 
-                            <div>
-                                <input id="email" type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="example@exaple.com" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                <div>
+                  <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email digitado de maneira encorreta." maxlength="45" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="example@exaple.com" required>
+                    @if ($errors->has('email'))
+                      <span class="invalid-feedback">
+                          <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                    @endif
+                </div>
+            </div>
 
 
             <div class=" form-group col-md-6">
@@ -50,7 +49,7 @@
               </label>
 
                             <div>
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"  required>
+                                <input id="password" type="password" maxlength="60" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"  required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
@@ -65,70 +64,70 @@
               <label for="localidade">
                 <span class="text-danger">* </span> Rua
               </label>
-              <input type="text" name="rua" class="form-control" placeholder="Rua" required="required">
+              <input type="text" name="rua" pattern="[A-Za-z0-9\s]+$" title="Endereço digitado de forma encorreta" maxlength="45" class="form-control" placeholder="Rua" required="required">
             </div>
 
             <div class="form-group col-md-4">
               <label for="dataExpiracao">
                 <span class="text-danger">* </span> N°
               </label>
-              <input type="number" name="numero" class="form-control" required="required">
+              <input type="number" name="numero" pattern="[0-9]+$" title="Número da residecia digitado de forma encorreta" maxlength="5" class="form-control" required="required">
             </div>
 
             <div class="form-group col-md-4">
               <label for="quantidade">
                 <span class="text-danger">* </span> Bairro
               </label>
-              <input name="bairro" type="text" class="form-control" placeholder="Bairro" required="required">
+              <input name="bairro" type="text" pattern="[A-Za-z\s]+$" title="Bairro digitado em formato invalido." maxlength="45" class="form-control" placeholder="Bairro" required="required">
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
               Complemento
               </label>
-              <input type="text" name="complemento" class="form-control" placeholder="Complemento" >
+              <input type="text" name="complemento" pattern="[A-Za-z\s]+$" title="Complemento digitado de forma encorreta" maxlength="50" class="form-control" placeholder="Complemento" >
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
               Telefone
               </label>
-              <input type="number" name="telefone" class="form-control" placeholder="Telefone" >
+              <input type="number" name="telefone" maxlength="11" pattern="\([0-9]{2}\) [0-9]{4,4}-[0-9]{3,4}$" class="form-control" placeholder="Telefone" >
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
               Celular
               </label>
-              <input type="number" name="celular" class="form-control" placeholder="Celular">
+              <input type="number" name="celular" maxlength="11" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" class="form-control" placeholder="Celular">
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
               Imagem
               </label>
-              <input type="file" name="img" class="form-control" placeholder="Complemento" >
+              <input type="file" name="img"  maxlength="250" class="form-control" placeholder="Complemento" >
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
               Linkedin
               </label>
-              <input type="text" name="linkedin" class="form-control" placeholder="Linkedin">
+              <input type="text" name="linkedin" maxlength="45" class="form-control" placeholder="Linkedin">
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
               Facebook
               </label>
-              <input type="text" name="facebook" class="form-control" placeholder="Facebook">
+              <input type="text" name="facebook" maxlength="45" class="form-control" placeholder="Facebook">
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
               Twitter
               </label>
-              <input type="text" name="twitter" class="form-control" placeholder="Twitter">
+              <input type="text" name="twitter" maxlength="45" class="form-control" placeholder="Twitter">
             </div>
 
             

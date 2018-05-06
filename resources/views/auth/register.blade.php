@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-<br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -18,12 +16,12 @@
                         <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
                         <div class="form-group row">
 
-                            <label for="name" class="col-md-4 col-form-label text-md-right">
-                                <span class="text-danger">*</span>{{ __('Nome Completo') }}
+                            <label for="name" class="col-md-4 col-form-label text-md-right" >
+                                <span class="text-danger" >*</span>{{ __('Nome Completo') }}
                             </label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="text" pattern="[A-Za-z\s]+$" title="Nome digitado em formato invalido." maxlength="45" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
@@ -39,7 +37,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                <input id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email digitado de maneira incorreta." maxlength="45" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
@@ -55,7 +53,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                <input id="password" type="password" maxlength="60" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
@@ -71,7 +69,7 @@
                                 <span class="text-danger">*</span>{{ __('Confirmar Senha') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" maxlength="60" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
 
@@ -80,7 +78,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
                                 <span class="text-danger">*</span>{{ __('Endereço') }}</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="rua" required>
+                                <input id="password-confirm" type="text" pattern="[A-Za-z0-9\s]+$" title="Endereço digitado de forma incorreta" maxlength="45" class="form-control" name="rua" required>
                             </div>
                         </div>
 
@@ -89,14 +87,14 @@
                                 <span class="text-danger">*</span>{{ __('Número') }}
                             </label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="number" class="form-control" name="nr" required>
+                                <input id="password-confirm" type="text" name="nr" pattern="[0-9]+$" title="Número da residecia digitado de forma incorreta" maxlength="5" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Complemento') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="complemento" >
+                                <input id="password-confirm" pattern="[A-Za-z\s]+$" title="Complemento digitado de forma incorreta" maxlength="50" type="text" class="form-control" name="complemento" >
                             </div>
                         </div>
                         <div class="form-group row">
@@ -105,7 +103,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="bairro" required>
+                                <input id="password-confirm" type="text" pattern="[A-Za-z\s]+$" title="Bairro digitado em formato invalido." maxlength="45" class="form-control" name="bairro" required>
                             </div>
                         </div>
                         
@@ -135,40 +133,39 @@
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="tel" class="form-control" name="tel" >
+                                <input id="password-confirm"  maxlength="11" pattern="\([0-9]{2}\) [0-9]{4,4}-[0-9]{3,4}$" type="tel" class="form-control" name="tel" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Celular') }}</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="tel" class="form-control" name="celular" >
+                                <input id="password-confirm"  maxlength="11" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" type="tel" class="form-control" name="celular" >
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Imagem de perfil') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="file"  name="img">
+                                <input id="password-confirm" maxlength="250" type="file"  name="img">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Linkedin') }}</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="url" class="form-control" name="linkedin" >
+                                <input id="password-confirm" maxlength="45" type="url" class="form-control" name="linkedin" >
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Facebook') }}</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="url" class="form-control" name="facebook" >
+                                <input id="password-confirm" maxlength="45" type="url" class="form-control" name="facebook" >
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Twitter') }}</label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="url" class="form-control" name="twitter" >
+                                <input id="password-confirm" maxlength="45" type="url" class="form-control" name="twitter" >
                             </div>
                         </div>
 
@@ -176,7 +173,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Portifolio') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="url" class="form-control" name="portifolio" >
+                                <input id="password-confirm" maxlength="45" type="url" class="form-control" name="portifolio" >
                             </div>
                         </div>
 
@@ -194,5 +191,4 @@
         </div>
     </div>
 </div>
-<br><br>
 @endsection

@@ -24,9 +24,9 @@
 
             <div class="form-group col-md-6">
               <label for="nome">
-                <span class="text-danger">*</span> Nome
+                <span class="text-danger">*</span> Tema da vaga
               </label>
-              <input type="text" name="nome" class="form-control" placeholder="Nome da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
+              <input type="text" name="nome" pattern="[A-Za-z\s]+$" title="Nome da vaga digitado em formato invalido." maxlength="30" class="form-control" placeholder="Tema da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
             </div>
             <div class="form-group col-md-6">
               <label for="areaTI">
@@ -43,14 +43,14 @@
               <label for="quantidade">
                 <span class="text-danger">* </span> Quantidade de Vagas
               </label>
-              <input name="quantidade" type="number" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($vaga) ? $vaga->qt_vagas : old('quantidade')}}">
+              <input name="quantidade" type="text" maxlength="3" pattern="([0-9]{3})" title="Quantidade de vagas digitado de forma encorreta" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($vaga) ? $vaga->qt_vagas : old('quantidade')}}">
             </div>
 
             <div class="form-group col-md-3">
               <label for="salario" >
                 <span class="text-danger">* </span> Salário
               </label>
-              <input type="text" name="salario" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($vaga) ? $vaga->vl_salario_vaga : old('salario')}}">
+              <input type="text" name="salario"  maxlength="9" pattern="([0-9]{9})" title="Salário digitado de forma encorreta" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($vaga) ? $vaga->vl_salario_vaga : old('salario')}}">
             </div>
 
             <div class="form-group col-md-3">
@@ -85,7 +85,7 @@
               <label for="dataExpiracao">
                 <span class="text-danger">* </span> Data de Expiração
               </label>
-              <input type="date" name="dataExpiracao" class="form-control" required="required" value="{{isset($vaga) ? $vaga->dt_expiracao : old('dataExpiracao')}}">
+              <input type="date" name="dataExpiracao" class="form-control" required="required" min="" max="" value="{{isset($vaga) ? $vaga->dt_expiracao : old('dataExpiracao')}}">
             </div>
             <div class="form-group col-md-12">
               <label>Benefícios</label>
@@ -129,7 +129,5 @@
           </div>
         </form>    
       </div> 
-  
   </div>
-
 @endsection

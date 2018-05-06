@@ -26,7 +26,7 @@
              @csrf
           <div class="form-group">
             <label for="exampleInputEmail1">{{ __('E-Mail') }}</label>
-            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="example@example.com">
+            <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email digitado de maneira encorreta." maxlength="45" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="example@example.com">
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
@@ -36,7 +36,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">{{ __('Senha') }}</label>
-            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Senha">
+            <input id="password" type="password" maxlength="60" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Senha">
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">

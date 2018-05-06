@@ -22,7 +22,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input  type="text" class="form-control" name="cnpj" required value="{{isset($info) ? $info->cd_cnpj : old('cnpj')}}">
+                                <input  type="text" class="form-control" pattern="[0-9]+$" title="CNPJ digitado em formato invalido." maxlength="14" name="cnpj" required value="{{isset($info) ? $info->cd_cnpj : old('cnpj')}}">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -31,7 +31,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="rz_social"  required value="{{isset($info) ? $info->ds_razao_social : old('rz_social')}}">
+                                <input type="text" class="form-control" pattern="[A-Za-z\s]+$" title="Razão Social digitado em formato invalido." maxlength="30" name="rz_social"  required value="{{isset($info) ? $info->ds_razao_social : old('rz_social')}}">
                             </div>
                         </div>
                         <div class="form-group row mb-0">
