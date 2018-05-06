@@ -186,9 +186,14 @@ Route::group(['prefix'=>'painel/admin'], function(){
         Route::post('/listaradmin', 'AdminController@salva');
         Route::get('/remove/{id}', 'AdminController@remove')->where('id', '[0-9]+');
         Route::get('/mostra/{id}', 'AdminController@mostra')->where('id', '[0-9]+');
-        Route::get('/testes', 'AdminController@teste');
-        Route::group(['prefix'=>'/teste'], function(){
-            Route::get('/cadastrarteste', 'TesteController@criarTeste');
+        
+        Route::group(['prefix'=>'/testes'], function(){
+            Route::get('/cadastra', 'TesteController@cadastra');
+            Route::post('/adiciona', 'TesteController@adiciona');
+            Route::get('/visualizar', 'TesteController@lista');
+            Route::get('/remove/{id}', 'TesteController@remove')->where('id', '[0-9]+');
+            Route::get('/editar/{id}', 'TesteController@editar')->where('id', '[0-9]+');
+            Route::post('/altera', 'TesteController@altera');
         });
     });
 });

@@ -15,7 +15,7 @@ class Pergunta extends Model
    		'fk_areaTI'
     ];
     public function areaTI(){
-        return $this->hasOne('App\Models\AreaTI', 'cd_areaTi','fk_areaTI');
+        return $this->hasOne('App\Models\AreaTI', 'cd_areaTI','fk_areaTI');
     }
 
     public function alternativa(){

@@ -77,13 +77,6 @@ class AdminController extends Controller
             return view('area-admin.cadastrar-admin.listagem', ['adm' => $adm]);
     }
 
-    public function teste(){
-       // $areaTI = DB::select('select * from area_ti')->get();
-        return view('area-admin.teste.form')
-        //->with('areaTI', $areaTI); 
-        ->with('areasTI',AreaTI::all());
-    }
-
      public function getNewParams(){
        
         $params = [

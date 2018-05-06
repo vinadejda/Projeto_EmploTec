@@ -49,7 +49,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link" href="<?php echo e(url('/painel/admin/testes')); ?>">
+          <a class="nav-link" href="<?php echo e(url('/painel/admin/testes/visualizar')); ?>">
             <i class="fa fa-fw fa-wrench"></i>
             <span class="nav-link-text">Teste</span>
           </a>

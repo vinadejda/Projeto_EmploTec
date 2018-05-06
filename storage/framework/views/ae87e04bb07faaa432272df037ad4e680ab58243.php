@@ -4,56 +4,59 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <a href="<?php echo e(url('/empresa/vagas/cadastro')); ?>" class="btn btn-primary btn-add">Cadastrar Vaga</a><br>
+        
         <div class="panel panel-default">
             <div class="panel-heading">
-                Listagem de Vagas
+                <h2>Lista de Teste Existentes</h2>
+                <hr>
             </div>
             <div class="panel-body">
-                <?php if(!count($vagas) > 0): ?>
+                <a href="<?php echo e(url('/painel/admin/testes/cadastra')); ?>" class="btn btn-primary btn-add">Cadastrar Novo Teste</a>
+            <br><br>
+                
+            <?php $__currentLoopData = $pergunta; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if(!isset($p)): ?>
                     <div class="alert alert-warning">
-                        Nenhuma vaga cadastrada.
+                        Nenhum teste cadastrado.
                     </div>
-                <?php else: ?>
-                    <?php if(old('nome')): ?>
-                        <div class="alert alert-success">
-                            <strong>Sucesso!</strong> A vaga "<?php echo e(old('nome')); ?>" foi adicionada.
-                        </div>
-                    <?php endif; ?>
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-vagas">
-                        <thead>
-                            <tr>
-                                <th>Cargo</th>
-                                <th>Nivel</th>
-                                <th>Localidade</th>
-                                <th>Salário</th>
-                                <th>Quantidade</th>
-                                <th>Data Expiração</th>
-                                <th colspan="3">Opções</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $__currentLoopData = $vagas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $vaga): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <tr>
-                                    <td> <?php echo e($vaga->nm_vaga); ?> </td>
-                                    <td> <?php echo e($vaga->ds_nivel); ?></td>
-                                    <td> <?php echo e($vaga->ds_localidade); ?> </td>
-                                    <td> <?php echo e($vaga->qt_vagas); ?> </td>
-                                    <td> <?php echo e($vaga->vl_salario_vaga); ?></td>
-                                    <td> <?php echo e($vaga->dt_expiracao); ?> </td>
-                                    <td alt="Detalhes">
-                                        <a href="empresa/vagas/mostra/<?php echo e($vaga->cd_vaga); ?>"><span class="fa fa-eye" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td>
-                                        <a href="/empresa/vagas/editar/<?php echo e($vaga->cd_vaga); ?>" alt="Editar" class="teste"><span class="fa fa-edit" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="excluir" >
-                                        <a href="javascript:func" onclick="alertConfirmaExclusao('/empresa/vagas/remove/<?php echo e($vaga->cd_vaga); ?>')" alt="Excluir"><span class="fa fa-trash-o" aria-hidden="true" ></span></a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </tbody>
-                    </table>
+                    <?php else: ?>
+                    <article class="card col-lg-12" >  
+                      <div class="card-body">
+                        
+                                <h3 class="card-title">Questão: </h3>
+                                <?php $__currentLoopData = $areasTI; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $aTI): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php if($p->fk_areaTI == $aTI->cd_areaTI): ?>
+                                        <p class="card-text"><b>Área: </b><?php echo e($aTI->nm_areaTI); ?></p>
+                                    <?php endif; ?>
+                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <p class="card-text"><?php echo e($p->ds_pergunta); ?></p>
+                              </div>
+                              <?php $__currentLoopData = $alternativas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php if($a->fk_pergunta == $p->cd_pergunta): ?>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><i class="<?php echo e(($a->ic_alternativa == 1) ? 'fa fa-check' : 'fa fa-times'); ?>" aria-hidden="true"></i>
+                                             <?php echo e($a->ds_alternativa); ?> </li>
+                                         </ul>
+                                    <?php endif; ?>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <div class="card-body">
+                                <a href="/painel/admin/testes/editar/<?php echo e($p->cd_pergunta); ?>" class="card-link col-lg-4" alt="Editar">
+                                    <span class="fa fa-edit" aria-hidden="true"></span>
+                                    Alterar Questão
+                                </a>
+                                <a href="javascript:func" onclick="alertConfirmaExclusao('/painel/admin/testes/remove/<?php echo e($p->cd_pergunta); ?>')" alt="Excluir" class="card-link col-lg-4">
+                                    <span class="fa fa-trash-o" aria-hidden="true" ></span>
+                                    Excluir Questão
+                                </a>
+                            </div>
+                             
+                      </div>
+                    </article>
+                    <br>
+                         <?php endif; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>   
+                                
+
                     <script>
                         function alertConfirmaExclusao(link) {
                             var acao = confirm("Deseja realmente excluir este registro?")
@@ -62,7 +65,7 @@
                             }
                         }
                     </script>
-                <?php endif; ?>
+                
             </div>
         </div>
     </div>
