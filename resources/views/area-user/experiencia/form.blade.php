@@ -59,14 +59,14 @@
               <label for="dataInicio">
                 <span class="text-danger">* </span> Data de Início
               </label>
-              <input type="date" name="dataInicio" class="form-control" required value="{{isset($exp) ? $exp->dt_inicio_experiencia : old('dataInicio')}}">
+              <input type="date" name="dataInicio" maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="01-01-1930" max="31-12-2018" class="form-control" required value="{{isset($exp) ? $exp->dt_inicio_experiencia : old('dataInicio')}}">
             </div>
 
             <div class="form-group col-md-4">
               <label for="dataTermino">
               Data de Término
               </label>
-              <input type="date" name="dataTermino" class="form-control"  value="{{isset($exp) ? $exp->dt_termino_experiencia : old('dataTermino')}}">
+              <input type="date" name="dataTermino" maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="01-01-1930" max="31-12-2018" class="form-control"  value="{{isset($exp) ? $exp->dt_termino_experiencia : old('dataTermino')}}">
             </div>
 
           </fieldset>

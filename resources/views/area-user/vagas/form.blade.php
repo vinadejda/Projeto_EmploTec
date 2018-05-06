@@ -25,35 +25,35 @@
               <label for="nome">
                 <span class="text-danger">*</span> Nome
               </label>
-              <input type="text" name="nome" class="form-control" placeholder="Nome da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
+              <input type="text" name="nome" pattern="[A-Za-z\s]+$" title="Nome digitado em formato invalido." maxlength="30" class="form-control" placeholder="Nome da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
             </div>
 
             <div class="form-group col-md-6">
               <label for="localidade">
                 <span class="text-danger">* </span> Localidade
               </label>
-              <input type="text" name="localidade" class="form-control" placeholder="Localidade da vaga" required="required" value="{{isset($vaga) ? $vaga->ds_localidade : old('localidade')}}">
+              <input type="text" name="localidade" pattern="[A-Za-z\s]+$" title="Nome digitado em formato invalido." maxlength="45" class="form-control" placeholder="Localidade da vaga" required="required" value="{{isset($vaga) ? $vaga->ds_localidade : old('localidade')}}">
             </div>
 
             <div class="form-group col-md-4">
               <label for="dataExpiracao">
                 <span class="text-danger">* </span> Data de Expiração
               </label>
-              <input type="date" name="dataExpiracao" class="form-control" required="required" value="{{isset($vaga) ? $vaga->dt_expiracao : old('dataExpiracao')}}">
+              <input type="date" name="dataExpiracao" maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="01-01-1930" max="31-12-2018" class="form-control" required="required" value="{{isset($vaga) ? $vaga->dt_expiracao : old('dataExpiracao')}}">
             </div>
 
             <div class="form-group col-md-4">
               <label for="quantidade">
                 <span class="text-danger">* </span> Quantidade
               </label>
-              <input name="quantidade" type="number" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($vaga) ? $vaga->qt_vagas : old('quantidade')}}">
+              <input name="quantidade" type="number" maxlength="3" pattern="([0-9]{3})" title="Salário digitado de forma incorreta" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($vaga) ? $vaga->qt_vagas : old('quantidade')}}">
             </div>
 
             <div class="form-group col-md-4">
               <label for="salario" >
                 <span class="text-danger">* </span> Salário
               </label>
-              <input type="text" name="salario" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($vaga) ? $vaga->vl_salario_vaga : old('salario')}}">
+              <input type="text" name="salario" maxlength="9" pattern="([0-9]{9})" title="Salário digitado de forma incorreta" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($vaga) ? $vaga->vl_salario_vaga : old('salario')}}">
             </div>
 
             <div class="form-group col-md-6">
