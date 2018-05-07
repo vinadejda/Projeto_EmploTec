@@ -14,12 +14,12 @@
                         <div class="col-md-8 featured-responsive">
                             <div class="detail-filter">
                                 <p>Filtro</p>
-                                <form class="filter-dropdown">
-                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                  <option selected>As mais procuradas</option>
-                  <option value="1">Um</option>
-                  <option value="2">Dois</option>
-                  <option value="3">Três</option>
+                                <form >
+                                    <select>
+                 
+                     @foreach($areasTI as $a)
+                  <option value="{{$a->cd_areaTI}}" {{(isset($vaga) && $a->cd_areaTI == $vaga->fk_area_ti) ? 'selected="selected"' : ''}}>{{$a->nm_areaTI}}</option>
+                @endforeach
                 </select>
                                 </form>
                                 <form class="filter-dropdown">

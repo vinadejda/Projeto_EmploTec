@@ -87,7 +87,7 @@
                                 <span class="text-danger">*</span>{{ __('Número') }}
                             </label>
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" name="nr" pattern="[0-9]+$" title="Número da residecia digitado de forma incorreta" maxlength="5" class="form-control" required>
+                                <input id="password-confirm" type="number" name="nr" pattern="[0-9]+$" title="Número da residecia digitado de forma incorreta" maxlength="5" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group row">

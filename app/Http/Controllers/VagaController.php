@@ -110,4 +110,6 @@ class VagaController extends Controller
 		  
 		return $params;
 	}
+	//----------------------------------PAGINA DE VAGAS--------------------------------------------
+	
 }

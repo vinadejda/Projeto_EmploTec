@@ -14,7 +14,7 @@
     <h2>Informações do Candidato</h2>  
 
       <div class="card-body">
-        <form role="form" method="post" action="{{isset($candidato) ? '/painel/candidato/dados/altera': '/painel/candidato/dados/adiciona'}}">
+        <form role="form" method="post" action="{{isset($candidato) ? '/painel/candidato/dados/altera': '/painel/candidato/dados/salva'}}">
           <fieldset>
             <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
@@ -25,7 +25,7 @@
               <label for="cpf">
                 <span class="text-danger">*</span> CPF
               </label>
-              <input type="text" name="cpf" pattern="[0-9]+$" title="CPF digitado de forma incorreta" maxlength="5" class="form-control" placeholder="Digite seu CPF" required value="{{isset($candidato) ? $candidato->cd_cpf : old('cpf')}}" 
+              <input type="text" name="cpf" pattern="[0-9]+$" title="CPF digitado de forma incorreta" maxlength="11" class="form-control" placeholder="Digite seu CPF" required value="{{isset($candidato) ? $candidato->cd_cpf : old('cpf')}}" 
               {{isset($candidato) ? 'readonly' : ''}}>
             </div>
             
@@ -86,7 +86,7 @@
               <label for="deficiencia">
                 Possui alguma deficiência?
               </label>
-              <!--
+              
               <div class="form-check form-check-inline">
                 <input class="form-check-input" name="op" type="radio"  class="form-control"  required="required" value="Sim"> 
                  <label class="form-check-label">
@@ -97,14 +97,16 @@
                   Não
                 </label>
               </div>
-            -->
+            
               <div class="form-check">
                 <select id="deficiencia" name="deficiencia" class="form-control">
-                  <option {{(isset($deficiencia) ? '' : 'selected="selected"')}}></option>
+
+                 <option {{(isset($candidato) ? '' : 'selected')}}></option>
                   @foreach($deficiencia as $d)
-                    <option value="{{isset($d) ? $d->cd_deficiencia : old('deficiencia')}}"
-                      {{(isset($d) && $d->cd_deficiencia == $candidato->fk_deficiencia) ? 'selected' : ''}}
-                      >{{$d->nm_deficiencia}}</option>
+                  
+
+                    <option value="{{ (isset($d) && $d->cd_deficiencia == isset($candidato->fk_deficiencia)) ? '' : $d->cd_deficiencia }}"> {{$d->nm_deficiencia}} </option>
+                    
                   @endforeach
               </select>
               </div>  

@@ -19,15 +19,17 @@ class CandidatoController extends Controller
     public function informacoes()
     {
         $candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->get();
+       // $deficiencia = Deficiencia::where('cd_deficiencia', $candidato->fk_deficiencia)->first();
         return view('area-user.candidato.informacoes')
-        ->with('candidato',$candidato);
+        ->with('candidato',$candidato)
+        ->with('deficiencia', Deficiencia::all());
     }
 
     public function listarDeficiencia(){
         $candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first();
-        $deficiencia = DB::select('select * from deficiencia');
+        $deficiencia = Deficiencia::all();
         return view('area-user.candidato.form')
-         ->with('candidato',$candidato)
+        ->with('candidato',$candidato)
         ->with('deficiencia', $deficiencia);
     }
 

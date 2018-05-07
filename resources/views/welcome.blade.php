@@ -51,7 +51,7 @@
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                                 <ul class="navbar-nav">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="{{ url('vagas') }}">{{ __('VAGAS') }}</a>
+                                        <a class="nav-link" href="{{ url('/vagas') }}">{{ __('VAGAS') }}</a>
                                     </li>
                                     
                                     <li class="nav-item active">

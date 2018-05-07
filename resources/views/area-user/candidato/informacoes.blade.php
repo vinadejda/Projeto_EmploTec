@@ -31,7 +31,15 @@
                                     <label><strong> Genero: </strong> {{$c->ic_genero}} </label><br>
                                     <label><strong> Data Nascimento: </strong> {{$c->dt_nascimento}} </label><br>
                                     <label><strong> Nacionalidade: </strong> {{$c->ds_nacionalidade }}</label><br>
-                                    <label><strong> Deficiencia: </strong> {{ $c->fk_deficiencia == NULL ? "Não Consta" : $c->fk_deficiencia }} </label><br>
+                                    <label><strong> Deficiencia: </strong> 
+                                        @if(!isset($c->fk_deficiencia))
+                                            Não
+                                        @else
+                                        @foreach($deficiencia as $d)
+                                            {{ $c->fk_deficiencia == $d->cd_deficiencia ? $d->nm_deficiencia : ''  }}
+                                        @endforeach
+                                        @endif
+                                         </label><br>
                                     <!--td alt="Detalhes">
                                         <a href="/painel/empresa/vagas/mostra/{{$c->cd_cpf}}"><span class="fa fa-eye" aria-hidden="true"></span></a>
                                     </td>
