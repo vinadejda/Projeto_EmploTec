@@ -12,10 +12,16 @@ use App\Models\PerfilVaga;
 
 class VagaController extends Controller
 {
-	public function __construct()
+	/*public function __construct()
 	{
 	    $this->middleware('empresa');
-	}
+	}*/
+
+	public function listarTodas()
+    {
+        return view('vagas')->with('vagas', Vaga::all());
+    }
+
     public function lista()
     {
     	$cnpj_empresa = Empresa::where('fk_usuario',auth()->guard('empresa')->user()->id)->value('cd_cnpj');

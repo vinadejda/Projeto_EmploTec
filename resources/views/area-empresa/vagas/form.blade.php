@@ -18,7 +18,7 @@
         <form role="form" method="post" 
         action="{{isset($vaga) ? '/painel/empresa/vagas/altera': '/painel/empresa/vagas/adiciona'}}">
           <fieldset>
-            <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatorio</p>
+            <p >Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
             <input type="hidden" input type="text" name="id" class="form-control" value="{{isset($vaga) ? $vaga->cd_vaga : '' }}">
 
@@ -26,7 +26,7 @@
               <label for="nome">
                 <span class="text-danger">*</span> Tema da vaga
               </label>
-              <input type="text" name="nome" pattern="[A-Za-z\s]+$" title="Nome da vaga digitado em formato invalido." maxlength="30" class="form-control" placeholder="Tema da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
+              <input type="text" name="nome" pattern="[\wÀ-ú\s]+" title="Digite apenas caracteres alfanuméricos" maxlength="30" class="form-control" placeholder="Tema da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
             </div>
             <div class="form-group col-md-6">
               <label for="areaTI">
@@ -43,7 +43,7 @@
               <label for="quantidade">
                 <span class="text-danger">* </span> Quantidade de Vagas
               </label>
-              <input name="quantidade" type="text" maxlength="3" pattern="([0-9]{3})" title="Quantidade de vagas digitado de forma encorreta" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($vaga) ? $vaga->qt_vagas : old('quantidade')}}">
+              <input name="quantidade" type="text" maxlength="3" pattern="([0-9]+)" title="Digite apenas números" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($vaga) ? $vaga->qt_vagas : old('quantidade')}}">
             </div>
 
             <div class="form-group col-md-3">
@@ -130,4 +130,10 @@
         </form>    
       </div> 
   </div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.telefone').mask("(99) 99999-9999");
+      $
+    });
+  </script>
 @endsection
