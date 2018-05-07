@@ -12,12 +12,12 @@
                         <div class="col-md-8 featured-responsive">
                             <div class="detail-filter">
                                 <p>Filtro</p>
-                                <form class="filter-dropdown">
-                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                  <option selected>As mais procuradas</option>
-                  <option value="1">Um</option>
-                  <option value="2">Dois</option>
-                  <option value="3">Três</option>
+                                <form >
+                                    <select>
+                 
+                     <?php $__currentLoopData = $areasTI; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <option value="<?php echo e($a->cd_areaTI); ?>" <?php echo e((isset($vaga) && $a->cd_areaTI == $vaga->fk_area_ti) ? 'selected="selected"' : ''); ?>><?php echo e($a->nm_areaTI); ?></option>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </select>
                                 </form>
                                 <form class="filter-dropdown">

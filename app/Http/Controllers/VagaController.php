@@ -19,7 +19,9 @@ class VagaController extends Controller
 
 	public function listarTodas()
     {
-        return view('vagas')->with('vagas', Vaga::all());
+        return view('vagas')
+        ->with('vagas', Vaga::all())
+        ->with('areasTI', AreaTI::all());
     }
 
     public function lista()
@@ -116,4 +118,6 @@ class VagaController extends Controller
 		  
 		return $params;
 	}
+	//----------------------------------PAGINA DE VAGAS--------------------------------------------
+	
 }

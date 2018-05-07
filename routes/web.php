@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
+
 Route::get('/vagas','VagaController@listarTodas');
+
+//Route::get('/vagas', 'CandidatoVagaController@visualizarVagas');
+
 
 Route::get('/empresas', function () {
     return view('empresas');
