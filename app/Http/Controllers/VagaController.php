@@ -22,15 +22,21 @@ class VagaController extends Controller
 
 	public function listarTodas()
     {
-		$cpf = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first();
-		$teste = CandidatoVaga::where('fk_candidato', $cpf->cd_cpf);
-		$t=0;
-    	if(!empty($teste))
-    	{
-    		$t = 1;
-    	}
-    	else
-    		$t =0;
+    	$t = 0;
+		if(isset(auth()->guard('web')->user()->id)){
+			
+			$cpf = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->value('cd_cpf');
+			$cpf;
+
+			/*if(CandidatoVaga::where('fk_candidato', $cpf->cd_cpf) > 0)
+
+				$t=1;
+			
+			else
+
+				$t=0;*/
+		}
+    	
         return view('vagas')
         ->with('vagas', Vaga::all())
         ->with('teste', $t)

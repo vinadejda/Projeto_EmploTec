@@ -5,9 +5,7 @@
 <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 responsive-wrap">
-                    @if(!count($vagas) > 0)
-                        <h1>Infelizmente não temos nenhuma vaga disponivel no momento!</h1>
-                    @else
+                    
                         <div class="row detail-filter-wrap">
                             
                             <div class="col-md-4 featured-responsive">
@@ -107,6 +105,9 @@
                             </div>
                         </div>
                         <div class="row light-bg detail-options-wrap">
+                        @if(!count($vagas) > 0)
+                            <p  color:  #000; >Infelizmente não temos nenhuma vaga disponivel no momento!<p>
+                        @else
                             @foreach ($vagas as $vaga)
                                <div class="col-md-3 responsive-wrap">
                                     <div class="featured-place-wrap">

@@ -15,7 +15,7 @@
           <div class="col-lg-12">
             <ul class="timeline">
               <li>
-                <div class="timeline-image">
+                <div class="timeline-image" style="z-index:-1;">
                   <img class="rounded-circle img-fluid" src="images/about/1.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
@@ -29,7 +29,7 @@
                 </div>
               </li>
               <li class="timeline-inverted">
-                <div class="timeline-image">
+                <div class="timeline-image" style="z-index:-1;" >
                   <img class="rounded-circle img-fluid" src="images/about/2.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
@@ -43,7 +43,7 @@
                 </div>
               </li>
               <li>
-                <div class="timeline-image">
+                <div class="timeline-image" style="z-index:-1;">
                   <img class="rounded-circle img-fluid" src="teste/img/about/3.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
@@ -57,7 +57,7 @@
                 </div>
               </li>
               <li class="timeline-inverted">
-                <div class="timeline-image">
+                <div class="timeline-image" style="z-index:-1;">
                   <img class="rounded-circle img-fluid" src="images/about/4.jpg" alt="">
                 </div>
                 <div class="timeline-panel">
@@ -71,7 +71,7 @@
                 </div>
               </li>
               <li class="timeline-inverted">
-                <div class="timeline-image">
+                <div class="timeline-image" style="z-index:-1;">
                   <h4>Faça parte 
                     <br>da nossa
                     <br>História!</h4>
