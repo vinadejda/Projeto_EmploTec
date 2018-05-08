@@ -293,14 +293,14 @@
                         </li>
                         
                         <li>
-                            <a href="#"><i class="fa fa-table fa-fw"></i> Vagas Candidatadas</a>
+                            <a href="{{url('painel/candidato/vagas/informacoes')}}"><i class="fa fa-table fa-fw"></i> Vagas Candidatadas</a>
                         </li>
                         <li>
                             <a href="{{url('/painel/candidato/dados/informacoes')}}"><i class="fa fa-edit fa-fw"></i> Dados Pessoais</a>
                         </li>
-                        <li>
+                        <!--li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Informações</a>
-                        </li>
+                        </li-->
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Teste</a>
                         </li>

@@ -135,7 +135,14 @@
                                                 </li>
                                             </ul>
                                             @if(auth()->guard('web')->check())
-                                                <a href="#" class="btn btn-primary">Candidatar-se</a>
+                                            @if($teste == 0)
+                                            {{$teste}}
+                                                <a href="/vagas/candidatura/{{$vaga->cd_vaga}}" class="btn btn-primary">Candidatar-se</a>
+                                                @else
+                                                {{$teste}}
+                                                <a href="/painel/candidato/vagas" class="btn btn-primary">Candidatou-se</a>
+                                                @endif
+
                                             @endif
                                             <div class="bottom-icons">
                                                 <a href="#" style="text-transform: uppercase;"><div class="open-now">Vizualizar vaga</div></a>

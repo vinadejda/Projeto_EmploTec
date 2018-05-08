@@ -1,4 +1,4 @@
-@extends('area-empresa.layout.template')
+@extends('area-user.layout.template')
 
 @section('content')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -6,15 +6,14 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <a href="{{url('/empresa/vagas/cadastro')}}" class="btn btn-primary btn-add">Cadastrar Vaga</a><br>
         <div class="panel panel-default">
             <div class="panel-heading">
-                Listagem de Vagas
+                Vagas Candidatadas
             </div>
             <div class="panel-body">
-                @if(!count($vagas) > 0)
+                @if(!count($candidato) > 0)
                     <div class="alert alert-warning">
-                        Nenhuma vaga cadastrada.
+                        Você ainda não se candidatou a nenhuma vaga.
                     </div>
                 @else
                     @if(old('nome'))

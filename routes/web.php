@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::get('/vagas','VagaController@listarTodas');
 
 //Route::get('/vagas', 'CandidatoVagaController@visualizarVagas');
+Route::get('/vagas/candidatura/{id}', 'CandidatoVagaController@adiciona')->where('id', '[0-9]+');
 
 
 Route::get('/empresas', function () {
@@ -48,33 +49,54 @@ Route::get('/painel/candidato/dashboard', function () {
 
 
 
+//-----------------------CANDIDATO------------------------------------------
+Route::group(['prefix'=>'painel/candidato'], function(){
+
+    //------------------Rotas protegidas do painel candidato-------------------
+    Route::group(['middleware' => ['web']], function(){
+
 //-----------------------DADOS PESSOAIS------------------------------------------
+        Route::group(['prefix'=>'dados'], function(){
 
+            Route::get('/informacoes', 'CandidatoController@informacoes');
+            Route::post('/salva', 'CandidatoController@adiciona');
+            Route::get('/adiciona', 'CandidatoController@listarDeficiencia');
+            Route::get('/edita', 'CandidatoController@editar');
+            Route::post('/altera', 'CandidatoController@altera');
 
-Route::get('/painel/candidato/dados/informacoes', 'CandidatoController@informacoes');
-Route::post('/painel/candidato/dados/salva', 'CandidatoController@adiciona');
-Route::get('/painel/candidato/dados/adiciona', 'CandidatoController@listarDeficiencia');
-Route::get('/painel/candidato/dados/edita', 'CandidatoController@editar');
-Route::post('/painel/candidato/dados/altera', 'CandidatoController@altera'); 
-
+        });
 
 //-----------------------------CURRICULO---------------------------------------------------------
+        Route::group(['prefix'=>'curriculo'], function(){
+            Route::get('/informacoes','CurriculoController@infoCurriculo');
+            Route::get('/adiciona', 'CurriculoController@adiciona');
+            Route::post('/salva', 'CurriculoController@salva');
+            Route::get('/edita', 'CurriculoController@edita');
+            Route::post('/altera', 'CurriculoController@altera');
 
-Route::get('/painel/candidato/curriculo/informacoes','CurriculoController@infoCurriculo');
-Route::get('/painel/candidato/curriculo/adiciona', 'CurriculoController@adiciona');
-Route::post('/painel/candidato/curriculo/salva', 'CurriculoController@salva');
-Route::get('/painel/candidato/curriculo/edita', 'CurriculoController@edita');
-Route::post('/painel/candidato/curriculo/altera', 'CurriculoController@altera');
-
-
+        });
 //------------------------------EXPERIENCIA------------------------------------------------------
+        Route::group(['prefix'=>'experiencia'], function(){
+            Route::get('/informacoes','ExperienciaController@infoExperiencia');
+            Route::get('/adiciona', 'ExperienciaController@adiciona');
+            Route::post('/salva', 'ExperienciaController@salva');
+            Route::get('/edita', 'ExperienciaController@edita');
+            Route::post('/altera', 'ExperienciaController@altera');
+            //Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
+        });
+//------------------------------EXPERIENCIA------------------------------------------------------
+        Route::group(['prefix'=>'vagas'], function(){
+            Route::get('/informacoes','CandidatoVagaController@informacoes');
+            //Route::get('/exclui', 'ExperienciaController@exclui');
+            //Route::post('/excluir', 'ExperienciaController@altera');
+            //Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
+        });
 
-Route::get('/painel/candidato/experiencia/informacoes','ExperienciaController@infoExperiencia');
-Route::get('/painel/candidato/experiencia/adiciona', 'ExperienciaController@adiciona');
-Route::post('/painel/candidato/experiencia/salva', 'ExperienciaController@salva');
-Route::get('/painel/candidato/experiencia/edita', 'ExperienciaController@edita');
-Route::post('/painel/candidato/experiencia/altera', 'ExperienciaController@altera');
-//Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
+
+
+        //Route::get('/painel/ca');
+   });
+});
 
 
 //-------------------------END ROTAS USUARIO-------------------------------------

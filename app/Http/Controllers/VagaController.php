@@ -10,6 +10,9 @@ use App\Models\Empresa;
 use App\Models\AreaTI;
 use App\Models\PerfilVaga;
 
+use App\Models\Candidato;
+use App\Models\CandidatoVaga;
+
 class VagaController extends Controller
 {
 	/*public function __construct()
@@ -19,8 +22,18 @@ class VagaController extends Controller
 
 	public function listarTodas()
     {
+		$cpf = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first();
+		$teste = CandidatoVaga::where('fk_candidato', $cpf->cd_cpf);
+		$t=0;
+    	if(!empty($teste))
+    	{
+    		$t = 1;
+    	}
+    	else
+    		$t =0;
         return view('vagas')
         ->with('vagas', Vaga::all())
+        ->with('teste', $t)
         ->with('areasTI', AreaTI::all());
     }
 
