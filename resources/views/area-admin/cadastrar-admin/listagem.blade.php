@@ -8,7 +8,8 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Lista de Administradores Cadastrados
+               <h2> Lista de Administradores Cadastrados</h2>
+               <br>
             </div>
             <div class="panel-body">
                 @if(!count($adm) > 0)

@@ -59,10 +59,11 @@
       background-size: cover;
       min-height: 800px;
     }
+
 </style>
 </head>
 <body>
-    <div class="nav-menu">
+    <nav class="nav-menu" style="z-index: 200;">
         <div class="bg transition">
             <div class="container-fluid fixed">
                 <div class="row">
@@ -183,7 +184,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
         <main>
             @yield('content')
         </main>

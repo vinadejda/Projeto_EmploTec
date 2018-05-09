@@ -41,7 +41,7 @@ class AdminController extends Controller
     }
 
     public function salva(){
-        Admin::create($this->getNewParams());
+        AdminAuth::create($this->getNewParams());
         return redirect('/painel/admin/lista');
     }
     public function adiciona(){

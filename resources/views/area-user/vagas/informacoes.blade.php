@@ -21,48 +21,32 @@
                             <strong>Sucesso!</strong> A vaga "{{old('nome')}}" foi adicionada.
                         </div>
                     @endif
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-vagas">
-                        <thead>
-                            <tr>
-                                <th>Cargo</th>
-                                <th>Nivel</th>
-                                <th>Localidade</th>
-                                <th>Salário</th>
-                                <th>Quantidade</th>
-                                <th>Data Expiração</th>
-                                <th colspan="3">Opções</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    
                             @foreach ($vagas as $vaga)
-                                <tr>
-                                    <td> {{$vaga->nm_vaga}} </td>
-                                    <td> {{$vaga->ds_nivel }}</td>
-                                    <td> {{$vaga->ds_localidade}} </td>
-                                    <td> {{$vaga->qt_vagas}} </td>
-                                    <td> {{$vaga->vl_salario_vaga }}</td>
-                                    <td> {{$vaga->dt_expiracao}} </td>
-                                    <td alt="Detalhes">
-                                        <a href="empresa/vagas/mostra/{{$vaga->cd_vaga}}"><span class="fa fa-eye" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td>
-                                        <a href="/empresa/vagas/editar/{{$vaga->cd_vaga}}" alt="Editar" class="teste"><span class="fa fa-edit" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="excluir" >
-                                        <a href="javascript:func" onclick="alertConfirmaExclusao('/empresa/vagas/remove/{{$vaga->cd_vaga}}')" alt="Excluir"><span class="fa fa-trash-o" aria-hidden="true" ></span></a>
-                                    </td>
-                                </tr>
+                                <div class="card" >
+                                    
+                                    <img class="card-img-top" src="/../images/vaga-programador.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                    <h4 class="card-title"><b>{{$vaga->nm_vaga}}</b></h4>
+                                        <p class="card-text">{{$vaga->areaTI->nm_areaTI}} </p> 
+                                        <p class="card-text">{{$vaga->ds_nivel }}</p> 
+                                        <p class="card-text">
+                                            <i class="fa fa-usd" aria-hidden="true"></i>
+                                            {{$vaga->vl_salario_vaga }}
+                                        </p>
+                                        <p>
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                {{$vaga->cidade->nm_cidade}}
+                                        </p>
+                                        <p>
+                                            <i class="fa fa-sitemap" aria-hidden="true"></i>
+                                            {{$vaga->empresa->ds_razao_social}}
+                                        </p>
+                                    <a href="#" class="btn btn-primary">Visualizar Vaga</a>
+                                  </div>
+                                </div>
+                                                
                             @endforeach
-                        </tbody>
-                    </table>
-                    <script>
-                        function alertConfirmaExclusao(link) {
-                            var acao = confirm("Deseja realmente excluir este registro?")
-                            if (acao){
-                                window.location = link;
-                            }
-                        }
-                    </script>
                 @endif
             </div>
         </div>

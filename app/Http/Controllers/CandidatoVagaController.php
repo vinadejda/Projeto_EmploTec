@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Vaga;
 use App\Models\Candidato;
 use App\Models\CandidatoVaga;
+use App\Models\Cidade;
+use App\Models\Estado;
+use App\Models\AreaTI;
 
 
 class CandidatoVagaController extends Controller
@@ -27,6 +30,9 @@ class CandidatoVagaController extends Controller
 
 		return view('area-user.vagas.informacoes')
 		->with('candidato', $candidato)
+		//->with('cidades', Cidade::all())
+		//->with('estado', Estado::all())
+		->with('areasTI', AreaTI::all())
 		->with('vagas', Vaga::all());
 	}
 

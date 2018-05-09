@@ -39,9 +39,7 @@
               <label for="pergunta">
                 <span class="text-danger">*</span> <b>Pergunta</b>
               </label>
-              <textarea name="pergunta" class="form-control" id="pergunta" rows="3" placeholder="Escreva a sua pergunta" required>
-                {{isset($pergunta) ? $pergunta->ds_pergunta : old('pergunta')}} 
-              </textarea>
+              <textarea name="pergunta" class="form-control" id="pergunta" rows="3" placeholder="Escreva a sua pergunta" required>{{isset($pergunta) ? $pergunta->ds_pergunta : old('pergunta')}}</textarea>
               <input type="hidden"  name="cd_pergunta" class="form-control" value="{{ isset($pergunta) ? $pergunta->cd_pergunta : '' }}">
             </div>
           </div>

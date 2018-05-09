@@ -50,7 +50,7 @@
               <label for="salario" >
                 <span class="text-danger">* </span> Salário
               </label>
-              <input type="text" name="salario"  maxlength="9" pattern="([0-9]{9})" title="Salário digitado de forma encorreta" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($vaga) ? $vaga->vl_salario_vaga : old('salario')}}">
+              <input type="text" name="salario" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($vaga) ? $vaga->vl_salario_vaga : old('salario')}}">
             </div>
 
             <div class="form-group col-md-3">

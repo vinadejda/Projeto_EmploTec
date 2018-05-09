@@ -25,7 +25,7 @@
               <label for="cpf">
                 <span class="text-danger">*</span> CPF
               </label>
-              <input type="text" name="cpf" pattern="[0-9]+$" title="CPF digitado de forma incorreta" maxlength="11" class="form-control" placeholder="Digite seu CPF" required value="{{isset($candidato) ? $candidato->cd_cpf : old('cpf')}}" 
+              <input type="text" name="cpf"  maxlength="11" class="form-control" placeholder="Digite seu CPF" required value="{{isset($candidato) ? $candidato->cd_cpf : old('cpf')}}" 
               {{isset($candidato) ? 'readonly' : ''}}>
             </div>
             
@@ -50,14 +50,14 @@
               <label for="dt_nascimento">
                 <span class="text-danger">* </span> Data de nascimento
               </label>
-              <input type="date" name="dt_nascimento" maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="01-01-1930" max="31-12-2018" class="form-control" required="required" value="{{isset($candidato) ? $candidato->dt_nascimento : old('dt_nascimento')}}">
+              <input type="date" name="dt_nascimento" maxlength="10"  min="01-01-1930" max="31-12-2017" class="form-control" required="required" value="{{isset($candidato) ? $candidato->dt_nascimento : old('dt_nascimento')}}">
             </div>
 
             <div class="form-group col-md-3">
               <label for="nacionalidade" >
                 Nacionalidade
               </label>
-              <input type="text" name="nacionalidade" pattern="[A-Za-z\s]+$" title="Nacionalidade digitado em formato invalido." maxlength="20" class="form-control" placeholder="Digite sua nacionalidade" value="{{isset($candidato) ? $candidato->ds_nacionalidade : old('nacionalidade')}}">
+              <input type="text" name="nacionalidade" pattern="[A-Za-z\s]+$" maxlength="20" class="form-control" placeholder="Digite sua nacionalidade" value="{{isset($candidato) ? $candidato->ds_nacionalidade : old('nacionalidade')}}">
             </div>
 
             <div class="form-group col-md-3">

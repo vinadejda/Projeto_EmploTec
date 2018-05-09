@@ -28,14 +28,14 @@
                 <label for="nome">
                   <span class="text-danger">*</span> Nome
                 </label>
-                <input type="text" name="nome" class="form-control" pattern="[A-Za-z\s]+$" title="Nome digitado em formato invalido." maxlength="45" placeholder="Nome da Empresa" value="{{$usuario->name}}" required>
+                <input type="text" name="nome" class="form-control"  placeholder="Nome da Empresa" value="{{$usuario->name}}" required>
               </div>
               
               <div class="form-group col-md-6">
                 <label for="email">
                   <span class="text-danger">*</span> Email
                 </label>
-                <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email digitado de maneira encorreta." maxlength="45" class="form-control" placeholder="Email da Empresa"  value="{{$usuario->email}}" required>
+                <input type="email" name="email"  class="form-control" placeholder="Email da Empresa"  value="{{$usuario->email}}" required>
               </div>
               <!--
               <div class="form-group col-md-6">
@@ -61,40 +61,40 @@
                 <label for="cnpj">
                   <span class="text-danger">*</span> CNPJ
                 </label>
-                <input type="text" name="cnpj" pattern="[0-9]+$" title="CNPJ digitado em formato invalido." maxlength="14" class="form-control" placeholder="CNPJ" value="{{$empresa->cd_cnpj}}" readonly required>
+                <input type="text" name="cnpj" class="form-control" placeholder="CNPJ" value="{{$empresa->cd_cnpj}}" readonly required>
               </div>
 
               <div class="form-group col-md-8">
                 <label for="rz_social">
                   <span class="text-danger">*</span> Razão Social
                 </label>
-                <input type="text" name="rz_social" pattern="[A-Za-z\s]+$" title="Razão Social digitado em formato invalido." maxlength="30" class="form-control" placeholder="Digite a Razão Social"  value="{{$empresa->ds_razao_social}}" required>
+                <input type="text" name="rz_social"  class="form-control" placeholder="Digite a Razão Social"  value="{{$empresa->ds_razao_social}}" required>
               </div>
 
               <div class="form-group col-md-6">
                 <label for="rua">
                   <span class="text-danger">*</span> Rua
                 </label>
-                <input type="text" name="rua"  pattern="[A-Za-z0-9\s]+$" title="Endereço digitado de forma encorreta" maxlength="45" class="form-control" placeholder="Digite o endereço"  value="{{$usuario->ds_rua}}" required>
+                <input type="text" name="rua"   class="form-control" placeholder="Digite o endereço"  value="{{$usuario->ds_rua}}" required>
               </div>
 
               <div class="form-group col-md-3">
                 <label for="nr-endereco">
                   <span class="text-danger">*</span> nº
                 </label>
-                <input type="text" name="nr-endereco" pattern="[0-9]+$" title="Número da residecia digitado de forma encorreta" maxlength="5" class="form-control" placeholder="Digite o número do endereço" value="{{$usuario->nr_endereco}}" required>
+                <input type="text" name="nr-endereco" class="form-control" placeholder="Digite o número do endereço" value="{{$usuario->nr_endereco}}" required>
               </div>
 
               <div class="form-group col-md-3">
                 <label for="complemento">Complemento</label>
-                <input type="text" name="complemento" pattern="[A-Za-z\s]+$" title="Complemento digitado de forma encorreta" maxlength="50" class="form-control" placeholder="Digite o complemento"  value="{{$usuario->ds_complemento}}">
+                <input type="text" name="complemento"  class="form-control" placeholder="Digite o complemento"  value="{{$usuario->ds_complemento}}">
               </div>
 
               <div class="form-group col-md-3">
                 <label for="bairro">
                   <span class="text-danger">*</span> Bairro
                 </label>
-                <input type="text" name="bairro" pattern="[A-Za-z\s]+$" title="Bairro digitado em formato invalido." maxlength="45" class="form-control" placeholder="Digite o bairro"  value="{{$usuario->ds_bairro}}" required>
+                <input type="text" name="bairro"  class="form-control" placeholder="Digite o bairro"  value="{{$usuario->ds_bairro}}" required>
               </div>
         
               <div class="form-group col-md-3">
@@ -110,12 +110,12 @@
               </div>
               <div class="form-group col-md-3">
                 <label for="tel">Telefone</label>
-                <input type="tel" name="tel" maxlength="11" pattern="\([0-9]{2}\) [0-9]{4,4}-[0-9]{3,4}+$" class="form-control" placeholder="Digite o telefone" value="{{$usuario->nr_tel}}">
+                <input type="tel" name="tel"  class="form-control" placeholder="Digite o telefone" value="{{$usuario->nr_tel}}">
               </div>
 
               <div class="form-group col-md-3">
                 <label for="celular">Celular</label>
-                <input type="tel" name="celular"  maxlength="11" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}+$" class="form-control" placeholder="Digite o celular" value="{{$usuario->nr_cel}}">
+                <input type="tel" name="celular"   class="form-control" placeholder="Digite o celular" value="{{$usuario->nr_cel}}">
               </div>
             </fieldset>
             <br>

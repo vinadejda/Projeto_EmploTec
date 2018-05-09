@@ -26,7 +26,7 @@
               <label for="nome">
                 <span class="text-danger">*</span> Nome
               </label>
-              <input type="text" name="nome" pattern="[A-Za-z\s]+$" title="Nome digitado em formato invalido." maxlength="20" class="form-control" placeholder="Nome do perfil" required value="{{isset($perfil) ? $perfil->nm_perfil_vaga : old('nome')}}">
+              <input type="text" name="nome"  maxlength="20" class="form-control" placeholder="Nome do perfil" required value="{{isset($perfil) ? $perfil->nm_perfil_vaga : old('nome')}}">
             </div>
 
             <div class="form-group col-md-6">
@@ -63,14 +63,14 @@
               <label for="idade">
                 <span class="text-danger">*</span> Idade
               </label>
-              <input type="number" name="idade" pattern="[0-9]+$" title="Número da residecia digitado de forma incorreta" maxlength="5" class="form-control" placeholder="Digite a idade desejada" required min="14" max="90" value="{{isset($perfil) ? $perfil->nr_idade : old('idade')}}">
+              <input type="number" name="idade"  class="form-control" placeholder="Digite a idade desejada" required min="14" max="90" value="{{isset($perfil) ? $perfil->nr_idade : old('idade')}}">
             </div>
 
             <div class="form-group col-md-5">
               <label for="formacao">
                 <span class="text-danger">* </span> Formação
               </label>
-              <input type="text" name="formacao"  pattern="[A-Za-z\s]+$" title="Nome digitado em formato invalido." maxlength="250" class="form-control" placeholder="Digite a formação desejada" required="required" value="{{isset($perfil) ? $perfil->ds_formacao : old('formacao')}}">
+              <input type="text" name="formacao"   class="form-control" placeholder="Digite a formação desejada" required="required" value="{{isset($perfil) ? $perfil->ds_formacao : old('formacao')}}">
               <!--<select id="formacao" name="areaTI" class="form-control" required="required">
                 <option {{(isset($perfil) ? '' : 'selected="selected"')}}></option>
                 <option value="Cursando curso técnico" {{(isset($perfil) && 'Cursando curso técnico' == $perfil->ds_formacao) ? 'selected="selected"' : ''}}>Estágio</option>
@@ -81,7 +81,7 @@
             </div>
             <div class="form-group col-md-12">
               <label for="competencia">Competências</label>
-              <textarea name="competencia"  pattern="[A-Za-z\s]+$" maxlength="300" class="form-control" placeholder="Digite as competências desejadas" rows="2" >{{isset($perfil) ? $perfil->ds_interresse : old('competencia')}}</textarea>
+              <textarea name="competencia"   rows="2" >{{isset($perfil) ? $perfil->ds_interresse : old('competencia')}}</textarea>
             </div>
           </fieldset>
           <div class="form-group col-md-8">
