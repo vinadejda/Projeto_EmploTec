@@ -12,6 +12,7 @@ use App\Models\AreaTI;
 
 class CandidatoVagaController extends Controller
 {
+
     public function adiciona($id)
 	{
 		$vaga = Vaga::where('cd_vaga', $id)->first();
@@ -34,6 +35,14 @@ class CandidatoVagaController extends Controller
 		//->with('estado', Estado::all())
 		->with('areasTI', AreaTI::all())
 		->with('vagas', Vaga::all());
+	}
+
+	public function cancela($id)
+	{
+		$cpf = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first();
+		CandidatoVaga::where('fk_candidato', '=', $cpf->cd_cpf)->where('fk_vaga', '=', $id)->delete();
+
+        return redirect('/vagas');
 	}
 
 

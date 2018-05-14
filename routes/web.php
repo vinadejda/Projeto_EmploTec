@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/vagas','VagaController@listarTodas');
 
 //Route::get('/vagas', 'CandidatoVagaController@visualizarVagas');
-Route::get('/vagas/candidatura/{id}', 'CandidatoVagaController@adiciona')->where('id', '[0-9]+');
+
 
 
 Route::get('/empresas', function () {
@@ -87,6 +87,8 @@ Route::group(['prefix'=>'painel/candidato'], function(){
 //------------------------------EXPERIENCIA------------------------------------------------------
         Route::group(['prefix'=>'vagas'], function(){
             Route::get('/informacoes','CandidatoVagaController@informacoes');
+            Route::get('/candidatura/{id}', 'CandidatoVagaController@adiciona')->where('id', '[0-9]+');
+            Route::get('/cancelar/{id}', 'CandidatoVagaController@cancela')->where('id', '[0-9]+');
             //Route::get('/exclui', 'ExperienciaController@exclui');
             //Route::post('/excluir', 'ExperienciaController@altera');
             //Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');

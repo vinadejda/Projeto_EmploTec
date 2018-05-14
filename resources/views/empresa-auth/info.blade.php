@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin-top: 12%;margin-bottom: 12%;">
         <div class="col-md-8">
             @foreach ($errors->all() as $error)
             <p class="alert alert-danger">{{ $error }}</p>

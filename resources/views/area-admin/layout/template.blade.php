@@ -170,7 +170,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Bem - Vind@, {{ auth()->guard('admin')->user()->name }}</li>
+        <li class="breadcrumb-item active">Bem - Vind@, </li>
       </ol>
       @yield('content')
       </div>

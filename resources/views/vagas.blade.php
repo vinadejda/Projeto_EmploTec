@@ -136,14 +136,25 @@
                                                 </li>
                                             </ul>
                                             @if(auth()->guard('web')->check())
-                                            @if($teste == 0)
-                                            {{$teste}}
-                                                <a href="/vagas/candidatura/{{$vaga->cd_vaga}}" class="btn btn-primary">Candidatar-se</a>
-                                                @else
-                                                {{$teste}}
-                                                <a href="/painel/candidato/vagas" class="btn btn-primary">Candidatou-se</a>
-                                                @endif
-
+                                               
+                                                    @for($i = 0; $i< sizeOf($result); $i++)
+                                                    
+                                                    
+                                                        @if($result[$i]->fk_vaga == $vaga->cd_vaga )
+                                                            
+                                                            <a href="/painel/candidato/vagas/cancelar/{{$vaga->cd_vaga}}" class="btn btn-danger">  Cancelar Cadastro</a>
+                                                            @break
+                                                           
+                                                        @elseif($i == sizeOf($result)-1)
+                                                            <a href="/painel/candidato/vagas/candidatura/{{$vaga->cd_vaga}}" class="btn btn-primary">Candidatar-se</a>
+                                                               
+                                                         @endif
+                                                        
+                                                    @endfor
+                                                    
+                                                
+                                               
+                                                        
                                             @endif
                                             <div class="bottom-icons">
                                                 <a href="#" style="text-transform: uppercase;"><div class="open-now">Vizualizar vaga</div></a>

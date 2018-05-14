@@ -26,7 +26,7 @@
               <label for="nome">
                 <span class="text-danger">*</span> Tema da vaga
               </label>
-              <input type="text" name="nome" pattern="[\wÀ-ú\s]+" title="Digite apenas caracteres alfanuméricos" maxlength="30" class="form-control" placeholder="Tema da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
+              <input type="text" name="nome" maxlength="30" class="form-control" placeholder="Tema da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
             </div>
             <div class="form-group col-md-6">
               <label for="areaTI">
@@ -43,7 +43,7 @@
               <label for="quantidade">
                 <span class="text-danger">* </span> Quantidade de Vagas
               </label>
-              <input name="quantidade" type="text" maxlength="3" pattern="([0-9]+)" title="Digite apenas números" min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($vaga) ? $vaga->qt_vagas : old('quantidade')}}">
+              <input name="quantidade" type="text" maxlength="3"  min="0" max="100" class="form-control" placeholder="Quantidade de vagas" required="required" value="{{isset($vaga) ? $vaga->qt_vagas : old('quantidade')}}">
             </div>
 
             <div class="form-group col-md-3">

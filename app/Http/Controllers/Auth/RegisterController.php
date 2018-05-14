@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Models\Cidade;
 use App\Models\Estado;
+//use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -51,9 +52,21 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'name' => 'required|regex:/(^[A-Za-z \']+$)+/|max:45',
+            'email' => 'required|string|email|max:45|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'rua' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/|max:45',
+            'nr' => 'required|numeric',
+            'bairro' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/|max:45',
+            'complemento' => 'nullable|regex:/(^[A-Za-z0-9 ]+$)+/|max:45',
+            'tel' => 'nullable|numeric|max:11',
+            'celular' => 'nullable|numeric|max:12',
+            'img' => 'nullable|image|max:250',
+            'linkedin' => 'nullable|url|max:45',
+            'facebook' => 'nullable|url|max:45',
+            'twitter' => 'nullable|url|max:45',
+            'portifolio' => 'nullable|url|max:45',
+            'cidade' => ''
         ]);
     }
 

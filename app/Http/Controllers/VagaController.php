@@ -26,20 +26,24 @@ class VagaController extends Controller
 		if(isset(auth()->guard('web')->user()->id)){
 			
 			$cpf = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->value('cd_cpf');
-			$cpf;
-
-			/*if(CandidatoVaga::where('fk_candidato', $cpf->cd_cpf) > 0)
+			$result  = CandidatoVaga::where('fk_candidato', $cpf)->get();
+			$tes = CandidatoVaga::where('fk_candidato', $cpf)->get();
+			$teste = $result->count();
+			if($teste > 0)
 
 				$t=1;
 			
 			else
 
-				$t=0;*/
+				$t=0;
 		}
     	
         return view('vagas')
         ->with('vagas', Vaga::all())
         ->with('teste', $t)
+        ->with('flag', 0)
+        //->with('candidato', $cpf)
+        ->with('result', $tes)
         ->with('areasTI', AreaTI::all());
     }
 

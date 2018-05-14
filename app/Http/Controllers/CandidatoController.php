@@ -8,6 +8,7 @@ use App\Models\Candidato;
 use App\Models\Deficiencia;
 use App\Models\Cidade;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\CandidatoRequest;
 
 class CandidatoController extends Controller
 {
@@ -33,9 +34,18 @@ class CandidatoController extends Controller
         ->with('deficiencia', $deficiencia);
     }
 
-    public function adiciona(){
-        Candidato::create($this->getParams());
-        return redirect('/painel/candidato/dados/informacoes')->withInput(Request::only('cpf'));
+    public function adiciona(CandidatoRequest $request){
+        Candidato::create([
+            'cpf' =>  $request->cd_cpf, 
+            'ds_estado_civil' => $request->estado_civil, 
+            'ic_genero' => $request->genero, 
+            'dt_nascimento' =>  $request->dt_nascimento, 
+            'ds_nacionalidade' =>  $request->nacionalidade,  
+            'fk_usuario' => auth()->guard('web')->user()->id, 
+            'fk_deficiencia' => $request->deficiencia,
+        ]);
+        //Candidato::create($this->getParams());
+        return redirect('/painel/candidato/dados/informacoes')->withInput(Request::only('cd_cpf'));
     }
     public function editar(){
     	$candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first();
@@ -57,16 +67,16 @@ class CandidatoController extends Controller
     }
 */
 
-    public function getParams(){
+    public function getParams(CandidatoRequest $request){
     	//$cpf = Candidato::where('cd_cpf', auth()->guard('web')->user()->id)->value('cd_cpf');
 		$params = [
-			'cd_cpf' =>  Request::input('cpf'), 
-			'ds_estado_civil' => Request::input('estado_civil'), 
-			'ic_genero' => Request::input('genero'), 
-			'dt_nascimento' =>  Request::input('dt_nascimento'), 
-			'ds_nacionalidade' =>  Request::input('nacionalidade'),  
+			'cd_cpf' =>  $request->cpf, 
+			'ds_estado_civil' => $request->estado_civil, 
+			'ic_genero' => $request->genero, 
+			'dt_nascimento' =>  $request->dt_nascimento, 
+			'ds_nacionalidade' =>  $request->nacionalidade,  
 			'fk_usuario' => auth()->guard('web')->user()->id, 
-			'fk_deficiencia' => Request::input('deficiencia'),
+			'fk_deficiencia' => $request->deficiencia,
 		];
 		return $params;
 	}

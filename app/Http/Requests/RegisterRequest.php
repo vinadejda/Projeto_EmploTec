@@ -24,21 +24,20 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:45',
-            'email' => 'required|email|max:45',
-            'password' => 'required|max:60',
-            'password-confirm' => 'required|max:60',
-            'rua' => 'required|max:45',
-            'nr' => 'required|numeric|max:5',
-            'bairro' => 'required|max:45',
-            'complemento' => 'max:45'
-            'tel' => 'numeric|max:11'
-            'celular' => 'numeric|max:11'
-            'img' => 'max:250'
-            'linkedin' => 'max:45'
-            'facebook' => 'max:45'
-            'twitter' => 'max:45'
-            'portifolio' => 'max:45'
+            'name' => 'required|regex:/(^[A-Za-z \']+$)+/|max:45',
+            'email' => 'required|string|email|max:45|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+            'rua' => 'required|regex:/(^[A-Za-z0-9 \']+$)+/|max:45',
+            'nr' => 'required|numeric',
+            'bairro' => 'required|regex:/(^[A-Za-z0-9 \']+$)+/|max:45',
+            'complemento' => 'nullable|regex:/(^[A-Za-z0-9 \']+$)+/|max:45',
+            'tel' => 'nullable|numeric|max:11',
+            'celular' => 'nullable|numeric|max:12',
+            'img' => 'nullable|image|max:250',
+            'linkedin' => 'nullable|url|max:45',
+            'facebook' => 'nullable|url|max:45',
+            'twitter' => 'nullable|url|max:45',
+            'portifolio' => 'nullable|url|max:45',
             'cidade' => ''
         ];
     }

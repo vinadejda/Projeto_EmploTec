@@ -10,23 +10,27 @@
     <link rel="icon" href="{{ asset('../images/logoVetor.png') }}" type="image/x-icon">
     <title>{{ __('EmployTec') }}</title>
 
+
  <!-- Scripts -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+        
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
 <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('../css/bootstrap.min.css') }}">
     <!-- Google Fonts -->
-    <!--link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet"-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
     <!-- Simple line Icon -->
     <link rel="stylesheet" href="{{ asset('../css/simple-line-icons.css') }}">
     <!-- Themify Icon -->
     <link rel="stylesheet" href="{{ asset('../css/themify-icons.css') }}">
     <!-- Hover Effects -->
-    <link rel="stylesheet" href="{{ asset('../css/set1.css') }}">
+    <!--link rel="stylesheet" href="{{ asset('../css/set1.css') }}"-->
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('../css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('../scss/style.scss') }}">
 
     <link href="{{ asset('css/agency.min.css') }} " rel="stylesheet">
 
@@ -34,7 +38,7 @@
 
 
 
- <link href="{{ asset('css/agency.min.css') }}" rel="stylesheet">
+ <!--link href="{{ asset('css/agency.min.css') }}" rel="stylesheet"-->
 
 
 
@@ -61,6 +65,13 @@
     }
 
 </style>
+<script src="{{ asset('js/jquery.mask.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.mask.min.js') }}">
+     $(document).ready(function(){
+        $('#telefone').mask('(000) 0000-0000');
+    });
+</script>
+
 </head>
 <body>
     <nav class="nav-menu" style="z-index: 200;">
@@ -70,7 +81,7 @@
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="{{ url('/') }}">
-                                <img  width="25%;" src="{{ asset('../images/logo.png') }}">
+                                <img  width="25%;" src="{{ asset('../images/logo.png') }}" alt="Logo EmployTec">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
@@ -185,13 +196,13 @@
             </div>
         </div>
     </nav>
-        <main>
+        <main class="container">
             @yield('content')
         </main>
     </div>
     
     <!--= FOOTER =-->
-    <footer class="main-block dark-bg">
+    <footer class=" dark-bg">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -236,6 +247,9 @@
 
             };
         });
+
+   
+
     </script>
     </body>
 </html>
