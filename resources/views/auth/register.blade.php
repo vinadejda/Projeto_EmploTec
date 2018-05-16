@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <section style="margin-top: -8%;">
     <h1 style="color: #000; font-size: 2.8em; font-weight: 300;">{{ __('Cadastro do Candidato') }}</h1>
      <p>Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
@@ -141,7 +142,7 @@
 
                     <div class="form-group col-md-3">
                         <label for="telefone">{{ __('Telefone') }}</label>
-                        <input id="telefone" type="tel"  class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" maxlength="12" pattern="\([0-9]{3}\) [0-9]{4,5}-[0-9]{4}$" placeholder="(012) 3456-7890" title="(012) 3456-7890" title="(012) 3456-7890">
+                        <input id="telefone" type="tel"  class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" maxlength="12" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}$" placeholder="(12) 3456-7890" title="(12) 3456-7890">
                         @if ($errors->has('telefone'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('telefone') }}</strong>
@@ -151,7 +152,7 @@
 
                     <div class="form-group col-md-3">
                         <label for="celular">{{ __('Celular') }}</label>            
-                        <input id="celular"   type="tel" class="form-control{{ $errors->has('celular') ? ' is-invalid' : '' }}" name="celular" value="{{ old('celular') }}" maxlength="12" pattern="\([0-9]{3}\) [0-9]{4,5}-[0-9]{4}$" placeholder="(012) 34567-8901" title="(012) 93456-7890" title="(012) 93456-7890">
+                        <input id="celular"   type="tel" class="form-control{{ $errors->has('celular') ? ' is-invalid' : '' }}" name="celular" value="{{ old('celular') }}" maxlength="12" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}$" placeholder="(12) 34567-8901" title="(12) 93456-7890">
                             @if ($errors->has('celular'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('celular') }}</strong>
