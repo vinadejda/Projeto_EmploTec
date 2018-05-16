@@ -17,7 +17,7 @@
               <label for="cpf">
                 <span class="text-danger">*</span> CPF
               </label>
-              <input type="text" name="cd_cpf"  maxlength="11" class="form-control{{ $errors->has('cd_cpf') ? ' is-invalid' : '' }}" placeholder="Digite seu CPF" required value="{{isset($candidato) ? $candidato->cd_cpf : old('cd_cpf')}}" 
+              <input type="text" name="cd_cpf" id="cpf"  maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="123.456.789-10" class="form-control{{ $errors->has('cd_cpf') ? ' is-invalid' : '' }}" placeholder="Digite seu CPF" required value="{{isset($candidato) ? $candidato->cd_cpf : old('cd_cpf')}}" 
               {{isset($candidato) ? 'readonly' : ''}} value="{{ old('cd_cpf') }}" >
                 @if ($errors->has('cd_cpf'))
                   <span class="invalid-feedback">
@@ -53,7 +53,7 @@
               <label for="dt_nascimento">
                 <span class="text-danger">* </span> Data de nascimento
               </label>
-              <input type="date" name="dt_nascimento" maxlength="10" class="form-control{{ $errors->has('dt_nascimento') ? ' is-invalid' : '' }}" required="required" value="{{isset($candidato) ? $candidato->dt_nascimento : old('dt_nascimento')}}" value="{{ old('dt_nascimento') }}" >
+              <input type="date" name="dt_nascimento" id="dataNascimento" maxlength="12" pattern="((0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" title="14/11/1997" class="form-control{{ $errors->has('dt_nascimento') ? ' is-invalid' : '' }}" required="required" value="{{isset($candidato) ? $candidato->dt_nascimento : old('dt_nascimento')}}" value="{{ old('dt_nascimento') }}" >
                 @if ($errors->has('dt_nascimento'))
                   <span class="invalid-feedback">
                     <strong>{{ $errors->first('dt_nascimento') }}</strong>

@@ -26,7 +26,7 @@
               <label for="nome">
                 <span class="text-danger">*</span> Tema da vaga
               </label>
-              <input type="text" name="nome" maxlength="30" class="form-control" placeholder="Tema da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
+              <input type="text" name="nome" maxlength="30" pattern="[a-zA-Z\s\']+" class="form-control" placeholder="Tema da vaga" required="required" value="{{isset($vaga) ? $vaga->nm_vaga : old('nome')}}">
             </div>
             <div class="form-group col-md-6">
               <label for="areaTI">
@@ -50,7 +50,7 @@
               <label for="salario" >
                 <span class="text-danger">* </span> Salário
               </label>
-              <input type="text" name="salario" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($vaga) ? $vaga->vl_salario_vaga : old('salario')}}">
+              <input type="text" id="salario" name="salario" class="form-control" placeholder="Salario de vagas" required="required"  value="{{isset($vaga) ? $vaga->vl_salario_vaga : old('salario')}}">
             </div>
 
             <div class="form-group col-md-3">

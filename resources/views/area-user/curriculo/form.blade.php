@@ -30,7 +30,7 @@
               <label for="vl_salario">
                 Pretensão Salarial
               </label>
-              <input type="number" name="vl_salario" maxlength="10" class="form-control" placeholder="Digite sua pretensão salarial" value="{{isset($curriculo) ? $curriculo->vl_prentencao_salarial : old('vl_salario')}}">
+              <input type="text" name="vl_salario" id="salario" maxlength="50" class="form-control" placeholder="Digite sua pretensão salarial" value="{{isset($curriculo) ? $curriculo->vl_prentencao_salarial : old('vl_salario')}}">
             </div>
             
             <div class="form-group col-md-6">

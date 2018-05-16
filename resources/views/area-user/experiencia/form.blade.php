@@ -52,7 +52,7 @@
               <label for="salario" >
                 Salário
               </label>
-              <input type="number" name="salario" class="form-control" placeholder="Digite o salário"  value="{{isset($exp) ? $exp->vl_salario : old('salario')}}">
+              <input type="text" name="salario" id="salario" class="form-control" placeholder="Digite o salário"  value="{{isset($exp) ? $exp->vl_salario : old('salario')}}">
             </div>
 
             <div class="form-group col-md-4">

@@ -26,6 +26,25 @@
     <link href="{{ asset('../vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
     <link href="{{ asset('../css/geral.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.mask.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function($){
+            $('#telefone').mask('(00) 0000-0000');
+            $('#celular').mask('(00) 0000-00009');
+            $('#celular').blur(function(event){
+                if ($(this).val().length == 15){
+                      $('#celular').mask('(00) 00000-0009');  
+                }else{
+                    $('#celular').mask('(00) 0000-00009');
+                }
+                })
+            $("#cpf").mask("000.000.000-00");
+            $("#salario").mask("###.##0,00", {reverse: true});
+
+        });
+    </script>
 </head>
 
 <body>

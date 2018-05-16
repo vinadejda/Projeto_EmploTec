@@ -26,14 +26,14 @@
               <label for="nome">
                 <span class="text-danger">*</span> Nome
               </label>
-              <input type="text" name="nome"  maxlength="20" class="form-control" placeholder="Nome do perfil" required value="{{isset($perfil) ? $perfil->nm_perfil_vaga : old('nome')}}">
+              <input type="text" name="nome"  maxlength="20" pattern="[a-zA-Z\s\']+" class="form-control" placeholder="Nome do perfil" required value="{{isset($perfil) ? $perfil->nm_perfil_vaga : old('nome')}}">
             </div>
 
             <div class="form-group col-md-6">
               <label for="vaga">
                 <span class="text-danger">* </span> Vaga
               </label>
-              <select id="vaga" name="vaga" class="form-control" required>
+              <select id="vaga" name="vaga" maxlength="20" pattern="[a-zA-Z\s\']+" class="form-control" required>
               	<option {{(isset($perfil) ? '' : 'selected')}}></option>
                 @foreach($vagas as $v)
                   <option value="{{$v->cd_vaga}}" {{(isset($perfil) && $v->cd_vaga == $id_vaga) ? 'selected' : ''}}>{{$v->nm_vaga}}</option>
@@ -70,7 +70,7 @@
               <label for="formacao">
                 <span class="text-danger">* </span> Formação
               </label>
-              <input type="text" name="formacao"   class="form-control" placeholder="Digite a formação desejada" required="required" value="{{isset($perfil) ? $perfil->ds_formacao : old('formacao')}}">
+              <input type="text" name="formacao" maxlength="45" pattern="[a-zA-Z\s\']+" class="form-control" placeholder="Digite a formação desejada" required="required" value="{{isset($perfil) ? $perfil->ds_formacao : old('formacao')}}">
               <!--<select id="formacao" name="areaTI" class="form-control" required="required">
                 <option {{(isset($perfil) ? '' : 'selected="selected"')}}></option>
                 <option value="Cursando curso técnico" {{(isset($perfil) && 'Cursando curso técnico' == $perfil->ds_formacao) ? 'selected="selected"' : ''}}>Estágio</option>
