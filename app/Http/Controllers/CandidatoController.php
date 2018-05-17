@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Candidato;
 use App\Models\Deficiencia;
 use App\Models\Cidade;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
-use App\Http\Requests\CandidatoRequest;
+//use App\Http\Requests\CandidatoRequest;
 
 class CandidatoController extends Controller
 {
@@ -33,10 +34,35 @@ class CandidatoController extends Controller
         ->with('candidato',$candidato)
         ->with('deficiencia', $deficiencia);
     }
+   /* protected function validator(array $data)
+    {
+        $data['cd_cpf'] = str_replace(['.', '-'], '', Request::input('cd_cpf'));
+        return Validator::make($data, [
+            'cd_cpf' => 'required|number|max:14|unique:candidato',
+            'estado_civil' => 'required|alpha|email|max:10',
+            'igenero' => 'required|alpha|max:45',
+            'dt_nascimento' => 'required|date|before:2016-12-31',
+            'nacionalidade' => 'nullable|alpha|max:45',
+            'deficiencia' => 'nullable|numeric|max:1'
+        ]);
+    }*/
 
-    public function adiciona(CandidatoRequest $request){
+   
+
+    public function create(Request $request){
+        //$cpf = str_replace(['.', '-'], '', Request::input('cd_cpf'));
+        $request['cd_cpf'] = str_replace(['.', '-'], '', $request['cd_cpf']);
+        $this->validate($request, [
+            //'cd_cpf' => 'required|numeric|unique:candidato',
+            'estado_civil' => 'required|alpha|email|max:10',
+            'igenero' => 'required|alpha|max:45',
+            'dt_nascimento' => 'required|date|before:2016-12-31',
+            'nacionalidade' => 'nullable|alpha|max:45',
+            'deficiencia' => 'nullable|numeric|max:1'
+        ]);
+        print_r($request['cd_cpf']);
         Candidato::create([
-            'cpf' =>  $request->cd_cpf, 
+            'cd_cpf' => $request->cd_cpf, 
             'ds_estado_civil' => $request->estado_civil, 
             'ic_genero' => $request->genero, 
             'dt_nascimento' =>  $request->dt_nascimento, 
@@ -67,7 +93,8 @@ class CandidatoController extends Controller
     }
 */
 
-    public function getParams(CandidatoRequest $request){
+    /*public function getParams(CandidatoRequest $request){
+        $request->cpf =  str_replace(['.', '-'], 'replace', $this->request->get('cd_cpf'));
     	//$cpf = Candidato::where('cd_cpf', auth()->guard('web')->user()->id)->value('cd_cpf');
 		$params = [
 			'cd_cpf' =>  $request->cpf, 
@@ -79,5 +106,5 @@ class CandidatoController extends Controller
 			'fk_deficiencia' => $request->deficiencia,
 		];
 		return $params;
-	}
+	}*/
 }

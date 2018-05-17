@@ -18,7 +18,7 @@
                         <label for="name" >
                             <span class="text-danger" >*</span>{{ __('Nome Completo') }}
                         </label>
-                        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" maxlength="45" pattern="[a-zA-Z\s\']+" placeholder="Digite o seu nome" oninvalid="setCustomValidity('Somente Letras!')" onchange="try{setCustomValidity('')}catch(e){}" title="Somente Letras!">
+                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" maxlength="45" pattern="[a-zA-ZÀ-ú\s\']+" placeholder="Digite o seu nome" oninvalid="setCustomValidity('Somente Letras!')" onchange="try{setCustomValidity('')}catch(e){}" title="Somente Letras!">
 
                             @if ($errors->has('name'))
                                 <span class="invalid-feedback">
@@ -63,7 +63,7 @@
 
                 <div class="form-group">
                     <label for="imagem">{{ __('Imagem de Perfil') }}</label>
-                    <input id="imagem" class="form-control{{ $errors->has('img0') ? ' is-invalid' : '' }}" type="file"  name="img" title="Formatos permitidos: .JPEG .JPG .PNG">
+                    <input id="imagem" class="form-control{{ $errors->has('img') ? ' is-invalid' : '' }}" type="file"  name="img" title="Formatos permitidos: .JPEG .JPG .PNG">
                         @if ($errors->has('img'))
                             <span class="invalid-feedback">
                                 <strong>{{ $errors->first('img') }}</strong>
@@ -76,7 +76,7 @@
                         <label for="endereco">
                             <span class="text-danger">*</span>{{ __('Endereço') }}
                         </label>
-                        <input id="endereco" type="text"  class="form-control{{ $errors->has('rua') ? ' is-invalid' : '' }}" name="rua" required value="{{ old('rua') }}" pattern="[a-zA-Z0-9\s]+" maxlength="45" placeholder="Digite o seu Endereço"  oninvalid="setCustomValidity('Somente Letras e Números!')" onchange="try{setCustomValidity('')}catch(e){}">
+                        <input id="endereco" type="text"  class="form-control{{ $errors->has('rua') ? ' is-invalid' : '' }}" name="rua" required value="{{ old('rua') }}" pattern="[a-zA-ZÀ-úçÇ0-9\s]+" maxlength="45" placeholder="Digite o seu Endereço"  oninvalid="setCustomValidity('Somente Letras e Números!')" onchange="try{setCustomValidity('')}catch(e){}">
                             @if ($errors->has('rua'))
                                 <span class="invalid-feedback">
                                     <strong>{{ $errors->first('rua') }}</strong>
@@ -143,9 +143,9 @@
                     <div class="form-group col-md-3">
                         <label for="telefone">{{ __('Telefone') }}</label>
                         <input id="telefone" type="tel"  class="form-control{{ $errors->has('telefone') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" maxlength="12" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}$" placeholder="(12) 3456-7890" title="(12) 3456-7890">
-                        @if ($errors->has('telefone'))
+                        @if ($errors->has('tel'))
                                 <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('telefone') }}</strong>
+                                    <strong>{{ $errors->first('tel') }}</strong>
                                 </span>
                             @endif
                     </div>

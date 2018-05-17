@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Models\Cidade;
 use App\Models\Estado;
-//use App\Http\Requests\RegisterRequest;
+use Request;
 
 class RegisterController extends Controller
 {
@@ -51,17 +51,19 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $data['tel'] = str_replace(['(', ')' , ' ', '-'], '', Request::input('tel'));
+        $data['celular'] = str_replace(['(', ')' , ' ', '-'], '', Request::input('celular'));
         return Validator::make($data, [
-            'name' => 'required|regex:/(^[A-Za-z \']+$)+/|max:45',
+            'name' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º °]+$)+/|max:45',
             'email' => 'required|string|email|max:45|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'rua' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/|max:45',
+            'password' => 'required|string|min:6|max:60|confirmed',
+            'rua' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
             'nr' => 'required|numeric',
-            'bairro' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/|max:45',
-            'complemento' => 'nullable|regex:/(^[A-Za-z0-9 ]+$)+/|max:45',
-            'tel' => 'nullable|numeric|max:11',
-            'celular' => 'nullable|numeric|max:12',
-            'img' => 'nullable|image|max:250',
+            'bairro' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
+            'complemento' => 'nullable|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
+            'tel' => 'nullable|numeric',
+            'celular' => 'nullable|numeric',
+            'img' => 'nullable|image|max:250',  
             'linkedin' => 'nullable|url|max:45',
             'facebook' => 'nullable|url|max:45',
             'twitter' => 'nullable|url|max:45',
@@ -80,6 +82,9 @@ class RegisterController extends Controller
     
     protected function create(array $data)
     {
+        $data['tel'] = str_replace(['(', ')' , ' ', '-'], '', Request::input('tel'));
+        $data['celular'] = str_replace(['(', ')' , ' ', '-'], '', Request::input('celular'));
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

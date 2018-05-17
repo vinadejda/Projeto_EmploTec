@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cadastro</title>
+<script type="text/javascript" src="src/jquery.js"></script>
+<script type="text/javascript" src="src/jquery.maskedinput.js"></script>
+<script>
+    jQuery(function($){
+       $(".data input").mask("99/99/9999");
+       $("#telefone input").mask("9999-9999");
+    });
+</script>
+</head>
+<body>
+<form action="">
+    <div class="data">
+        <label for="">Campo 1:</label>
+        <input type="text">
+    </div>
+    <div id="telefone">
+        <label for="">Campo 2:</label>
+        <input type="text">
+    </div>
+    <div class="">
+        <label for="">Campo 3:</label>
+        <input type="text">
+    </div>
+    <div class="">
+        <label for="">Campo 4:</label>
+        <input type="text">
+    </div>
+    <div class="">
+        <label for="">Campo 5:</label>
+        <input type="text">
+    </div>
+</form>
+</body>
+</html>

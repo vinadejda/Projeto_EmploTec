@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+//use Request;
 
 class CandidatoRequest extends FormRequest
 {
@@ -23,8 +24,9 @@ class CandidatoRequest extends FormRequest
      */
     public function rules()
     {
+        //$this->request->merge(['cd_cpf'] => str_replace(['.', '-'], 'replace', $this->request->get('cd_cpf')));
         return [
-            'cd_cpf' => 'required|alpha-num|max:11|unique:candidato',
+            'cd_cpf' => 'required|string|max:14|unique:candidato',
             'estado_civil' => 'required|alpha|email|max:10',
             'igenero' => 'required|alpha|max:45',
             'dt_nascimento' => 'required|date|before:2016-12-31',
@@ -33,4 +35,5 @@ class CandidatoRequest extends FormRequest
            
         ];
     }
+   
 }

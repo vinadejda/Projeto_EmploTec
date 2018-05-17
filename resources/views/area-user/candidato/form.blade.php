@@ -65,7 +65,7 @@
               <label for="nacionalidade" >
                 Nacionalidade
               </label>
-              <input type="text" name="nacionalidade"  maxlength="20" class="form-control{{ $errors->has('nacionalidade') ? ' is-invalid' : '' }}" placeholder="Digite sua nacionalidade" value="{{isset($candidato) ? $candidato->ds_nacionalidade : old('nacionalidade')}}" value="{{ old('nacionalidade') }}" >
+              <input type="text" name="nacionalidade" pattern="[a-zA-ZÀ-ú\s\']+" maxlength="20" class="form-control{{ $errors->has('nacionalidade') ? ' is-invalid' : '' }}" placeholder="Digite sua nacionalidade" value="{{isset($candidato) ? $candidato->ds_nacionalidade : old('nacionalidade')}}" value="{{ old('nacionalidade') }}" >
                 @if ($errors->has('nacionalidade'))
                   <span class="invalid-feedback">
                     <strong>{{ $errors->first('nacionalidade') }}</strong>

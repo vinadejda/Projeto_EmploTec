@@ -59,7 +59,7 @@ Route::group(['prefix'=>'painel/candidato'], function(){
         Route::group(['prefix'=>'dados'], function(){
 
             Route::get('/informacoes', 'CandidatoController@informacoes');
-            Route::post('/salva', 'CandidatoController@adiciona');
+            Route::post('/salva', 'CandidatoController@create');
             Route::get('/adiciona', 'CandidatoController@listarDeficiencia');
             Route::get('/edita', 'CandidatoController@editar');
             Route::post('/altera', 'CandidatoController@altera');
