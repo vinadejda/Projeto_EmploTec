@@ -50,17 +50,15 @@ class CandidatoController extends Controller
    
 
     public function create(Request $request){
-        //$cpf = str_replace(['.', '-'], '', Request::input('cd_cpf'));
-        $request['cd_cpf'] = str_replace(['.', '-'], '', $request['cd_cpf']);
+        $request->cd_cpf = str_replace(['.', '-'], '', $request->cd_cpf);
         $this->validate($request, [
-            //'cd_cpf' => 'required|numeric|unique:candidato',
-            'estado_civil' => 'required|alpha|email|max:10',
-            'igenero' => 'required|alpha|max:45',
+            'estado_civil' => 'required|alpha|max:10',
+            'genero' => 'required|alpha|max:45',
             'dt_nascimento' => 'required|date|before:2016-12-31',
             'nacionalidade' => 'nullable|alpha|max:45',
             'deficiencia' => 'nullable|numeric|max:1'
         ]);
-        print_r($request['cd_cpf']);
+       
         Candidato::create([
             'cd_cpf' => $request->cd_cpf, 
             'ds_estado_civil' => $request->estado_civil, 
@@ -71,7 +69,7 @@ class CandidatoController extends Controller
             'fk_deficiencia' => $request->deficiencia,
         ]);
         //Candidato::create($this->getParams());
-        return redirect('/painel/candidato/dados/informacoes')->withInput(Request::only('cd_cpf'));
+        return redirect('/painel/candidato/dados/informacoes')->withInput($request->only('cd_cpf'));
     }
     public function editar(){
     	$candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first();

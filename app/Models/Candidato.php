@@ -30,4 +30,8 @@ class Candidato extends Model
     public function experiencia(){
     	return $this->belongsTo('App/Models/Candidato', 'fk_candidato', 'cd_cpf');
     }
+
+    public function candidatoVaga(){
+        return $this->belongsToMany('App\Models\CandidatoVaga','fk_candidato', 'cd_cpf');
+    }
 }

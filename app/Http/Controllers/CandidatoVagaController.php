@@ -27,14 +27,10 @@ class CandidatoVagaController extends Controller
 	public function informacoes()
 	{
 		$cpf = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first();
-		$candidato = CandidatoVaga::where('fk_candidato', $cpf->cd_cpf)->get();
+		$vagas = CandidatoVaga::where('fk_candidato', $cpf->cd_cpf)->get();
 
 		return view('area-user.vagas.informacoes')
-		->with('candidato', $candidato)
-		//->with('cidades', Cidade::all())
-		//->with('estado', Estado::all())
-		->with('areasTI', AreaTI::all())
-		->with('vagas', Vaga::all());
+		->with('vagasCandidato', $vagas);
 	}
 
 	public function cancela($id)

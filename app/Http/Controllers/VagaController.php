@@ -36,6 +36,8 @@ class VagaController extends Controller
 			else
 
 				$t=0;
+		}else{
+			$tes = null;
 		}
     	
         return view('vagas')

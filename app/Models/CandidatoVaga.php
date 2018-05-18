@@ -13,5 +13,10 @@ class CandidatoVaga extends Model
     	'fk_vaga',
     ];
     
-    
+    public function candidato(){
+        return $this->hasOne('App\Models\Candidato', 'cd_cpf','fk_candidato');
+    }
+    public function vaga(){
+        return $this->hasOne('App\Models\Vaga', 'cd_vaga','fk_vaga');
+    }
 }

@@ -41,4 +41,8 @@ class Vaga extends Model
     public function perfilVaga(){
         return $this->belongsTo('App\Models\PerfilVaga','fk_vaga', 'cd_vaga');
     }
+
+    public function candidatoVaga(){
+        return $this->belongsToMany('App\Models\CandidatoVaga','fk_vaga', 'cd_vaga');
+    }
 }

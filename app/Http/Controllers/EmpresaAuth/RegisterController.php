@@ -83,7 +83,7 @@ class RegisterController extends Controller
             'link_linkedin' => $data['linkedin'],
             'link_facebook' => $data['facebook'],
             'link_twitter' => $data['twitter'],
-            'link_site' => $data['portifolio'],
+            'link_site' => $data['site'],
             'fk_cidade' => $data['cidade'],
         ]);   
     }

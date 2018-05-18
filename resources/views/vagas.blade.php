@@ -136,7 +136,7 @@
                                                 </li>
                                             </ul>
                                             @if(auth()->guard('web')->check())
-                                               
+                                                @if(sizeOf($result) > 0)
                                                     @for($i = 0; $i< sizeOf($result); $i++)
                                                     
                                                     
@@ -147,14 +147,11 @@
                                                            
                                                         @elseif($i == sizeOf($result)-1)
                                                             <a href="/painel/candidato/vagas/candidatura/{{$vaga->cd_vaga}}" class="btn btn-primary">Candidatar-se</a>
-                                                               
                                                          @endif
-                                                        
                                                     @endfor
-                                                    
-                                                
-                                               
-                                                        
+                                                @else
+                                                    <a href="/painel/candidato/vagas/candidatura/{{$vaga->cd_vaga}}" class="btn btn-primary">Candidatar-se</a>
+                                                @endif  
                                             @endif
                                             <div class="bottom-icons">
                                                 <a href="#" style="text-transform: uppercase;"><div class="open-now">Vizualizar vaga</div></a>
