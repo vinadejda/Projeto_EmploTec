@@ -76,11 +76,10 @@
             }else{
                 $('#celular').mask('(00) 0000-00009');
             }
-            })
+            });
         $("#cpf").mask("000.000.000-00");
         $("#salario").mask("###.##0,00", {reverse: true});
-
-    });
+});
 </script>
 
 </head>
