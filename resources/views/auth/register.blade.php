@@ -207,7 +207,6 @@
                     </div>
                 </div>
             </fieldset>
-
             <button type="submit" class="btn btn-success" style="margin-left: 35%;">{{ __('Cadastrar') }}</button>
             <button type="reset" class="btn btn-warning">{{ __('Limpar') }}</button>
             <a href="{{ url('/') }}" class="btn btn-danger">{{ __('Cancelar') }}</a>
