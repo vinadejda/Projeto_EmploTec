@@ -83,7 +83,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if (!empty($data['tel']))
-            str_replace(['(', ')' , ' ', '-'], '', Request::input('tel'));
+            $data['tel'] = str_replace(['(', ')' , ' ', '-'], '', Request::input('tel'));
         if (!empty($data['celular']))
             $data['celular'] = str_replace(['(', ')' , ' ', '-'], '', Request::input('celular'));
 

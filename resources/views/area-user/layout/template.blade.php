@@ -259,14 +259,13 @@
                 </li>
                 -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>{{ Auth::guard('web')->user()->name }} <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="/painel/candidato/dados/adiciona"><i class="fa  fa-edit fa-fw"></i>Dados Cadastrais</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
+                        <!--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Configurações</a></li>-->
                         <li class="divider"></li>
                         <li> 
                             <a class="dropdown-item" href="{{ route('logout') }}"

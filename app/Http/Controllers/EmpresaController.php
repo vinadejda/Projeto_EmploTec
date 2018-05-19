@@ -3,19 +3,30 @@
 namespace App\Http\Controllers;
 
 use Auth;
-use Session;
-use Request;
+use Illuminate\Http\Request;
 use App\Models\Cidade;
 use App\Models\Empresa;
 use App\Models\EmpresaAuth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class EmpresaController extends Controller
 {
-    public function cadastrar(){
+    public function cadastrar(Request $request){
+
+        $request->cd_cnpj = str_replace(['.', '/', '-'], '', $request->cd_cnpj);
+        /*$this->validate($request, [
+            'cd_cnpj' => 'required|numeric|max:14|unique',
+            'ds_razao_social' => 'required|alpha|max:45',
+        ]);*/
+
 	    if (auth()->guard('empresa')->check()) {
-	        Empresa::create($this->getParamsEmpresa());
-	        return redirect('painel/empresa/');
+	        Empresa::create([
+            'cd_cnpj' =>  $request->cd_cnpj, 
+            'ds_razao_social' => $request->rz_social, 
+            'fk_usuario' =>  auth()->guard('empresa')->user()->id
+        ]);
+	         return redirect('painel/empresa/dashboard')->withInput($request->only('cd_cnpj'));
 	    }  
 	}
 
@@ -36,10 +47,17 @@ class EmpresaController extends Controller
         EmpresaAuth::where('id', $id)->update($paramsUser);
         return redirect()->action('EmpresaController@editar');
     }
-    public function getParamsEmpresa(){
+    public function getParamsEmpresa(Request $request){
+        $request->cd_cnpj = str_replace(['.', '/', '-'], '', $request->cd_cnpj);
+        /*$this->validate($request, [
+            'cd_cnpj' => 'required|num|max:14|unique',
+            'ds_razao_social' => 'required|alpha|max:45',
+        ]);*/
+        //'bairro' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
+
         $params = [
-            'cd_cnpj' =>  Request::input('cnpj'), 
-            'ds_razao_social' => Request::input('rz_social'), 
+            'cd_cnpj' =>  $request->cd_cnpj, 
+            'ds_razao_social' => $request->rz_social, 
             'fk_usuario' =>  auth()->guard('empresa')->user()->id            
         ];
         return $params;

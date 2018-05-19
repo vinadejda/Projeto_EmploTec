@@ -130,7 +130,7 @@ Route::group(['prefix'=>'painel/empresa'], function(){
 
     //------------------Rotas protegidas do painel empresa-------------------
     Route::group(['middleware' => ['empresa']], function(){
-        Route::get('/', function(){return view('area-empresa.dashboard.index');})->name('dashboard-empresa');
+        Route::get('/dashboard', function(){return view('area-empresa.dashboard.index');})->name('dashboard-empresa');
         Route::group(['prefix'=>'/vagas'], function(){
             Route::get('/','VagaController@lista');
             Route::get('/cadastro', 'VagaController@novo');
@@ -153,8 +153,8 @@ Route::group(['prefix'=>'painel/empresa'], function(){
             Route::get('/editar/{id}', 'PerfilVagaController@editar')->where('id', '[0-9]+');
         });
         //Empresa Info
-        Route::get('info', ['as' => 'empresa.info','uses' => 'EmpresaController@showRegistrationInfoForm']);
-        Route::post('info', ['uses' => 'EmpresaController@cadastrar'])->name('cadastro-empresa');
+        Route::get('/info', ['as' => 'empresa.info','uses' => 'EmpresaController@showRegistrationInfoForm']);
+        Route::post('/info', ['uses' => 'EmpresaController@cadastrar'])->name('cadastro-empresa');
         Route::get('/editar', 'EmpresaController@editar');
         Route::post('/alterar', 'EmpresaController@altera');
     });
