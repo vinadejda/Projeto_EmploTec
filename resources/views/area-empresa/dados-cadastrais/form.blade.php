@@ -79,10 +79,10 @@
               </div>
 
               <div class="form-group col-md-3">
-                <label for="nr-endereco">
+                <label for="nr">
                   <span class="text-danger">*</span> nº
                 </label>
-                <input type="text" name="nr-endereco" class="form-control"  pattern="[0-9]+$" maxlength="5" placeholder="Digite o número do endereço" value="{{$usuario->nr_endereco}}" required>
+                <input type="text" name="nr" class="form-control"  pattern="[0-9]+$" maxlength="5" placeholder="Digite o número do endereço" value="{{$usuario->nr_endereco}}" required>
               </div>
 
               <div class="form-group col-md-3">
