@@ -213,7 +213,7 @@
     </div>
     
     <!--= FOOTER =-->
-    <footer class=" dark-bg">
+    <footer class=" dark-bg footer navbar-fixed-bottom>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

@@ -11,6 +11,7 @@
     <title>{{ __('EmployTec') }}</title>
 
     <!-- Bootstrap Core CSS -->
+    
     <link href="{{ asset('../vendor/bootstrap/css/bootstrap.min2.css') }}" rel="stylesheet">
     <!-- MetisMenu CSS -->
     <link href="{{ asset('../vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
@@ -45,6 +46,24 @@
 
         });
     </script>
+    <style type="text/css">
+        .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated.form-control:invalid {
+                border-color: #dc3545;
+            }
+        .invalid-feedback{
+            display:none;
+            margin-top:.25rem;
+            font-size:.875rem;
+            color:#dc3545
+        }
+        .custom-select.is-invalid~.invalid-feedback, .custom-select.is-invalid~.invalid-tooltip, .form-control.is-invalid~.invalid-feedback, .form-control.is-invalid~.invalid-tooltip, .was-validated .custom-select:invalid~.invalid-feedback, .was-validated .custom-select:invalid~.invalid-tooltip, .was-validated .form-control:invalid~.invalid-feedback, .was-validated .form-control:invalid~.invalid-tooltip {
+            display: block;
+        }
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+    </style>
 </head>
 
 <body>

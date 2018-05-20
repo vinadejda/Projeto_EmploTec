@@ -15,10 +15,10 @@ class EmpresaController extends Controller
     public function cadastrar(Request $request){
 
         $request->cd_cnpj = str_replace(['.', '/', '-'], '', $request->cd_cnpj);
-        /*$this->validate($request, [
+        $this->validate($request, [
             'cd_cnpj' => 'required|numeric|max:14|unique',
-            'ds_razao_social' => 'required|alpha|max:45',
-        ]);*/
+            'ds_razao_social' => 'required|alpha_num|max:45',
+        ]);
 
 	    if (auth()->guard('empresa')->check()) {
 	        Empresa::create([

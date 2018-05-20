@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use App\Models\Vaga;
 use App\Models\Cidade;
 use App\Models\Empresa;
@@ -74,10 +76,53 @@ class VagaController extends Controller
     		->with('areasTI',AreaTI::all());
     }
 
-	public function adiciona(){
-		Vaga::create($this->getParams());
-    	return redirect()->action('VagaController@lista')->withInput(Request::only('nome'));
+	public function adiciona(Request $request){
+		$empresa = (
+			!empty($request->empresa) > 0 ? 
+			$request->empresa : 
+			Empresa::where('fk_usuario',auth()->guard('empresa')->user()->id)->value('cd_cnpj')
+		);
+		
+		$request->salario = str_replace(['.', ','], '', $request->salario);
+
+        $this->validate($request, [
+            'nome' => 'required|alpha|max:14',
+            //'ds_razao_social' => 'required|alpha_num|max:45',
+			'nivel' => 'required|alpha', 
+			'dataExpiracao' =>  'required|date|after:today', 
+			'quantidade' =>  'required|numeric', 
+			'salario' => 'required|numeric', 
+			'beneficios[0]' => 'boleano', 
+			'beneficios[1]' =>'boleano', 
+			'beneficios[2]' => 'boleano', 
+			'beneficios[3]' => 'boleano', 
+			'beneficios[4]' => 'boleano', 
+			'contratacao' => 'nullable|alpha',
+			'empresa' => 'required|numeric|',  
+			'areaTI' => 'required|numeric',
+			'cidade' => 'required|numeric',
+        ]);
+    
+			Vaga::create(
+				$this->getParams()
+			/*[
+			'nm_vaga' =>  $request->nome, 
+			'ds_nivel' => $request->nivel, 
+			'dt_expiracao' =>  $request->dataExpiracao, 
+			'qt_vagas' =>  $request->quantidade, 
+			'vl_salario_vaga' => $request->salario, 
+			'ic_vale_transporte' => (empty($beneficios[0]) ? false : true), 
+			'ic_vale_alimentacao' => (empty($beneficios[1]) ? false : true), 
+			'ic_plano_saude' => (empty($beneficios[2]) ? false : true), 
+			'ic_plano_dentario' => (empty($beneficios[3]) ? false : true), 
+			'ic_seguro_vida' => (empty($beneficios[4]) ? false : true), 
+			'nm_contratacao' => $request->contratacao,
+			'fk_empresa' => $empresa,  
+			'fk_area_ti' => Request::input('areaTI'),
+			'fk_cidade' => Request::input('cidade')]*/);
+    	return redirect('/painel/empresa/vagas')->withInput(Request::only('nome'));
     }
+    
     public function editar($id){
     	$vaga = Vaga::where('cd_vaga', $id)->first();
         return view('area-empresa.vagas.form')
@@ -124,6 +169,7 @@ class VagaController extends Controller
 				}
 			}
 		}
+
 		$params = [
 			'nm_vaga' =>  Request::input('nome'), 
 			'ds_nivel' => Request::input('nivel'), 

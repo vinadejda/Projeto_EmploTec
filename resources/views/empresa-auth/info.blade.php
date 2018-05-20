@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <section style="margin-top: -8% !important; margin-bottom: -7.9% !important; margin: 0 auto; width: 600px;">
+  <section style="margin-top: -8% !important;  margin: 0 auto; width: 600px;">
     <h1 style="color: #000; font-size: 2.8em; font-weight: 300;">{{ __('Mais Informações') }}</h1>
     <p>Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
                     

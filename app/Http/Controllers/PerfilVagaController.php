@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+//use Request;
 use App\Models\Vaga;
 use App\Models\Empresa;
 use App\Models\PerfilVaga;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class PerfilVagaController extends Controller
 {
@@ -34,9 +36,17 @@ class PerfilVagaController extends Controller
         return view('area-empresa.perfil-vaga.listagem')->with('perfis', $perfilVagas);
     }
 
-    public function adiciona(){
+    public function adiciona(Request $request){
+        $this->validate($request, [
+            'nome' => 'required|alpha|',
+            'genero' => 'required|alpha',
+            'idade' => 'required|numeric',
+            'competencia' => 'required|alpha_num|max:45',
+            'formacao' => 'required|alpha',
+            'vaga' => 'required|numeric',
+        ]);
 		PerfilVaga::create($this->getParams());
-    	return redirect()->action('PerfilVagaController@lista')->withInput(Request::only('nome'));
+    	return redirect()->action('PerfilVagaController@lista')->withInput($request->nome);
     }
 
     public function editar($id){
