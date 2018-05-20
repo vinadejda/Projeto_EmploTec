@@ -208,7 +208,7 @@ Route::group(['prefix'=>'painel/admin'], function(){
         Route::post('/perfil/altera', 'AdminController@altera');
         Route::get('/lista', 'AdminController@listaAdmin');
         Route::get('/cadastrarnovo', 'AdminController@adiciona');
-        Route::post('/perfil/salva', 'AdminController@salva');
+        Route::post('/salva', 'AdminController@salva');
         Route::post('/listaradmin', 'AdminController@salva');
         Route::get('/remove/{id}', 'AdminController@remove')->where('id', '[0-9]+');
         Route::get('/mostra/{id}', 'AdminController@mostra')->where('id', '[0-9]+');

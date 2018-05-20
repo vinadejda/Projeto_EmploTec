@@ -29,7 +29,7 @@
                                     <label><strong> Descrição: </strong> {{$e->ds_experiencia}} </label><br>
                                     <label><strong> Nome da Empresa: </strong> {{$e->nm_empresa}} </label><br>
                                     <label><strong> Segmento: </strong> {{$e->ds_segmento_empresa }}</label><br>
-                                    <label><strong> Salário: </strong> {{$e->vl_salario}},00 </label><br>
+                                    <label><strong> Salário: </strong> {{$e->vl_salario}} </label><br>
                                     <label><strong> Inicio: </strong> {{$e->dt_inicio_experiencia}} </label><br>
                                     <label><strong> Termino: </strong> {{(!isset($e->dt_termino_experiencia)) ? "Atual"  : $e->dt_termino_experiencia }} </label><br>
                                

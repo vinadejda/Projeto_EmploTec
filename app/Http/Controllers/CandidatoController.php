@@ -30,7 +30,7 @@ class CandidatoController extends Controller
     public function listarDeficiencia(){
         $candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first();
         $deficiencia = Deficiencia::all();
-        return view('area-user.candidato.form')
+        return view('auth.form')
         ->with('candidato',$candidato)
         ->with('deficiencia', $deficiencia);
     }
@@ -52,10 +52,10 @@ class CandidatoController extends Controller
     public function create(Request $request){
         $request->cd_cpf = str_replace(['.', '-'], '', $request->cd_cpf);
         $this->validate($request, [
-            'estado_civil' => 'required|alpha|max:10',
-            'genero' => 'required|alpha|max:45',
+            'estado_civil' => 'required|regex:/(^[A-Za-z]+$)+/|max:10',
+            'genero' => 'required|regex:/(^[A-Za-z]+$)+/|max:45',
             'dt_nascimento' => 'required|date|before:2016-12-31',
-            'nacionalidade' => 'nullable|alpha|max:45',
+            'nacionalidade' => 'nullable|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/|max:45',
             'deficiencia' => 'nullable|numeric|max:1'
         ]);
        

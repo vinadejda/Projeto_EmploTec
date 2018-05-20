@@ -29,9 +29,9 @@
 
             <div class="form-group col-md-6">
               <label for="descricao">
-                Descrição
+                <span class="text-danger">*</span> Descrição
               </label>
-              <input type="text" name="descricao" maxlength="300" class="form-control" placeholder="Descreva sobre suas funções" value="{{isset($exp) ? $exp->ds_experiencia : old('descricao')}}">
+              <input type="text" name="descricao" maxlength="300" class="form-control" placeholder="Descreva sobre suas funções" value="{{isset($exp) ? $exp->ds_experiencia : old('descricao')}}" required>
             </div>
 
             <div class="form-group col-md-4">

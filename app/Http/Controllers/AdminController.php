@@ -6,6 +6,8 @@ use Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\AdminAuth;
 use App\Models\AreaTI;
+use App\Models\Cidade;
+use App\Models\Estado;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -17,10 +19,24 @@ class AdminController extends Controller
 
     protected function validator(array $data)
     {
+        $data['tel'] = str_replace(['(', ')' , ' ', '-'], '', Request::input('telefone'));
+        $data['celular'] = str_replace(['(', ')' , ' ', '-'], '', Request::input('celular'));
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'name' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º °]+$)+/|max:45',
+            'email' => 'required|string|email|max:45|unique:users',
+            'password' => 'required|string|min:6|max:60|confirmed',
+            'endereco' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
+            'nr' => 'required|numeric',
+            'bairro' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
+            'complemento' => 'nullable|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
+            'telefone' => 'nullable|numeric',
+            'celular' => 'nullable|numeric',
+            'img' => 'nullable|image|max:250',  
+            'linkedin' => 'nullable|url|max:45',
+            'facebook' => 'nullable|url|max:45',
+            'twitter' => 'nullable|url|max:45',
+            'portifolio' => 'nullable|url|max:45',
+            'cidade' => ''
         ]);
     }
 
@@ -45,14 +61,18 @@ class AdminController extends Controller
         return redirect('/painel/admin/lista');
     }
     public function adiciona(){
-        return view('area-admin.cadastrar-admin.form');
+        return view('area-admin.cadastrar-admin.form')
+        ->with('estado', Estado::all())
+        ->with('cidade', Cidade::all());
     }
 
 
     public function edita(){
         $admin = AdminAuth::where('id', auth()->guard('admin')->user()->id)->first();
         return view('area-admin.informacao-admin.form')
-        ->with('admin',$admin);
+        ->with('admin',$admin)
+        ->with('estado', Estado::all())
+        ->with('cidade', Cidade::all());
     }
 
     public function altera(){
@@ -78,18 +98,19 @@ class AdminController extends Controller
     }
 
      public function getNewParams(){
-       
+        $tel = str_replace(['(', ')' , ' ', '-'], '', Request::input('telefone'));
+        $celular = str_replace(['(', ')' , ' ', '-'], '', Request::input('celular'));
         $params = [
             'name' => Request::input('nome'),
             'email' => Request::input('email'),
             'password' => Hash::make(Request::input('password')),
-            'ds_rua' => Request::input('rua'),
+            'ds_rua' => Request::input('endereco'),
             'nr_endereco' => Request::input('numero'),
             'ds_bairro' => Request::input('bairro'),
             'ds_complemento' => Request::input('complemento'),
-            'nr_tel' => Request::input('telefone'),
+            'nr_tel' => $tel,
             'nl_user' => 1,
-            'nr_cel' => Request::input('celular'),
+            'nr_cel' => $celular,
             'im_perfil' => Request::input('img'),
             'link_linkedin' => Request::input('linkedin'),
             'link_facebook' => Request::input('facebook'),
@@ -99,18 +120,20 @@ class AdminController extends Controller
         return $params;
     }
     public function getParams(){
+        $tel = str_replace(['(', ')' , ' ', '-'], '', Request::input('telefone'));
+        $celular = str_replace(['(', ')' , ' ', '-'], '', Request::input('celular'));
         $usuario = AdminAuth::where('id', auth()->guard('admin')->user()->id)->first();
         $params = [
             'name' => Request::input('nome'),
             'email' => $usuario->email,
             'password' => $usuario->password,
-            'ds_rua' => Request::input('rua'),
+            'ds_rua' => Request::input('endereco'),
             'nr_endereco' => Request::input('numero'),
             'ds_bairro' => Request::input('bairro'),
             'ds_complemento' => Request::input('complemento'),
-            'nr_tel' => Request::input('telefone'),
+            'nr_tel' => $tel,
             'nl_user' => $usuario->nl_user,
-            'nr_cel' => Request::input('celular'),
+            'nr_cel' => $celular,
             'im_perfil' => Request::input('img'),
             'link_linkedin' => Request::input('linkedin'),
             'link_facebook' => Request::input('facebook'),

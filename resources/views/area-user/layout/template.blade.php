@@ -41,7 +41,7 @@
                 }
                 })
             $("#cpf").mask("000.000.000-00");
-            $("#salario").mask("###.##0,00", {reverse: true});
+            $("#salario").mask("##.##0,00", {reverse: true});
 
         });
     </script>

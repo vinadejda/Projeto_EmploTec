@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Experiencia;
 use App\Models\Candidato;
@@ -27,8 +27,35 @@ class ExperienciaController extends Controller
         ->with('exp',$exp);
     }
 
-    public function salva(){
-        Experiencia::create($this->getParams());
+    public function salva(Request $request){
+        $salario = str_replace(['.'], '', $request->salario);
+        $salario = str_replace([','], '.', $salario);
+         $this->validate($request, [
+            'cargo' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/|max:100',
+            'descricao' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/',
+            'segmento' => 'nullable|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç ]+$)+/|max:250',
+            'dataInicio' => 'required|date',
+            'dataTermino' => 'nullable|date',
+            'empresa' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç ]+$)+/|max:250',
+            'resumo' => 'nullable|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/',
+            
+        ]);
+        
+
+
+        $cpf = Candidato::where('fk_usuario',auth()->guard('web')->user()->id)->first();
+        //$candidato =  Experiencia::where('fk_candidato', $teste)->first();
+
+        Experiencia::create([
+            'nm_cargo_experiencia' =>  $request->cargo, 
+            'ds_experiencia' => $request->descricao, 
+            'nm_empresa' => $request->empresa, 
+            'ds_segmento_empresa' => $request->segmento, 
+            'vl_salario' =>  $salario, 
+            'dt_inicio_experiencia' => $request->dataInicio, 
+            'dt_termino_experiencia' => $request->dataTermino, 
+            'fk_candidato' => $cpf->cd_cpf,
+        ]);
         return redirect('/painel/candidato/experiencia/informacoes');
     }
     public function adiciona(){
@@ -46,10 +73,34 @@ class ExperienciaController extends Controller
         //->with('deficiencia',Deficiencia::all());
     }
 
-    public function altera(){
-        $params = $this->getParams();
-        Experiencia::where('fk_candidato', $this->getCpf())->update($params);
-        return redirect()->action('ExperienciaController@infoExperiencia')->withInput(Request::only('cpf'));
+    public function altera(Request $request){
+         $salario = str_replace(['.'], '', $request->salario);
+        $salario = str_replace([','], '.', $salario);
+         $this->validate($request, [
+            'cargo' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/|max:100',
+            'descricao' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/',
+            'segmento' => 'nullable|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç ]+$)+/|max:250',
+            'dataInicio' => 'required|date',
+            'dataTermino' => 'nullable|date',
+            'empresa' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç ]+$)+/|max:250',
+            'resumo' => 'nullable|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/',
+            
+        ]);
+        
+
+
+        $cpf = Candidato::where('fk_usuario',auth()->guard('web')->user()->id)->first();
+        Experiencia::where('fk_candidato', $this->getCpf())->update([
+            'nm_cargo_experiencia' =>  $request->cargo, 
+            'ds_experiencia' => $request->descricao, 
+            'nm_empresa' => $request->empresa, 
+            'ds_segmento_empresa' => $request->segmento, 
+            'vl_salario' =>  $salario, 
+            'dt_inicio_experiencia' => $request->dataInicio, 
+            'dt_termino_experiencia' => $request->dataTermino, 
+            'fk_candidato' => $cpf->cd_cpf,
+        ]);
+        return redirect()->action('ExperienciaController@infoExperiencia')->withInput($request->cpf);
     }
 
     /*public function remove($cnpj){

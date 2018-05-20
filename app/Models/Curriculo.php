@@ -19,7 +19,7 @@ class Curriculo extends Model
     	'fk_candidato',
 
     ];
-
+    
     protected $guarded = ['cd_curriculo'];
 
     public function candidato(){
