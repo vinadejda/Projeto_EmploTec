@@ -66,6 +66,7 @@
 
 </style>
 <script src="{{ asset('js/jquery.mask.js') }}"></script>
+<script src="{{ asset('js/CPF.min.js') }}"></script>
 <script type="text/javascript">
      $(document).ready(function($){
         $('#telefone').mask('(00) 0000-0000');
@@ -79,7 +80,18 @@
             });
         $("#cpf").mask("000.000.000-00");
         $("#cnpj").mask("00.000.000/0000-00")
-        $("#salario").mask("###.##0,00", {reverse: true});
+        $("#salario").mask("###.##0,00", {reverse: true});  
+    $("#cpf").blur(function(){
+        var resposta;
+     resposta = CPF.validate($(this).val());
+        if(resposta == false){
+            document.getElementById("respostafalse").innerHTML = "CPF Inválido!"
+            document.getElementById("respostatrue").innerHTML = ""
+        } else {
+            document.getElementById("respostatrue").innerHTML = "CPF Válido!"
+            document.getElementById("respostafalse").innerHTML = ""
+        }
+});
 });
 </script>
 

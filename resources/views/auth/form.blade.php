@@ -19,6 +19,8 @@
               </label>
               <input type="text" name="cd_cpf" id="cpf"  maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="123.456.789-10" class="form-control{{ $errors->has('cd_cpf') ? ' is-invalid' : '' }}" placeholder="Digite seu CPF" required value="{{isset($candidato) ? $candidato->cd_cpf : old('cd_cpf')}}" 
               {{isset($candidato) ? 'readonly' : ''}} value="{{ old('cd_cpf') }}" >
+                  <span style="color:green;font-style:italic;font-size:85%" id="respostatrue"></span>
+                  <span style="color:red;font-style:italic;font-size:85%" id="respostafalse"></span>
                 @if ($errors->has('cd_cpf'))
                   <span class="invalid-feedback">
                     <strong>{{ $errors->first('cd_cpf') }}</strong>

@@ -7109,3 +7109,7 @@
 #58 C:\\xampp\\htdocs\\Projeto_EmployTec\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #59 {main}
 "} 
+[2018-05-21 20:54:05] local.ERROR: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+  
+[2018-05-21 20:54:05] local.ERROR: SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+ (SQL: select * from `estado`)  
