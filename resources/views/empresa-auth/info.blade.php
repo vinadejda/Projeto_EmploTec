@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
   <section style="margin-top: -8% !important;  margin: 0 auto; width: 600px;">
     <h1 style="color: #000; font-size: 2.8em; font-weight: 300;">{{ __('Mais Informações') }}</h1>
     <p>Campos com <span class="text-danger">*</span> são de preenchimento obrigatório</p>
                     
-        <form method="POST" action="{{route('cadastro-empresa')}}">
+        <form method="POST" action="{{ '/painel/empresa/cadastra' }}">
             <fieldset>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>              
                 <div div class="form-row">
@@ -13,7 +14,7 @@
                         <label for="cnpj">
                             <span class="text-danger">*</span>{{ __('CNPJ') }}
                         </label>
-                        <input  type="text" class="form-control" name="cd_cnpj" required value="{{isset($info) ? $info->cd_cnpj : old('cd_cnpj')}}" id="cnpj"  maxlength="14" pattern="/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/" title="00.000.000/0000-00" class="form-control{{ $errors->has('cd_cpf') ? ' is-invalid' : '' }}" placeholder="Digite o CNPJ da Empresa">
+                        <input  type="text" class="form-control{{ $errors->has('cd_cnpj') ? ' is-invalid' : '' }}" name="cd_cnpj" required value="{{isset($info) ? $info->cd_cnpj : old('cd_cnpj')}}" id="cnpj"  maxlength="14" pattern="/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/" title="00.000.000/0000-00" class="form-control{{ $errors->has('cd_cpf') ? ' is-invalid' : '' }}" placeholder="Digite o CNPJ da Empresa">
                             @if ($errors->has('cd_cnpj'))
                               <span class="invalid-feedback">
                                 <strong>{{ $errors->first('cd_cnpj') }}</strong>
@@ -26,7 +27,7 @@
                         <label for="rz_social">
                             <span class="text-danger">*</span>{{ __('Razão Social') }}
                         </label>
-                        <input type="text" class="form-control"  name="rz_social" maxlength="45" placeholder="Digite a Razão Social da Empresa" pattern="[a-zA-ZÀ-úçÇ0-9\s]+" required value="{{ old('rz_social') }}"  oninvalid="setCustomValidity('Somente Letras e Números!')" onchange="try{setCustomValidity('')}catch(e){}" title="Somente Letras e Números!">
+                        <input type="text" class="form-control{{ $errors->has('rz_social') ? ' is-invalid' : '' }}"  name="rz_social" maxlength="45" placeholder="Digite a Razão Social da Empresa" pattern="[a-zA-ZÀ-úçÇ0-9\s]+" required value="{{ old('rz_social') }}"  oninvalid="setCustomValidity('Somente Letras e Números!')" onchange="try{setCustomValidity('')}catch(e){}" title="Somente Letras e Números!">
                             @if ($errors->has('rz_social'))
                               <span class="invalid-feedback">
                                 <strong>{{ $errors->first('rz_social') }}</strong>

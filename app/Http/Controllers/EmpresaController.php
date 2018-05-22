@@ -15,9 +15,11 @@ class EmpresaController extends Controller
     public function cadastrar(Request $request){
 
         $request->cd_cnpj = str_replace(['.', '/', '-'], '', $request->cd_cnpj);
+        
+
         $this->validate($request, [
-            'cd_cnpj' => 'required|numeric|max:14|unique',
-            'ds_razao_social' => 'required|alpha_num|max:45',
+            //'cd_cnpj' => 'required|numeric|max:14|unique:empresa',
+            'rz_social' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/|max:45',
         ]);
 
 	    if (auth()->guard('empresa')->check()) {
@@ -25,9 +27,11 @@ class EmpresaController extends Controller
             'cd_cnpj' =>  $request->cd_cnpj, 
             'ds_razao_social' => $request->rz_social, 
             'fk_usuario' =>  auth()->guard('empresa')->user()->id
-        ]);
-	         return redirect('painel/empresa/dashboard')->withInput($request->only('cd_cnpj'));
-	    }  
+            ]);
+
+           //return redirect()->action('EmpresaController@editar');
+	       return redirect('painel/empresa/dashboard')->withInput($request->only('cd_cnpj'));
+	    }
 	}
 
     public function editar(){

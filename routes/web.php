@@ -154,7 +154,7 @@ Route::group(['prefix'=>'painel/empresa'], function(){
         });
         //Empresa Info
         Route::get('/info', ['as' => 'empresa.info','uses' => 'EmpresaController@showRegistrationInfoForm']);
-        Route::post('/info', ['uses' => 'EmpresaController@cadastrar'])->name('cadastro-empresa');
+        Route::post('/cadastra', 'EmpresaController@cadastrar');
         Route::get('/editar', 'EmpresaController@editar');
         Route::post('/alterar', 'EmpresaController@altera');
     });
