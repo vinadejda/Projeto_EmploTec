@@ -57,7 +57,7 @@ class CurriculoController extends Controller
 
     public function altera(Request $request){
          $this->validate($request, [
-            'objetivo' => 'regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/|max:100, ',
+            'objetivo' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/|max:100, ',
             'vl_salario' => 'nullable|',
             'infomacoes' => 'nullable|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç ]+$)+/|max:250',
             'resumo' => 'nullable|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/',

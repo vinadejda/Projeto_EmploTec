@@ -44,7 +44,7 @@ class EmpresaController extends Controller
         $request['tel'] = str_replace(['(', ')' , ' ', '-'], '', $request->tel);
         $request['celular'] = str_replace(['(', ')' , ' ', '-'], '', $request->celular);
         $this->validate($request, [
-            'cd_cnpj' => 'numeric|max:14|unique',
+            'cd_cnpj' => 'numeric|max:14',
             'ds_razao_social' => 'alpha_num|max:45',
             'name' => 'regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º °]+$)+/|max:45',
             'email' => 'string|email|max:45',
@@ -53,8 +53,8 @@ class EmpresaController extends Controller
             'nr' => 'numeric',
             'bairro' => 'regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
             'complemento' => 'nullable|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
-            'tel' => 'nullable|numeric',
-            'celular' => 'nullable|numeric',
+            'tel' => 'nullable',
+            'celular' => 'nullable',
             'foto' => 'nullable|image|max:250',  
             'linkedin' => 'nullable|url|max:45',
             'facebook' => 'nullable|url|max:45',

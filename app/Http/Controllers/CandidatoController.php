@@ -52,16 +52,18 @@ class CandidatoController extends Controller
    
 
     public function create(Request $request){
+        $request->tel = str_replace(['(', ')' , ' ', '-'], '', $request->tel);
+        $request->celular = str_replace(['(', ')' , ' ', '-'], '', $request->celular);
         $request->cd_cpf = str_replace(['.', '-'], '', $request->cd_cpf);
         $this->validate($request, [
             'nome' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º °]+$)+/|max:45',
-            'email' => 'required|string|email|max:45|unique:users',
+            'email' => 'sometimes|required|string|email|max:45|unique:users',
             'endereco' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
             'nr' => 'required|numeric',
             'bairro' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
             'complemento' => 'nullable|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
-            'tel' => 'nullable|numeric',
-            'celular' => 'nullable|numeric',
+            'tel' => 'nullable',
+            'celular' => 'nullable',
             'foto' => 'nullable|image|max:250',  
             'linkedin' => 'nullable|url|max:45',
             'facebook' => 'nullable|url|max:45',
@@ -98,7 +100,29 @@ class CandidatoController extends Controller
     }
 
     public function altera(Request $request){
-    	//$params = $this->getParams();
+        $request->tel = str_replace(['(', ')' , ' ', '-'], '', $request->tel);
+        $request->celular = str_replace(['(', ')' , ' ', '-'], '', $request->celular);
+    	 $this->validate($request, [
+            'nome' => 'required|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º °]+$)+/|max:45',
+            'email' => 'required|string|email|max:45',
+            'endereco' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
+            'nr' => 'required|numeric',
+            'bairro' => 'required|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
+            'complemento' => 'nullable|regex:/(^[A-Za-z0-9 \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç º ° ]+$)+/|max:45',
+            'tel' => 'nullable',
+            'celular' => 'nullable',
+            'foto' => 'nullable|image|max:250',  
+            'linkedin' => 'nullable|url|max:45',
+            'facebook' => 'nullable|url|max:45',
+            'twitter' => 'nullable|url|max:45',
+            'portifolio' => 'nullable|url|max:45',
+            'cidade' => '',
+            'estado_civil' => 'required|regex:/(^[A-Za-z]+$)+/|max:10',
+            'genero' => 'required|regex:/(^[A-Za-z]+$)+/|max:45',
+            'dt_nascimento' => 'required|date|before:2016-12-31',
+            'nacionalidade' => 'nullable|regex:/(^[A-Za-z \' ã á â é ê í î õ ó ô ú û ç Ã Á Â Ê É Í Î Õ Ô Ó Ú Û Ç]+$)+/|max:45',
+            'deficiencia' => 'nullable|numeric|max:1'
+        ]);
     	Candidato::where('cd_cpf', $request->cd_cpf)->update([
             'cd_cpf' => $request->cd_cpf, 
             'ds_estado_civil' => $request->estado_civil, 
