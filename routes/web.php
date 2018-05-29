@@ -92,6 +92,12 @@ Route::group(['prefix'=>'painel/candidato'], function(){
             //Route::get('/exclui', 'ExperienciaController@exclui');
             //Route::post('/excluir', 'ExperienciaController@altera');
             //Route::get('/painel/candidato/informacoes', 'CandidatoController@informacoes');
+            Route::group(['prefix' => 'testes'], function(){
+                Route::get('realizar/{id}', 'TesteController@realizar')->where('id', '[0-9]+');
+                Route::post('concluir', 'TesteController@concluir');
+            
+
+            });
         });
 
 

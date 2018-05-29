@@ -42,7 +42,7 @@
                                     <i class="fa fa-sitemap" aria-hidden="true"></i>
                                     {{$vagaCandidatada->vaga->empresa->ds_razao_social}}
                                 </p>
-                            <a href="#" class="btn btn-primary">Visualizar Vaga</a>
+                            <a href="/painel/candidato/vagas/testes/realizar/{{$vagaCandidatada->vaga->areaTI->cd_areaTI}}" class="btn btn-primary">Realizar Teste</a>
                           </div>
                         </div>
                                         

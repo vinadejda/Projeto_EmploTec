@@ -6,6 +6,8 @@ use Request;
 use App\Models\Pergunta;
 use App\Models\Alternativa;
 use App\Models\AreaTI;
+use App\Models\Candidato;
+use App\Models\PerguntaCandidato;
 use Illuminate\Support\Facades\DB;
 
 class TesteController extends Controller
@@ -32,7 +34,7 @@ class TesteController extends Controller
 		return view('area-admin.teste.listagem')
 		->with('pergunta', Pergunta::all())
 		->with('alternativas', Alternativa::all())
-		->with('areasTI', AreaTI::all());;
+		->with('areasTI', AreaTI::all());
 	}
 	public function editar($id){
     	$pergunta = Pergunta::where('cd_pergunta', $id)->first();
@@ -174,5 +176,35 @@ class TesteController extends Controller
 		];
 		  
 		return $params;
+	}
+
+	public function realizar($id)
+	{
+		$perguntas = Pergunta::where('fk_areaTI',$id)->get();
+		$pergunta = Pergunta::where('fk_areaTI',$id)->first();
+		$nome = AreaTI::where('cd_areaTI', $pergunta->fk_areaTI)->first();
+		return view('area-user.teste.form')
+		->with('numero', 1)
+		->with('perguntas', $perguntas)
+		->with('alternativas', Alternativa::all())
+		->with('areaTI', $nome);
+	}
+
+	public function concluir()
+	{
+		$resultado = 0;
+		$candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first()->cd_cpf;
+		$perguntas = Pergunta::where('fk_areaTI', Request::input('id'))->get();
+		foreach ($perguntas as $p) {
+			PerguntaCandidato::create([
+				'fk_pergunta' => Request::input($p->cd_pergunta),
+   				'fk_cpf' => $candidato,
+			]);
+			$alternativas = Alternativa::where('fk_pergunta', $perguntas->cd_pergunta)->get();
+			foreach ($alternativas as $a) {
+				if($a == Request::input($p->cd_pergunta))
+					$resultado += 1;
+			}
+		}
 	}
 }
