@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23-Maio-2018 às 03:56
+-- Generation Time: 04-Jun-2018 às 00:28
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -45,11 +45,26 @@ INSERT INTO `alternativa` (`cd_alternativa`, `ds_alternativa`, `ic_alternativa`,
 (48, 'PHP 3', 0, 15),
 (49, 'PHP 4', 0, 15),
 (50, 'PHP 5', 0, 15),
-(51, 'guhpo', 1, 16),
-(52, '~hojij', 0, 16),
-(53, 'oijpoç', 0, 16),
-(54, '~jokko', 0, 16),
-(55, 'çojop', 0, 16);
+(56, 'alternativa 1', 1, 17),
+(57, 'alternativa  2', 0, 17),
+(58, 'alternativa 3', 0, 17),
+(59, 'alternativa 4', 0, 17),
+(60, 'alternativa 5', 0, 17),
+(61, 'alternativa 1', 1, 18),
+(62, 'alternativa 2', 0, 18),
+(63, 'alternativa 3', 0, 18),
+(64, 'alternativa 4', 0, 18),
+(65, 'alternativa 5', 0, 18),
+(66, 'alternativa 1', 1, 19),
+(67, 'alternativa 2', 0, 19),
+(68, 'alternativa 3', 0, 19),
+(69, 'alternativa 4', 0, 19),
+(70, 'alternativa 5', 0, 19),
+(71, 'alternativa 1', 1, 20),
+(72, 'alternativa 2', 0, 20),
+(73, 'alternativa 3', 0, 20),
+(74, 'alternativa 4', 0, 20),
+(75, 'alternativa 5', 0, 20);
 
 -- --------------------------------------------------------
 
@@ -5871,7 +5886,10 @@ CREATE TABLE `pergunta` (
 
 INSERT INTO `pergunta` (`cd_pergunta`, `ds_pergunta`, `fk_areaTI`) VALUES
 (15, 'Pergunta sobre PHP 7.2', 2),
-(16, '~;.;/opj][´]´[', 17);
+(17, 'pergunta1', 2),
+(18, 'PERGUNTA 2', 2),
+(19, 'pergunta3', 2),
+(20, 'pergunta 4', 2);
 
 -- --------------------------------------------------------
 
@@ -5884,6 +5902,17 @@ CREATE TABLE `pergunta_candidato` (
   `fk_cpf` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `pergunta_candidato`
+--
+
+INSERT INTO `pergunta_candidato` (`fk_pergunta`, `fk_cpf`) VALUES
+(15, '392487664'),
+(17, '392487664'),
+(18, '392487664'),
+(19, '392487664'),
+(20, '392487664');
+
 -- --------------------------------------------------------
 
 --
@@ -5892,10 +5921,42 @@ CREATE TABLE `pergunta_candidato` (
 
 CREATE TABLE `resposta` (
   `cd_resposta` int(6) NOT NULL,
-  `alternativa_candidato` varchar(45) DEFAULT NULL,
+  `ic_resposta` tinyint(1) NOT NULL DEFAULT '0',
   `dt_realizado` date NOT NULL,
+  `fk_cpf` varchar(11) NOT NULL,
   `fk_alternativa` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `resposta`
+--
+
+INSERT INTO `resposta` (`cd_resposta`, `ic_resposta`, `dt_realizado`, `fk_cpf`, `fk_alternativa`) VALUES
+(101, 1, '2018-06-03', '392487664', 46),
+(102, 0, '2018-06-03', '392487664', 47),
+(103, 0, '2018-06-03', '392487664', 48),
+(104, 0, '2018-06-03', '392487664', 49),
+(105, 0, '2018-06-03', '392487664', 50),
+(106, 1, '2018-06-03', '392487664', 56),
+(107, 0, '2018-06-03', '392487664', 57),
+(108, 0, '2018-06-03', '392487664', 58),
+(109, 0, '2018-06-03', '392487664', 59),
+(110, 0, '2018-06-03', '392487664', 60),
+(111, 1, '2018-06-03', '392487664', 61),
+(112, 0, '2018-06-03', '392487664', 62),
+(113, 0, '2018-06-03', '392487664', 63),
+(114, 0, '2018-06-03', '392487664', 64),
+(115, 0, '2018-06-03', '392487664', 65),
+(116, 1, '2018-06-03', '392487664', 66),
+(117, 0, '2018-06-03', '392487664', 67),
+(118, 0, '2018-06-03', '392487664', 68),
+(119, 0, '2018-06-03', '392487664', 69),
+(120, 0, '2018-06-03', '392487664', 70),
+(121, 1, '2018-06-03', '392487664', 71),
+(122, 0, '2018-06-03', '392487664', 72),
+(123, 0, '2018-06-03', '392487664', 73),
+(124, 0, '2018-06-03', '392487664', 74),
+(125, 0, '2018-06-03', '392487664', 75);
 
 -- --------------------------------------------------------
 
@@ -5933,7 +5994,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `ds_rua`, `nr_endereco`, `ds_bairro`, `ds_complemento`, `nr_tel`, `nl_user`, `nr_cel`, `im_perfil`, `link_linkedin`, `link_facebook`, `link_twitter`, `link_site`, `fk_cidade`, `ic_ativo`, `created_at`, `update_at`, `remember_token`) VALUES
 (1, 'Admin Supremooooo', 'admin@supremo.com', '$2y$10$I9gQ08PoYM9XE3GlaKeDseW3RvoDtMGAgXuMUoXBNsaN2oA0UFWjm', 'srthws', 86469, 'teste', 'teste', '', 2, '', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, 'cFJzsxOiNsgLvuhSWtJtWEwUZ7nGxiwrer52t1BhqIHdAmwG6EoupcK7RfM3'),
-(2, 'Candidato Supremo', 'candidato@supremo.com', '$2y$10$WRyndHj2GP0UYA5J4qp90elW0WOYaAQGZm7e9RL7PiR9IG2RBF67i', 'Candidato', 100, 'Supremo', NULL, NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, '1GdCp4PpMAUcj6BM3AelwIuffHcVr8hVnJRu0YEBG2R8unEOBif3158KbgGr'),
+(2, 'Candidato Supremo', 'candidato@supremo.com', '$2y$10$WRyndHj2GP0UYA5J4qp90elW0WOYaAQGZm7e9RL7PiR9IG2RBF67i', 'Candidato', 100, 'Supremo', NULL, '1334277544', 2, '13998135486', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, '1GdCp4PpMAUcj6BM3AelwIuffHcVr8hVnJRu0YEBG2R8unEOBif3158KbgGr'),
 (3, 'Alguem', 'alguem@teste.com', '$2y$10$Oypds91zumxmj4YCPhuzaOIqOGatr41sy3uhPVNeT4qovYLLhbpka', 'Alguem', 111, 'teste', 'teste', NULL, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL),
 (4, 'Empresa Supremaaa', 'empresa@suprema.com', '$2y$10$ogXl/q1b0AJngxYVuj9Moe.On2T7oBDckfvWH/4R3YJH3FYRsXw6.', 'Empresa', 10, 'Supremo', NULL, '', 3, '', NULL, NULL, NULL, NULL, NULL, 18, 1, NULL, NULL, 'OgbAAuxd5vXYkHt3lp65pyYHJRX0bsBfy5FrbdaO4qVmsV9CWuviVwwgBPSo'),
 (5, 'Vitória ADM', 'vi@adm.com', '$2y$10$Yr3OSIlnQhHmt0AWBGlhmehDKIbGmo1pmZTTLSv6SrIzRBxXNZwve', 'teste', 10, 'teste', NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL),
@@ -6106,16 +6167,16 @@ ALTER TABLE `pergunta`
 -- Indexes for table `pergunta_candidato`
 --
 ALTER TABLE `pergunta_candidato`
-  ADD PRIMARY KEY (`fk_pergunta`,`fk_cpf`),
-  ADD KEY `fk_pergunta_has_candidato_candidato1_idx` (`fk_cpf`),
-  ADD KEY `fk_pergunta_has_candidato_pergunta1_idx` (`fk_pergunta`);
+  ADD KEY `fk_pergunta_candidato` (`fk_cpf`),
+  ADD KEY `fk_pergunta_pergunta` (`fk_pergunta`);
 
 --
 -- Indexes for table `resposta`
 --
 ALTER TABLE `resposta`
   ADD PRIMARY KEY (`cd_resposta`),
-  ADD KEY `fk_respostas_alternativa1_idx` (`fk_alternativa`);
+  ADD KEY `fk_respostas_alternativa1_idx` (`fk_alternativa`),
+  ADD KEY `fk_resposta_candidato` (`fk_cpf`);
 
 --
 -- Indexes for table `users`
@@ -6141,7 +6202,7 @@ ALTER TABLE `vaga`
 -- AUTO_INCREMENT for table `alternativa`
 --
 ALTER TABLE `alternativa`
-  MODIFY `cd_alternativa` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `cd_alternativa` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `area_ti`
@@ -6201,13 +6262,13 @@ ALTER TABLE `perfil_vaga`
 -- AUTO_INCREMENT for table `pergunta`
 --
 ALTER TABLE `pergunta`
-  MODIFY `cd_pergunta` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `cd_pergunta` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `resposta`
 --
 ALTER TABLE `resposta`
-  MODIFY `cd_resposta` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `cd_resposta` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -6292,13 +6353,14 @@ ALTER TABLE `pergunta`
 -- Limitadores para a tabela `pergunta_candidato`
 --
 ALTER TABLE `pergunta_candidato`
-  ADD CONSTRAINT `fk_pergunta_has_candidato_candidato1` FOREIGN KEY (`fk_cpf`) REFERENCES `candidato` (`cd_cpf`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_pergunta_has_candidato_pergunta1` FOREIGN KEY (`fk_pergunta`) REFERENCES `pergunta` (`cd_pergunta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_pergunta_candidato` FOREIGN KEY (`fk_cpf`) REFERENCES `candidato` (`cd_cpf`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_pergunta_pergunta` FOREIGN KEY (`fk_pergunta`) REFERENCES `pergunta` (`cd_pergunta`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `resposta`
 --
 ALTER TABLE `resposta`
+  ADD CONSTRAINT `fk_resposta_candidato` FOREIGN KEY (`fk_cpf`) REFERENCES `candidato` (`cd_cpf`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_respostas_alternativa1` FOREIGN KEY (`fk_alternativa`) REFERENCES `alternativa` (`cd_alternativa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

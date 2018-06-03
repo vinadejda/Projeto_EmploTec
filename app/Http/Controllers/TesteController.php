@@ -7,6 +7,7 @@ use App\Models\Pergunta;
 use App\Models\Alternativa;
 use App\Models\AreaTI;
 use App\Models\Candidato;
+use App\Models\Resposta;
 use App\Models\PerguntaCandidato;
 use Illuminate\Support\Facades\DB;
 
@@ -192,19 +193,44 @@ class TesteController extends Controller
 
 	public function concluir()
 	{
-		$resultado = 0;
+		
+		
 		$candidato = Candidato::where('fk_usuario', auth()->guard('web')->user()->id)->first()->cd_cpf;
 		$perguntas = Pergunta::where('fk_areaTI', Request::input('id'))->get();
 		foreach ($perguntas as $p) {
 			PerguntaCandidato::create([
-				'fk_pergunta' => Request::input($p->cd_pergunta),
+				'fk_pergunta' => $p->cd_pergunta,
    				'fk_cpf' => $candidato,
-			]);
-			$alternativas = Alternativa::where('fk_pergunta', $perguntas->cd_pergunta)->get();
+   			]);
+			$alternativas = Alternativa::where('fk_pergunta', $p->cd_pergunta)->get();
 			foreach ($alternativas as $a) {
-				if($a == Request::input($p->cd_pergunta))
-					$resultado += 1;
+				$a->cd_alternativa == Request::input($p->cd_pergunta) && $a->ic_alternativa == 1 ? $resposta = 1 : $resposta = 0;
+				
+				Resposta::create([
+					'ic_resposta' => $resposta,	
+					'dt_realizado' => date('Y-m-d'),
+					'fk_cpf' => $candidato,
+					'fk_alternativa' => $a->cd_alternativa,
+				]);	
+		
 			}
 		}
+		return redirect()->action('TesteController@resultado')->with('id',Request::input('id'));
 	}
-}
+	public function resultado()
+	{
+		
+
+
+
+		$resposta =  Resposta::where('ic_resposta', 1)->count();
+
+		
+
+		return view('area-user.teste.resultado')
+		->with('resposta', $resposta)
+		//->with('resp', $resp)
+		//->with('perguntas', $perguntas)
+		/*->with('areaTI', AreaTI::all())*/;
+	}
+}//class

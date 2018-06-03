@@ -95,7 +95,7 @@ Route::group(['prefix'=>'painel/candidato'], function(){
             Route::group(['prefix' => 'testes'], function(){
                 Route::get('realizar/{id}', 'TesteController@realizar')->where('id', '[0-9]+');
                 Route::post('concluir', 'TesteController@concluir');
-            
+                Route::get('/resultado','TesteController@resultado');
 
             });
         });
