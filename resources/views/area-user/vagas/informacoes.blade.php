@@ -22,13 +22,13 @@
                         </div>
                     @endif
                     
-                    @foreach ($vagasCandidato as $vagaCandidatada)
+                    @foreach ($vagas as $vagaCandidatada)
                         <div class="card col-md-4 responsive-wrap" >
                             
                             <img class="card-img-top" src="/../images/vaga-programador.jpg" alt="Card image cap">
                             <div class="card-body">
-                            <h4 class="card-title"><b>{{$vagaCandidatada->vaga->nm_vaga}}</b></h4>
-                                <p class="card-text">{{$vagaCandidatada->vaga->areaTI->nm_areaTI}} </p> 
+                            <h4 class="card-title"><b>{{$vagaCandidatada->nm_vaga}}</b></h4>
+                                <p class="card-text">{{$vagaCandidatada->nm_areaTI}} </p> 
                                 <p class="card-text">{{$vagaCandidatada->ds_nivel }}</p> 
                                 <p class="card-text">
                                     <i class="fa fa-usd" aria-hidden="true"></i>
@@ -36,13 +36,17 @@
                                 </p>
                                 <p>
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        {{$vagaCandidatada->vaga->cidade->nm_cidade}}
+                                        {{$vagaCandidatada->nm_cidade}}
                                 </p>
                                 <p>
                                     <i class="fa fa-sitemap" aria-hidden="true"></i>
-                                    {{$vagaCandidatada->vaga->empresa->ds_razao_social}}
+                                    {{$vagaCandidatada->ds_razao_social}}
                                 </p>
-                            <a href="/painel/candidato/vagas/testes/realizar/{{$vagaCandidatada->vaga->areaTI->cd_areaTI}}" class="btn btn-primary">Realizar Teste</a>
+                            @if($vagaCandidatada->qtd == 0)
+                                <a href="/painel/candidato/vagas/testes/realizar/{{$vagaCandidatada->cd_areaTI}}" class="btn btn-primary">Realizar Teste</a>
+                            @else
+                                <a href="#" class="btn btn-success" disabled>Teste Realizado</a>
+                            @endif
                           </div>
                         </div>
                                         

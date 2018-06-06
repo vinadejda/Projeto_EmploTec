@@ -319,9 +319,7 @@
                         <!--li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Informações</a>
                         </li-->
-                        <li>
-                            <a href="{{url('/painel/candidato/vagas/testes/resultado')}}"><i class="fa fa-sitemap fa-fw"></i> Teste</a>
-                        </li>
+                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

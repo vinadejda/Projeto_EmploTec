@@ -182,8 +182,7 @@ class TesteController extends Controller
 	public function realizar($id)
 	{
 		$perguntas = Pergunta::where('fk_areaTI',$id)->get();
-		$pergunta = Pergunta::where('fk_areaTI',$id)->first();
-		$nome = AreaTI::where('cd_areaTI', $pergunta->fk_areaTI)->first();
+		$nome = AreaTI::where('cd_areaTI', $id)->first();
 		return view('area-user.teste.form')
 		->with('numero', 1)
 		->with('perguntas', $perguntas)
@@ -215,7 +214,7 @@ class TesteController extends Controller
 		
 			}
 		}
-		return redirect()->action('TesteController@resultado')->with('id',Request::input('id'));
+		return redirect()->action('TesteController@lista')->with('id',Request::input('id'));
 	}
 	public function resultado()
 	{
